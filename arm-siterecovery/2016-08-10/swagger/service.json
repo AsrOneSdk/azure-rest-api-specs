@@ -15,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems": {
       "get": {
         "tags": [
           "ReplicationProtectedItems"
@@ -74,7 +74,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationProtectedItems": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationProtectedItems": {
       "get": {
         "tags": [
           "ReplicationProtectedItems"
@@ -126,7 +126,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationNetworkMappings": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationNetworkMappings": {
       "get": {
         "tags": [
           "ReplicationNetworkMappings"
@@ -171,7 +171,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationNetworks/{networkName}/replicationNetworkMappings": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationNetworks/{networkName}/replicationNetworkMappings": {
       "get": {
         "tags": [
           "ReplicationNetworkMappings"
@@ -230,7 +230,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/renewCertificate": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/renewCertificate": {
       "post": {
         "tags": [
           "ReplicationFabrics"
@@ -295,7 +295,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationvCenters/{vCenterName}/operationresults/{jobName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationvCenters/{vCenterName}/operationresults/{jobName}": {
       "get": {
         "tags": [
           "ReplicationvCenters"
@@ -364,7 +364,7 @@
         "deprecated": false
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationvCenters/{vCenterName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationvCenters/{vCenterName}": {
       "get": {
         "tags": [
           "ReplicationvCenters"
@@ -615,7 +615,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationvCenters": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationvCenters": {
       "get": {
         "tags": [
           "ReplicationvCenters"
@@ -667,7 +667,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationvCenters": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationvCenters": {
       "get": {
         "tags": [
           "ReplicationvCenters"
@@ -712,7 +712,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}/replicationStorageClassificationMappings/{storageClassificationMappingName}/operationresults/{jobName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}/replicationStorageClassificationMappings/{storageClassificationMappingName}/operationresults/{jobName}": {
       "get": {
         "tags": [
           "ReplicationStorageClassificationMappings"
@@ -788,7 +788,7 @@
         "deprecated": false
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}/replicationStorageClassificationMappings/{storageClassificationMappingName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}/replicationStorageClassificationMappings/{storageClassificationMappingName}": {
       "get": {
         "tags": [
           "ReplicationStorageClassificationMappings"
@@ -990,7 +990,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}/replicationStorageClassificationMappings": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}/replicationStorageClassificationMappings": {
       "get": {
         "tags": [
           "ReplicationStorageClassificationMappings"
@@ -1049,7 +1049,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationStorageClassificationMappings": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationStorageClassificationMappings": {
       "get": {
         "tags": [
           "ReplicationStorageClassificationMappings"
@@ -1094,7 +1094,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}": {
       "get": {
         "tags": [
           "ReplicationStorageClassifications"
@@ -1150,7 +1150,7 @@
         "deprecated": false
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications": {
       "get": {
         "tags": [
           "ReplicationStorageClassifications"
@@ -1202,7 +1202,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationStorageClassifications": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationStorageClassifications": {
       "get": {
         "tags": [
           "ReplicationStorageClassifications"
@@ -1247,7 +1247,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/operationresults/{jobId}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/operationresults/{jobId}": {
       "get": {
         "tags": [
           "ReplicationProtectedItems"
@@ -1323,7 +1323,7 @@
         "deprecated": false
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/applyRecoveryPoint": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/applyRecoveryPoint": {
       "post": {
         "tags": [
           "ReplicationProtectedItems"
@@ -1402,7 +1402,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/repairReplication": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/repairReplication": {
       "post": {
         "tags": [
           "ReplicationProtectedItems"
@@ -1469,7 +1469,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/updateMobilityService": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/updateMobilityService": {
       "post": {
         "tags": [
           "ReplicationProtectedItems"
@@ -1548,7 +1548,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/reProtect": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/reProtect": {
       "post": {
         "tags": [
           "ReplicationProtectedItems"
@@ -1627,7 +1627,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/failoverCommit": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/failoverCommit": {
       "post": {
         "tags": [
           "ReplicationProtectedItems"
@@ -1694,7 +1694,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/testFailoverCleanup": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/testFailoverCleanup": {
       "post": {
         "tags": [
           "ReplicationProtectedItems"
@@ -1773,7 +1773,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/testFailover": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/testFailover": {
       "post": {
         "tags": [
           "ReplicationProtectedItems"
@@ -1852,7 +1852,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/unplannedFailover": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/unplannedFailover": {
       "post": {
         "tags": [
           "ReplicationProtectedItems"
@@ -1931,7 +1931,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/plannedFailover": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/plannedFailover": {
       "post": {
         "tags": [
           "ReplicationProtectedItems"
@@ -2010,7 +2010,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/remove": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/remove": {
       "post": {
         "tags": [
           "ReplicationProtectedItems"
@@ -2086,7 +2086,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}": {
       "get": {
         "tags": [
           "ReplicationProtectedItems"
@@ -2365,7 +2365,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders/{providerName}/operationresults/{jobName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders/{providerName}/operationresults/{jobName}": {
       "get": {
         "tags": [
           "ReplicationRecoveryServicesProviders"
@@ -2434,7 +2434,7 @@
         "deprecated": false
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders/{providerName}/refreshProvider": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders/{providerName}/refreshProvider": {
       "post": {
         "tags": [
           "ReplicationRecoveryServicesProviders"
@@ -2494,7 +2494,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders/{providerName}/remove": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders/{providerName}/remove": {
       "post": {
         "tags": [
           "ReplicationRecoveryServicesProviders"
@@ -2551,7 +2551,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders/{providerName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders/{providerName}": {
       "get": {
         "tags": [
           "ReplicationRecoveryServicesProviders"
@@ -2662,7 +2662,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders": {
       "get": {
         "tags": [
           "ReplicationRecoveryServicesProviders"
@@ -2714,7 +2714,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryServicesProviders": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryServicesProviders": {
       "get": {
         "tags": [
           "ReplicationRecoveryServicesProviders"
@@ -2759,7 +2759,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/recoveryPoints/{recoveryPointName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/recoveryPoints/{recoveryPointName}": {
       "get": {
         "tags": [
           "RecoveryPoints"
@@ -2829,7 +2829,7 @@
         "deprecated": false
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/recoveryPoints": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/recoveryPoints": {
       "get": {
         "tags": [
           "RecoveryPoints"
@@ -2895,7 +2895,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/operationresults/{jobName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/operationresults/{jobName}": {
       "get": {
         "tags": [
           "ReplicationRecoveryPlans"
@@ -2957,7 +2957,7 @@
         "deprecated": false
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/reProtect": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/reProtect": {
       "post": {
         "tags": [
           "ReplicationRecoveryPlans"
@@ -3010,7 +3010,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/failoverCommit": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/failoverCommit": {
       "post": {
         "tags": [
           "ReplicationRecoveryPlans"
@@ -3063,7 +3063,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/testFailoverCleanup": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/testFailoverCleanup": {
       "post": {
         "tags": [
           "ReplicationRecoveryPlans"
@@ -3128,7 +3128,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/testFailover": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/testFailover": {
       "post": {
         "tags": [
           "ReplicationRecoveryPlans"
@@ -3193,7 +3193,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/unplannedFailover": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/unplannedFailover": {
       "post": {
         "tags": [
           "ReplicationRecoveryPlans"
@@ -3258,7 +3258,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/plannedFailover": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/plannedFailover": {
       "post": {
         "tags": [
           "ReplicationRecoveryPlans"
@@ -3323,7 +3323,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}": {
       "get": {
         "tags": [
           "ReplicationRecoveryPlans"
@@ -3546,7 +3546,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans": {
       "get": {
         "tags": [
           "ReplicationRecoveryPlans"
@@ -3591,7 +3591,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/switchprotection": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/switchprotection": {
       "post": {
         "tags": [
           "ReplicationProtectionContainers"
@@ -3663,7 +3663,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/remove": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/remove": {
       "post": {
         "tags": [
           "ReplicationProtectionContainers"
@@ -3720,7 +3720,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/operationresults/{jobId}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/operationresults/{jobId}": {
       "get": {
         "tags": [
           "ReplicationProtectionContainers"
@@ -3789,7 +3789,7 @@
         "deprecated": false
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/discoverProtectableItem": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/discoverProtectableItem": {
       "post": {
         "tags": [
           "ReplicationProtectionContainers"
@@ -3861,7 +3861,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}": {
       "get": {
         "tags": [
           "ReplicationProtectionContainers"
@@ -3987,7 +3987,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers": {
       "get": {
         "tags": [
           "ReplicationProtectionContainers"
@@ -4039,7 +4039,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationProtectionContainers": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationProtectionContainers": {
       "get": {
         "tags": [
           "ReplicationProtectionContainers"
@@ -4084,7 +4084,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectionContainerMappings/{mappingName}/operationresults/{jobId}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectionContainerMappings/{mappingName}/operationresults/{jobId}": {
       "get": {
         "tags": [
           "ReplicationProtectionContainerMappings"
@@ -4160,7 +4160,7 @@
         "deprecated": false
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectionContainerMappings/{mappingName}/remove": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectionContainerMappings/{mappingName}/remove": {
       "post": {
         "tags": [
           "ReplicationProtectionContainerMappings"
@@ -4236,7 +4236,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectionContainerMappings/{mappingName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectionContainerMappings/{mappingName}": {
       "get": {
         "tags": [
           "ReplicationProtectionContainerMappings"
@@ -4438,7 +4438,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectionContainerMappings": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectionContainerMappings": {
       "get": {
         "tags": [
           "ReplicationProtectionContainerMappings"
@@ -4497,7 +4497,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationProtectionContainerMappings": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationProtectionContainerMappings": {
       "get": {
         "tags": [
           "ReplicationProtectionContainerMappings"
@@ -4542,7 +4542,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectableItems/{protectableItemName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectableItems/{protectableItemName}": {
       "get": {
         "tags": [
           "ReplicationProtectableItems"
@@ -4605,7 +4605,7 @@
         "deprecated": false
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectableItems": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectableItems": {
       "get": {
         "tags": [
           "ReplicationProtectableItems"
@@ -4664,7 +4664,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationPolicies/{policyName}/operationresults/{jobName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationPolicies/{policyName}/operationresults/{jobName}": {
       "get": {
         "tags": [
           "ReplicationPolicies"
@@ -4726,7 +4726,7 @@
         "deprecated": false
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationPolicies/{policyName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationPolicies/{policyName}": {
       "get": {
         "tags": [
           "ReplicationPolicies"
@@ -4949,7 +4949,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationPolicies": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationPolicies": {
       "get": {
         "tags": [
           "ReplicationPolicies"
@@ -4994,7 +4994,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationNetworks": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationNetworks": {
       "get": {
         "tags": [
           "ReplicationNetworks"
@@ -5039,7 +5039,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationNetworks": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationNetworks": {
       "get": {
         "tags": [
           "ReplicationNetworks"
@@ -5091,7 +5091,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationNetworks/{networkName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationNetworks/{networkName}": {
       "get": {
         "tags": [
           "ReplicationNetworks"
@@ -5147,7 +5147,7 @@
         "deprecated": false
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationNetworks/{networkName}/replicationNetworkMappings/{networkMappingName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationNetworks/{networkName}/replicationNetworkMappings/{networkMappingName}": {
       "get": {
         "tags": [
           "ReplicationNetworkMappings"
@@ -5426,7 +5426,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationLogicalNetworks": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationLogicalNetworks": {
       "get": {
         "tags": [
           "ReplicationLogicalNetworks"
@@ -5478,7 +5478,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationLogicalNetworks/{logicalNetworkName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationLogicalNetworks/{logicalNetworkName}": {
       "get": {
         "tags": [
           "ReplicationLogicalNetworks"
@@ -5534,7 +5534,7 @@
         "deprecated": false
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationJobs/{name}/operationresults/{jobName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationJobs/{name}/operationresults/{jobName}": {
       "get": {
         "tags": [
           "ReplicationJobs"
@@ -5596,7 +5596,7 @@
         "deprecated": false
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationJobs/{jobName}/resume": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationJobs/{jobName}/resume": {
       "post": {
         "tags": [
           "ReplicationJobs"
@@ -5661,7 +5661,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationJobs/{jobName}/restart": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationJobs/{jobName}/restart": {
       "post": {
         "tags": [
           "ReplicationJobs"
@@ -5714,7 +5714,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationJobs/{jobName}/cancel": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationJobs/{jobName}/cancel": {
       "post": {
         "tags": [
           "ReplicationJobs"
@@ -5767,7 +5767,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationJobs/{jobName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationJobs/{jobName}": {
       "get": {
         "tags": [
           "ReplicationJobs"
@@ -5816,7 +5816,7 @@
         "deprecated": false
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationJobs/export": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationJobs/export": {
       "post": {
         "tags": [
           "ReplicationJobs"
@@ -5874,7 +5874,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationJobs": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationJobs": {
       "get": {
         "tags": [
           "ReplicationJobs"
@@ -5927,7 +5927,7 @@
         "x-ms-odata": "JobQueryParameter"
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/operationresults/{jobName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/operationresults/{jobName}": {
       "get": {
         "tags": [
           "ReplicationFabrics"
@@ -5989,7 +5989,7 @@
         "deprecated": false
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/reassociateGateway": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/reassociateGateway": {
       "post": {
         "tags": [
           "ReplicationFabrics"
@@ -6054,7 +6054,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/deployProcessServerImage": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/deployProcessServerImage": {
       "post": {
         "tags": [
           "ReplicationFabrics"
@@ -6119,7 +6119,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/checkConsistency": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/checkConsistency": {
       "post": {
         "tags": [
           "ReplicationFabrics"
@@ -6172,7 +6172,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/remove": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/remove": {
       "post": {
         "tags": [
           "ReplicationFabrics"
@@ -6222,7 +6222,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}": {
       "get": {
         "tags": [
           "ReplicationFabrics"
@@ -6382,7 +6382,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics": {
       "get": {
         "tags": [
           "ReplicationFabrics"
@@ -6427,7 +6427,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationEvents/{eventName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationEvents/{eventName}": {
       "get": {
         "tags": [
           "ReplicationEvents"
@@ -6476,7 +6476,7 @@
         "deprecated": false
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationEvents": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationEvents": {
       "get": {
         "tags": [
           "ReplicationEvents"
@@ -6521,7 +6521,7 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationAlertSettings/{alertSettingName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationAlertSettings/{alertSettingName}": {
       "get": {
         "tags": [
           "ReplicationAlertSettings"
@@ -6629,7 +6629,7 @@
         "deprecated": false
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationAlertSettings": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationAlertSettings": {
       "get": {
         "tags": [
           "ReplicationAlertSettings"
@@ -6704,8 +6704,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/AlertProperties",
-          "description": "Gets or sets Alert related data.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets Alert related data."
         }
       }
     },
@@ -6736,8 +6735,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/ConfigureAlertRequestProperties",
-          "description": "Gets or sets the properties of a configure alert request.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the properties of a configure alert request."
         }
       }
     },
@@ -6790,8 +6788,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/EventProperties",
-          "description": "Gets or sets Event related data.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets Event related data."
         }
       }
     },
@@ -6897,8 +6894,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/FabricProperties",
-          "description": "Gets or sets Fabric related data.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets Fabric related data."
         }
       }
     },
@@ -6980,8 +6976,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/FabricCreationInputProperties",
-          "description": "Gets or sets fabric creation input.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets fabric creation input."
         }
       }
     },
@@ -7018,8 +7013,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/DeployProcessServerRequestProperties",
-          "description": "Gets or sets the deploy process server request propertyies.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the deploy process server request propertyies."
         }
       }
     },
@@ -7067,8 +7061,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/FailoverProcessServerRequestProperties",
-          "description": "Gets or sets the properties of the PS Failover request.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the properties of the PS Failover request."
         }
       }
     },
@@ -7129,8 +7122,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/JobProperties",
-          "description": "Gets or sets the custom data.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the custom data."
         },
         "status": {
           "description": "Gets or sets the status of the Job. ARM expects the terminal status to be one of\r\n            (1) Succeeded, (2) Failed or (3) Canceled.\r\n            All other values imply that the operation is still running / being applied.",
@@ -7138,8 +7130,7 @@
         },
         "error": {
           "$ref": "#/definitions/ARMException",
-          "description": "Gets or sets the error.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the error."
         },
         "startTime": {
           "description": "Gets or sets the start time.",
@@ -7602,8 +7593,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/ResumeJobParamsProperties",
-          "description": "Gets or sets Resume job properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets Resume job properties."
         }
       }
     },
@@ -7628,8 +7618,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/LogicalNetworkProperties",
-          "description": "Gets or sets the Logical Network Properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the Logical Network Properties."
         }
       }
     },
@@ -7683,8 +7672,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/NetworkMappingProperties",
-          "description": "Gets or sets the Network Mapping Properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the Network Mapping Properties."
         }
       }
     },
@@ -7730,7 +7718,7 @@
       "description": "Network Mapping fabric specific settings.",
       "type": "object",
       "properties": {
-        "InstanceType": {
+        "instanceType": {
           "description": "Gets the Instance type.",
           "type": "string",
           "readOnly": true
@@ -7744,8 +7732,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/CreateNetworkMappingInputProperties",
-          "description": "Gets or sets Properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets Properties."
         }
       }
     },
@@ -7784,8 +7771,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/UpdateNetworkMappingInputProperties",
-          "description": "Gets or sets Properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets Properties."
         }
       }
     },
@@ -7829,8 +7815,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/NetworkProperties",
-          "description": "Gets or sets the Network Properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the Network Properties."
         }
       }
     },
@@ -7925,8 +7910,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/PolicyProperties",
-          "description": "Gets or sets the custom data.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the custom data."
         }
       }
     },
@@ -7962,8 +7946,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/CreatePolicyInputProperties",
-          "description": "Gets or sets policy creation properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets policy creation properties."
         }
       }
     },
@@ -7994,8 +7977,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/UpdatePolicyInputProperties",
-          "description": "Gets or sets the ReplicationProviderSettings.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the ReplicationProviderSettings."
         }
       }
     },
@@ -8037,8 +8019,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/ProtectableItemProperties",
-          "description": "Gets or sets the custom data.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the custom data."
         }
       }
     },
@@ -8122,8 +8103,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/ProtectionContainerMappingProperties",
-          "description": "Gets or sets the custom data.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the custom data."
         }
       }
     },
@@ -8197,8 +8177,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/CreateProtectionContainerMappingInputProperties",
-          "description": "Gets or sets Configure protection input properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets Configure protection input properties."
         }
       }
     },
@@ -8236,8 +8215,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/RemoveProtectionContainerMappingInputProperties",
-          "description": "Gets or sets Configure protection input properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets Configure protection input properties."
         }
       }
     },
@@ -8289,8 +8267,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/ProtectionContainerProperties",
-          "description": "Gets or sets the custom data.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the custom data."
         }
       }
     },
@@ -8346,8 +8323,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/CreateProtectionContainerInputProperties",
-          "description": "Gets or sets create protection container input properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets create protection container input properties."
         }
       }
     },
@@ -8381,8 +8357,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/DiscoverProtectableItemRequestProperties",
-          "description": "Gets or sets the properties of a discover protectable item request.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the properties of a discover protectable item request."
         }
       }
     },
@@ -8410,8 +8385,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/SwitchProtectionInputProperties",
-          "description": "Gets or sets switch protection properties",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets switch protection properties"
         }
       }
     },
@@ -8469,8 +8443,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/RecoveryPlanProperties",
-          "description": "Gets or sets the custom details.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the custom details."
         }
       }
     },
@@ -8689,8 +8662,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/CreateRecoveryPlanInputProperties",
-          "description": "Gets or sets recovery plan creation properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets recovery plan creation properties."
         }
       }
     },
@@ -8742,8 +8714,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/UpdateRecoveryPlanInputProperties",
-          "description": "Gets or sets recovery plan update properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets recovery plan update properties."
         }
       }
     },
@@ -8769,8 +8740,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/RecoveryPlanPlannedFailoverInputProperties",
-          "description": "Gets or sets the recovery plan planned failover input properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the recovery plan planned failover input properties."
         }
       }
     },
@@ -8822,8 +8792,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/RecoveryPlanUnplannedFailoverInputProperties",
-          "description": "Gets or sets the recovery plan unplanned failover input properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the recovery plan unplanned failover input properties."
         }
       }
     },
@@ -8877,8 +8846,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/RecoveryPlanTestFailoverInputProperties",
-          "description": "Gets or sets the recovery plan test failover input properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the recovery plan test failover input properties."
         }
       }
     },
@@ -8932,8 +8900,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/RecoveryPlanTestFailoverCleanupInputProperties",
-          "description": "Gets or sets the recovery plan test failover cleanup input properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the recovery plan test failover cleanup input properties."
         }
       }
     },
@@ -8975,8 +8942,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/RecoveryPointProperties",
-          "description": "Gets or sets recovery point related data.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets recovery point related data."
         }
       }
     },
@@ -9023,8 +8989,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/RecoveryServicesProviderProperties",
-          "description": "Gets or sets provider properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets provider properties."
         }
       }
     },
@@ -9095,8 +9060,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/ReplicationProtectedItemProperties",
-          "description": "Gets or sets the custom data.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the custom data."
         }
       }
     },
@@ -9290,8 +9254,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/EnableProtectionInputProperties",
-          "description": "Gets or sets enable protection input properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets enable protection input properties."
         }
       }
     },
@@ -9330,8 +9293,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/UpdateReplicationProtectedItemInputProperties",
-          "description": "Gets or sets update replication protected item properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets update replication protected item properties."
         }
       }
     },
@@ -9424,8 +9386,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/DisableProtectionInputProperties",
-          "description": "Gets or sets disable protection input properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets disable protection input properties."
         }
       }
     },
@@ -9468,8 +9429,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/PlannedFailoverInputProperties",
-          "description": "Gets or sets Planned failover input properties",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets Planned failover input properties"
         }
       }
     },
@@ -9504,8 +9464,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/UnplannedFailoverInputProperties",
-          "description": "Gets or sets Planned failover input properties",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets Planned failover input properties"
         }
       }
     },
@@ -9533,8 +9492,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/TestFailoverInputProperties",
-          "description": "Gets or sets Planned failover input properties",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets Planned failover input properties"
         }
       }
     },
@@ -9573,8 +9531,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/TestFailoverCleanupInputProperties",
-          "description": "Gets or sets test failover cleanup input properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets test failover cleanup input properties."
         }
       }
     },
@@ -9594,8 +9551,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/ReverseReplicationInputProperties",
-          "description": "Gets or sets Reverse replication properties",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets Reverse replication properties"
         }
       }
     },
@@ -9630,8 +9586,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/UpdateMobilityServiceRequestProperties",
-          "description": "Gets or sets the properties of the update mobility service request.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the properties of the update mobility service request."
         }
       }
     },
@@ -9651,8 +9606,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/ApplyRecoveryPointInputProperties",
-          "description": "Gets or sets the input properties to apply recovery point.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the input properties to apply recovery point."
         }
       }
     },
@@ -9709,8 +9663,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/StorageClassificationProperties",
-          "description": "Gets or sets proprties of the storage object.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets proprties of the storage object."
         }
       }
     },
@@ -9752,8 +9705,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/StorageClassificationMappingProperties",
-          "description": "Gets or sets proprties of the storage mappping object.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets proprties of the storage mappping object."
         }
       }
     },
@@ -9773,8 +9725,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/StorageMappingInputProperties",
-          "description": "Gets or sets storage mapping input properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets storage mapping input properties."
         }
       }
     },
@@ -9816,8 +9767,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/VCenterProperties",
-          "description": "Gets or sets vCenter related data.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets vCenter related data."
         }
       }
     },
@@ -9874,8 +9824,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/AddVCenterRequestProperties",
-          "description": "Gets or sets the properties of an add vCenter request.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the properties of an add vCenter request."
         }
       }
     },
@@ -9911,8 +9860,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/UpdateVCenterRequestProperties",
-          "description": "Gets or sets the update VCenter Request Properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets the update VCenter Request Properties."
         }
       }
     },
@@ -9948,8 +9896,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/RenewCertificateInputProperties",
-          "description": "Gets or sets renew certificate input properties.",
-          "x-ms-client-flatten": true
+          "description": "Gets or sets renew certificate input properties."
         }
       }
     },
@@ -10006,11 +9953,6 @@
         }
       ],
       "properties": {
-        "instanceType": {
-          "description": "Gets the Instance type.",
-          "type": "string",
-          "readOnly": true
-        },
         "primaryFabricLocation": {
           "description": "Gets or sets the primary fabric location.",
           "type": "string"
@@ -10030,13 +9972,7 @@
           "$ref": "#/definitions/NetworkMappingFabricSpecificSettings"
         }
       ],
-      "properties": {
-        "instanceType": {
-          "description": "Gets the Instance type.",
-          "type": "string",
-          "readOnly": true
-        }
-      },
+      "properties": {},
       "x-ms-discriminator-value": "VmmToAzureNetworkMappingSettings"
     },
     "VmmToVmmNetworkMappingSettings": {
@@ -10047,13 +9983,7 @@
           "$ref": "#/definitions/NetworkMappingFabricSpecificSettings"
         }
       ],
-      "properties": {
-        "instanceType": {
-          "description": "Gets the Instance type.",
-          "type": "string",
-          "readOnly": true
-        }
-      },
+      "properties": {},
       "x-ms-discriminator-value": "VmmToVmmNetworkMappingSettings"
     },
     "AzureToAzureCreateNetworkMappingInput": {
