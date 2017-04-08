@@ -15,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems": {
       "get": {
         "tags": [
           "ReplicationProtectedItems"
@@ -32,12 +32,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -74,7 +68,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationProtectedItems": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationProtectedItems": {
       "get": {
         "tags": [
           "ReplicationProtectedItems"
@@ -93,12 +87,6 @@
             "$ref": "#/parameters/ResourceName"
           },
           {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
-          },
-          {
             "$ref": "#/parameters/ResourceGroupName"
           },
           {
@@ -108,6 +96,13 @@
             "name": "skipToken",
             "in": "query",
             "description": "The pagination token.\r\n            Possible values: \"FabricId\" or \"FabricId_CloudId\" or null",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "OData filter options.",
             "required": false,
             "type": "string"
           }
@@ -123,10 +118,11 @@
         "deprecated": false,
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
-        }
+        },
+        "x-ms-odata": "ProtectedItemsQueryParameter"
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationNetworkMappings": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationNetworkMappings": {
       "get": {
         "tags": [
           "ReplicationNetworkMappings"
@@ -143,12 +139,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -171,7 +161,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationNetworks/{networkName}/replicationNetworkMappings": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationNetworks/{networkName}/replicationNetworkMappings": {
       "get": {
         "tags": [
           "ReplicationNetworkMappings"
@@ -188,12 +178,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -230,7 +214,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/renewCertificate": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/renewCertificate": {
       "post": {
         "tags": [
           "ReplicationFabrics"
@@ -250,12 +234,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -295,7 +273,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationvCenters/{vCenterName}/operationresults/{jobName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationvCenters/{vCenterName}/operationresults/{jobName}": {
       "get": {
         "tags": [
           "ReplicationvCenters"
@@ -312,12 +290,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -364,7 +336,7 @@
         "deprecated": false
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationvCenters/{vCenterName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationvCenters/{vCenterName}": {
       "get": {
         "tags": [
           "ReplicationvCenters"
@@ -381,12 +353,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -438,12 +404,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -507,12 +467,6 @@
             "$ref": "#/parameters/ResourceName"
           },
           {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
-          },
-          {
             "$ref": "#/parameters/ResourceGroupName"
           },
           {
@@ -565,12 +519,6 @@
             "$ref": "#/parameters/ResourceName"
           },
           {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
-          },
-          {
             "$ref": "#/parameters/ResourceGroupName"
           },
           {
@@ -615,7 +563,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationvCenters": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationvCenters": {
       "get": {
         "tags": [
           "ReplicationvCenters"
@@ -632,12 +580,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -667,7 +609,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationvCenters": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationvCenters": {
       "get": {
         "tags": [
           "ReplicationvCenters"
@@ -684,12 +626,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -712,7 +648,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}/replicationStorageClassificationMappings/{storageClassificationMappingName}/operationresults/{jobName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}/replicationStorageClassificationMappings/{storageClassificationMappingName}/operationresults/{jobName}": {
       "get": {
         "tags": [
           "ReplicationStorageClassificationMappings"
@@ -729,12 +665,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -788,7 +718,7 @@
         "deprecated": false
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}/replicationStorageClassificationMappings/{storageClassificationMappingName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}/replicationStorageClassificationMappings/{storageClassificationMappingName}": {
       "get": {
         "tags": [
           "ReplicationStorageClassificationMappings"
@@ -805,12 +735,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -869,12 +793,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -945,12 +863,6 @@
             "$ref": "#/parameters/ResourceName"
           },
           {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
-          },
-          {
             "$ref": "#/parameters/ResourceGroupName"
           },
           {
@@ -990,7 +902,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}/replicationStorageClassificationMappings": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}/replicationStorageClassificationMappings": {
       "get": {
         "tags": [
           "ReplicationStorageClassificationMappings"
@@ -1007,12 +919,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -1049,7 +955,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationStorageClassificationMappings": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationStorageClassificationMappings": {
       "get": {
         "tags": [
           "ReplicationStorageClassificationMappings"
@@ -1066,12 +972,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -1094,7 +994,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}": {
       "get": {
         "tags": [
           "ReplicationStorageClassifications"
@@ -1111,12 +1011,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -1150,7 +1044,7 @@
         "deprecated": false
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications": {
       "get": {
         "tags": [
           "ReplicationStorageClassifications"
@@ -1167,12 +1061,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -1202,7 +1090,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationStorageClassifications": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationStorageClassifications": {
       "get": {
         "tags": [
           "ReplicationStorageClassifications"
@@ -1219,12 +1107,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -1247,7 +1129,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/operationresults/{jobId}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/operationresults/{jobId}": {
       "get": {
         "tags": [
           "ReplicationProtectedItems"
@@ -1264,12 +1146,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -1323,7 +1199,7 @@
         "deprecated": false
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/applyRecoveryPoint": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/applyRecoveryPoint": {
       "post": {
         "tags": [
           "ReplicationProtectedItems"
@@ -1343,12 +1219,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -1402,7 +1272,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/repairReplication": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/repairReplication": {
       "post": {
         "tags": [
           "ReplicationProtectedItems"
@@ -1419,12 +1289,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -1469,7 +1333,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/updateMobilityService": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/updateMobilityService": {
       "post": {
         "tags": [
           "ReplicationProtectedItems"
@@ -1489,12 +1353,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -1548,7 +1406,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/reProtect": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/reProtect": {
       "post": {
         "tags": [
           "ReplicationProtectedItems"
@@ -1568,12 +1426,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -1627,7 +1479,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/failoverCommit": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/failoverCommit": {
       "post": {
         "tags": [
           "ReplicationProtectedItems"
@@ -1644,12 +1496,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -1694,7 +1540,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/testFailoverCleanup": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/testFailoverCleanup": {
       "post": {
         "tags": [
           "ReplicationProtectedItems"
@@ -1714,12 +1560,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -1773,7 +1613,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/testFailover": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/testFailover": {
       "post": {
         "tags": [
           "ReplicationProtectedItems"
@@ -1793,12 +1633,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -1852,7 +1686,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/unplannedFailover": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/unplannedFailover": {
       "post": {
         "tags": [
           "ReplicationProtectedItems"
@@ -1872,12 +1706,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -1931,7 +1759,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/plannedFailover": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/plannedFailover": {
       "post": {
         "tags": [
           "ReplicationProtectedItems"
@@ -1951,12 +1779,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -2010,7 +1832,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/remove": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/remove": {
       "post": {
         "tags": [
           "ReplicationProtectedItems"
@@ -2030,12 +1852,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -2086,7 +1902,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}": {
       "get": {
         "tags": [
           "ReplicationProtectedItems"
@@ -2103,12 +1919,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -2167,12 +1977,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -2243,12 +2047,6 @@
             "$ref": "#/parameters/ResourceName"
           },
           {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
-          },
-          {
             "$ref": "#/parameters/ResourceGroupName"
           },
           {
@@ -2308,12 +2106,6 @@
             "$ref": "#/parameters/ResourceName"
           },
           {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
-          },
-          {
             "$ref": "#/parameters/ResourceGroupName"
           },
           {
@@ -2365,7 +2157,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders/{providerName}/operationresults/{jobName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders/{providerName}/operationresults/{jobName}": {
       "get": {
         "tags": [
           "ReplicationRecoveryServicesProviders"
@@ -2382,12 +2174,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -2434,7 +2220,7 @@
         "deprecated": false
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders/{providerName}/refreshProvider": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders/{providerName}/refreshProvider": {
       "post": {
         "tags": [
           "ReplicationRecoveryServicesProviders"
@@ -2451,12 +2237,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -2494,7 +2274,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders/{providerName}/remove": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders/{providerName}/remove": {
       "post": {
         "tags": [
           "ReplicationRecoveryServicesProviders"
@@ -2511,12 +2291,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -2551,7 +2325,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders/{providerName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders/{providerName}": {
       "get": {
         "tags": [
           "ReplicationRecoveryServicesProviders"
@@ -2568,12 +2342,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -2624,12 +2392,6 @@
             "$ref": "#/parameters/ResourceName"
           },
           {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
-          },
-          {
             "$ref": "#/parameters/ResourceGroupName"
           },
           {
@@ -2662,7 +2424,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders": {
       "get": {
         "tags": [
           "ReplicationRecoveryServicesProviders"
@@ -2679,12 +2441,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -2714,7 +2470,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryServicesProviders": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationRecoveryServicesProviders": {
       "get": {
         "tags": [
           "ReplicationRecoveryServicesProviders"
@@ -2731,12 +2487,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -2759,7 +2509,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/recoveryPoints/{recoveryPointName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/recoveryPoints/{recoveryPointName}": {
       "get": {
         "tags": [
           "RecoveryPoints"
@@ -2776,12 +2526,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -2829,7 +2573,7 @@
         "deprecated": false
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/recoveryPoints": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/recoveryPoints": {
       "get": {
         "tags": [
           "RecoveryPoints"
@@ -2846,12 +2590,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -2895,7 +2633,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/operationresults/{jobName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/operationresults/{jobName}": {
       "get": {
         "tags": [
           "ReplicationRecoveryPlans"
@@ -2912,12 +2650,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -2957,7 +2689,7 @@
         "deprecated": false
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/reProtect": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/reProtect": {
       "post": {
         "tags": [
           "ReplicationRecoveryPlans"
@@ -2976,12 +2708,6 @@
             "$ref": "#/parameters/ResourceName"
           },
           {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
-          },
-          {
             "$ref": "#/parameters/ResourceGroupName"
           },
           {
@@ -3010,7 +2736,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/failoverCommit": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/failoverCommit": {
       "post": {
         "tags": [
           "ReplicationRecoveryPlans"
@@ -3029,12 +2755,6 @@
             "$ref": "#/parameters/ResourceName"
           },
           {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
-          },
-          {
             "$ref": "#/parameters/ResourceGroupName"
           },
           {
@@ -3063,7 +2783,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/testFailoverCleanup": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/testFailoverCleanup": {
       "post": {
         "tags": [
           "ReplicationRecoveryPlans"
@@ -3083,12 +2803,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -3128,7 +2842,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/testFailover": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/testFailover": {
       "post": {
         "tags": [
           "ReplicationRecoveryPlans"
@@ -3148,12 +2862,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -3193,7 +2901,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/unplannedFailover": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/unplannedFailover": {
       "post": {
         "tags": [
           "ReplicationRecoveryPlans"
@@ -3213,12 +2921,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -3258,7 +2960,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/plannedFailover": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/plannedFailover": {
       "post": {
         "tags": [
           "ReplicationRecoveryPlans"
@@ -3278,12 +2980,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -3323,7 +3019,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}": {
       "get": {
         "tags": [
           "ReplicationRecoveryPlans"
@@ -3340,12 +3036,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -3390,12 +3080,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -3452,12 +3136,6 @@
             "$ref": "#/parameters/ResourceName"
           },
           {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
-          },
-          {
             "$ref": "#/parameters/ResourceGroupName"
           },
           {
@@ -3503,12 +3181,6 @@
             "$ref": "#/parameters/ResourceName"
           },
           {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
-          },
-          {
             "$ref": "#/parameters/ResourceGroupName"
           },
           {
@@ -3546,7 +3218,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationRecoveryPlans": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationRecoveryPlans": {
       "get": {
         "tags": [
           "ReplicationRecoveryPlans"
@@ -3563,12 +3235,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -3591,7 +3257,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/switchprotection": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/switchprotection": {
       "post": {
         "tags": [
           "ReplicationProtectionContainers"
@@ -3611,12 +3277,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -3663,7 +3323,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/remove": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/remove": {
       "post": {
         "tags": [
           "ReplicationProtectionContainers"
@@ -3680,12 +3340,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -3720,7 +3374,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/operationresults/{jobId}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/operationresults/{jobId}": {
       "get": {
         "tags": [
           "ReplicationProtectionContainers"
@@ -3737,12 +3391,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -3789,7 +3437,7 @@
         "deprecated": false
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/discoverProtectableItem": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/discoverProtectableItem": {
       "post": {
         "tags": [
           "ReplicationProtectionContainers"
@@ -3809,12 +3457,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -3861,7 +3503,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}": {
       "get": {
         "tags": [
           "ReplicationProtectionContainers"
@@ -3878,12 +3520,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -3937,12 +3573,6 @@
             "$ref": "#/parameters/ResourceName"
           },
           {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
-          },
-          {
             "$ref": "#/parameters/ResourceGroupName"
           },
           {
@@ -3987,7 +3617,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers": {
       "get": {
         "tags": [
           "ReplicationProtectionContainers"
@@ -4004,12 +3634,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -4039,7 +3663,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationProtectionContainers": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationProtectionContainers": {
       "get": {
         "tags": [
           "ReplicationProtectionContainers"
@@ -4056,12 +3680,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -4084,7 +3702,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectionContainerMappings/{mappingName}/operationresults/{jobId}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectionContainerMappings/{mappingName}/operationresults/{jobId}": {
       "get": {
         "tags": [
           "ReplicationProtectionContainerMappings"
@@ -4101,12 +3719,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -4160,7 +3772,7 @@
         "deprecated": false
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectionContainerMappings/{mappingName}/remove": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectionContainerMappings/{mappingName}/remove": {
       "post": {
         "tags": [
           "ReplicationProtectionContainerMappings"
@@ -4180,12 +3792,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -4236,7 +3842,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectionContainerMappings/{mappingName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectionContainerMappings/{mappingName}": {
       "get": {
         "tags": [
           "ReplicationProtectionContainerMappings"
@@ -4253,12 +3859,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -4317,12 +3917,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -4393,12 +3987,6 @@
             "$ref": "#/parameters/ResourceName"
           },
           {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
-          },
-          {
             "$ref": "#/parameters/ResourceGroupName"
           },
           {
@@ -4438,7 +4026,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectionContainerMappings": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectionContainerMappings": {
       "get": {
         "tags": [
           "ReplicationProtectionContainerMappings"
@@ -4455,12 +4043,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -4497,7 +4079,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationProtectionContainerMappings": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationProtectionContainerMappings": {
       "get": {
         "tags": [
           "ReplicationProtectionContainerMappings"
@@ -4514,12 +4096,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -4542,7 +4118,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectableItems/{protectableItemName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectableItems/{protectableItemName}": {
       "get": {
         "tags": [
           "ReplicationProtectableItems"
@@ -4559,12 +4135,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -4605,7 +4175,7 @@
         "deprecated": false
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectableItems": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectableItems": {
       "get": {
         "tags": [
           "ReplicationProtectableItems"
@@ -4622,12 +4192,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -4664,7 +4228,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationPolicies/{policyName}/operationresults/{jobName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationPolicies/{policyName}/operationresults/{jobName}": {
       "get": {
         "tags": [
           "ReplicationPolicies"
@@ -4681,12 +4245,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -4726,7 +4284,7 @@
         "deprecated": false
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationPolicies/{policyName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationPolicies/{policyName}": {
       "get": {
         "tags": [
           "ReplicationPolicies"
@@ -4743,12 +4301,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -4793,12 +4345,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -4855,12 +4401,6 @@
             "$ref": "#/parameters/ResourceName"
           },
           {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
-          },
-          {
             "$ref": "#/parameters/ResourceGroupName"
           },
           {
@@ -4906,12 +4446,6 @@
             "$ref": "#/parameters/ResourceName"
           },
           {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
-          },
-          {
             "$ref": "#/parameters/ResourceGroupName"
           },
           {
@@ -4949,7 +4483,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationPolicies": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationPolicies": {
       "get": {
         "tags": [
           "ReplicationPolicies"
@@ -4966,12 +4500,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -4994,7 +4522,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationNetworks": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationNetworks": {
       "get": {
         "tags": [
           "ReplicationNetworks"
@@ -5011,12 +4539,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -5039,7 +4561,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationNetworks": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationNetworks": {
       "get": {
         "tags": [
           "ReplicationNetworks"
@@ -5056,12 +4578,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -5091,7 +4607,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationNetworks/{networkName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationNetworks/{networkName}": {
       "get": {
         "tags": [
           "ReplicationNetworks"
@@ -5108,12 +4624,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -5147,7 +4657,7 @@
         "deprecated": false
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationNetworks/{networkName}/replicationNetworkMappings/{networkMappingName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationNetworks/{networkName}/replicationNetworkMappings/{networkMappingName}": {
       "get": {
         "tags": [
           "ReplicationNetworkMappings"
@@ -5164,12 +4674,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -5228,12 +4732,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -5304,12 +4802,6 @@
             "$ref": "#/parameters/ResourceName"
           },
           {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
-          },
-          {
             "$ref": "#/parameters/ResourceGroupName"
           },
           {
@@ -5369,12 +4861,6 @@
             "$ref": "#/parameters/ResourceName"
           },
           {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
-          },
-          {
             "$ref": "#/parameters/ResourceGroupName"
           },
           {
@@ -5426,7 +4912,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationLogicalNetworks": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationLogicalNetworks": {
       "get": {
         "tags": [
           "ReplicationLogicalNetworks"
@@ -5443,12 +4929,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -5478,7 +4958,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/replicationLogicalNetworks/{logicalNetworkName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationLogicalNetworks/{logicalNetworkName}": {
       "get": {
         "tags": [
           "ReplicationLogicalNetworks"
@@ -5495,12 +4975,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -5534,7 +5008,7 @@
         "deprecated": false
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationJobs/{name}/operationresults/{jobName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationJobs/{name}/operationresults/{jobName}": {
       "get": {
         "tags": [
           "ReplicationJobs"
@@ -5551,12 +5025,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -5596,7 +5064,7 @@
         "deprecated": false
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationJobs/{jobName}/resume": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationJobs/{jobName}/resume": {
       "post": {
         "tags": [
           "ReplicationJobs"
@@ -5616,12 +5084,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -5661,7 +5123,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationJobs/{jobName}/restart": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationJobs/{jobName}/restart": {
       "post": {
         "tags": [
           "ReplicationJobs"
@@ -5678,12 +5140,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -5714,7 +5170,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationJobs/{jobName}/cancel": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationJobs/{jobName}/cancel": {
       "post": {
         "tags": [
           "ReplicationJobs"
@@ -5731,12 +5187,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -5767,7 +5217,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationJobs/{jobName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationJobs/{jobName}": {
       "get": {
         "tags": [
           "ReplicationJobs"
@@ -5784,12 +5234,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -5816,7 +5260,7 @@
         "deprecated": false
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationJobs/export": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationJobs/export": {
       "post": {
         "tags": [
           "ReplicationJobs"
@@ -5836,12 +5280,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -5874,7 +5312,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationJobs": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationJobs": {
       "get": {
         "tags": [
           "ReplicationJobs"
@@ -5891,12 +5329,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -5927,7 +5359,7 @@
         "x-ms-odata": "JobQueryParameter"
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/operationresults/{jobName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/operationresults/{jobName}": {
       "get": {
         "tags": [
           "ReplicationFabrics"
@@ -5944,12 +5376,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -5989,7 +5415,7 @@
         "deprecated": false
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/reassociateGateway": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/reassociateGateway": {
       "post": {
         "tags": [
           "ReplicationFabrics"
@@ -6009,12 +5435,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -6054,7 +5474,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/deployProcessServerImage": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/deployProcessServerImage": {
       "post": {
         "tags": [
           "ReplicationFabrics"
@@ -6074,12 +5494,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -6119,7 +5533,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/checkConsistency": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/checkConsistency": {
       "post": {
         "tags": [
           "ReplicationFabrics"
@@ -6136,12 +5550,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -6172,7 +5580,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}/remove": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/remove": {
       "post": {
         "tags": [
           "ReplicationFabrics"
@@ -6189,12 +5597,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -6222,7 +5624,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics/{fabricName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}": {
       "get": {
         "tags": [
           "ReplicationFabrics"
@@ -6239,12 +5641,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -6289,12 +5685,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -6351,12 +5741,6 @@
             "$ref": "#/parameters/ResourceName"
           },
           {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
-          },
-          {
             "$ref": "#/parameters/ResourceGroupName"
           },
           {
@@ -6382,7 +5766,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationFabrics": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics": {
       "get": {
         "tags": [
           "ReplicationFabrics"
@@ -6399,12 +5783,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -6427,7 +5805,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationEvents/{eventName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationEvents/{eventName}": {
       "get": {
         "tags": [
           "ReplicationEvents"
@@ -6444,12 +5822,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -6476,7 +5848,7 @@
         "deprecated": false
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationEvents": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationEvents": {
       "get": {
         "tags": [
           "ReplicationEvents"
@@ -6493,12 +5865,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -6521,7 +5887,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationAlertSettings/{alertSettingName}": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationAlertSettings/{alertSettingName}": {
       "get": {
         "tags": [
           "ReplicationAlertSettings"
@@ -6538,12 +5904,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -6590,12 +5950,6 @@
             "$ref": "#/parameters/ResourceName"
           },
           {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
-          },
-          {
             "$ref": "#/parameters/ResourceGroupName"
           },
           {
@@ -6629,7 +5983,7 @@
         "deprecated": false
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/replicationAlertSettings": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationAlertSettings": {
       "get": {
         "tags": [
           "ReplicationAlertSettings"
@@ -6646,12 +6000,6 @@
           },
           {
             "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceType"
-          },
-          {
-            "$ref": "#/parameters/ResourceNamespace"
           },
           {
             "$ref": "#/parameters/ResourceGroupName"
@@ -7758,7 +7106,7 @@
       "description": "Input details specific to fabrics during Network Mapping.",
       "type": "object",
       "properties": {
-        "InstanceType": {
+        "instanceType": {
           "description": "Gets or sets the instance type.",
           "type": "string"
         }
@@ -9944,6 +9292,20 @@
         }
       }
     },
+    "ProtectedItemsQueryParameter": {
+      "description": "Query parameter to enumerate protected items.",
+      "type": "object",
+      "properties": {
+        "sourceFabricName": {
+          "description": "Gets or sets the source fabric name filter.",
+          "type": "string"
+        },
+        "recoveryPlanName": {
+          "description": "Gets or sets the recovery plan filter.",
+          "type": "string"
+        }
+      }
+    },
     "AzureToAzureNetworkMappingSettings": {
       "description": "A2A  Network Mapping fabric specific settings.",
       "type": "object",
@@ -9962,7 +9324,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "AzureToAzureNetworkMappingSettings"
+      "x-ms-discriminator-value": "AzureToAzure"
     },
     "VmmToAzureNetworkMappingSettings": {
       "description": "E2A  Network Mapping fabric specific settings.",
@@ -9973,7 +9335,7 @@
         }
       ],
       "properties": {},
-      "x-ms-discriminator-value": "VmmToAzureNetworkMappingSettings"
+      "x-ms-discriminator-value": "VmmToAzure"
     },
     "VmmToVmmNetworkMappingSettings": {
       "description": "E2E  Network Mapping fabric specific settings.",
@@ -9984,7 +9346,7 @@
         }
       ],
       "properties": {},
-      "x-ms-discriminator-value": "VmmToVmmNetworkMappingSettings"
+      "x-ms-discriminator-value": "VmmToVmm"
     },
     "AzureToAzureCreateNetworkMappingInput": {
       "description": "Create network mappings input properties/behaviour specific to Azure to Azure Network \r\n            mapping.",
@@ -9998,10 +9360,6 @@
         "primaryNetworkId": {
           "description": "Gets or sets the primary azure vnet Id.",
           "type": "string"
-        },
-        "InstanceType": {
-          "description": "Gets or sets the instance type.",
-          "type": "string"
         }
       },
       "x-ms-discriminator-value": "AzureToAzureCreateNetworkMappingInput"
@@ -10014,12 +9372,7 @@
           "$ref": "#/definitions/FabricSpecificCreateNetworkMappingInput"
         }
       ],
-      "properties": {
-        "InstanceType": {
-          "description": "Gets or sets the instance type.",
-          "type": "string"
-        }
-      },
+      "properties": {},
       "x-ms-discriminator-value": "VmmToAzureCreateNetworkMappingInput"
     },
     "VmmToVmmCreateNetworkMappingInput": {
@@ -10030,12 +9383,7 @@
           "$ref": "#/definitions/FabricSpecificCreateNetworkMappingInput"
         }
       ],
-      "properties": {
-        "InstanceType": {
-          "description": "Gets or sets the instance type.",
-          "type": "string"
-        }
-      },
+      "properties": {},
       "x-ms-discriminator-value": "VmmToVmmCreateNetworkMappingInput"
     },
     "AzureToAzureUpdateNetworkMappingInput": {
@@ -10111,7 +9459,7 @@
           }
         }
       },
-      "x-ms-discriminator-value": "AzureFabricSpecificDetails"
+      "x-ms-discriminator-value": "Azure"
     },
     "VmmDetails": {
       "description": "VMM fabric specific details.",
@@ -10122,7 +9470,7 @@
         }
       ],
       "properties": {},
-      "x-ms-discriminator-value": "VmmDetails"
+      "x-ms-discriminator-value": "VMM"
     },
     "HyperVSiteDetails": {
       "description": "HyperVSite fabric specific details.",
@@ -10133,7 +9481,7 @@
         }
       ],
       "properties": {},
-      "x-ms-discriminator-value": "HyperVSiteDetails"
+      "x-ms-discriminator-value": "HyperVSite"
     },
     "VMwareDetails": {
       "description": "Store the fabric details specific to the VMware fabric.",
@@ -10281,7 +9629,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "VMwareDetails"
+      "x-ms-discriminator-value": "VMware"
     },
     "ProcessServer": {
       "description": "Details of the Process Server.",
@@ -10683,7 +10031,7 @@
           }
         }
       },
-      "x-ms-discriminator-value": "HyperVReplicaReplicationDetails"
+      "x-ms-discriminator-value": "HyperVReplica2012"
     },
     "HyperVReplicaBlueReplicationDetails": {
       "description": "HyperV replica 2012 R2 (Blue) replication details.",
@@ -10730,7 +10078,7 @@
           }
         }
       },
-      "x-ms-discriminator-value": "HyperVReplicaBlueReplicationDetails"
+      "x-ms-discriminator-value": "HyperVReplica2012R2"
     },
     "HyperVReplicaAzureReplicationDetails": {
       "description": "Hyper V Replica Azure provider specific settings.",
@@ -10827,7 +10175,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "HyperVReplicaAzureReplicationDetails"
+      "x-ms-discriminator-value": "HyperVReplicaAzure"
     },
     "AzureVmDiskDetails": {
       "description": "Disk details for E2A provider.",
@@ -11048,7 +10396,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "InMageAzureV2ReplicationDetails"
+      "x-ms-discriminator-value": "InMageAzureV2"
     },
     "InMageAzureV2ProtectedDiskDetails": {
       "description": "InMageAzureV2 protected disk details.",
@@ -11275,7 +10623,7 @@
           }
         }
       },
-      "x-ms-discriminator-value": "InMageReplicationDetails"
+      "x-ms-discriminator-value": "InMage"
     },
     "OSDiskDetails": {
       "description": "Details of the OS Disk.",
@@ -11493,7 +10841,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "A2AReplicationDetails"
+      "x-ms-discriminator-value": "A2A"
     },
     "A2AProtectedDiskDetails": {
       "description": "A2A protected disk details.",
@@ -12206,7 +11554,7 @@
           }
         }
       },
-      "x-ms-discriminator-value": "HyperVVirtualMachineDetails"
+      "x-ms-discriminator-value": "HyperVVirtualMachine"
     },
     "OSDetails": {
       "description": "Disk Details.",
@@ -12310,7 +11658,7 @@
           }
         }
       },
-      "x-ms-discriminator-value": "VMwareVirtualMachineDetails"
+      "x-ms-discriminator-value": "VMwareVirtualMachine"
     },
     "InMageDiskDetails": {
       "description": "VMware/Physical specific Disk Details",
@@ -13299,7 +12647,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "HyperVReplicaAzurePolicyDetails"
+      "x-ms-discriminator-value": "HyperVReplicaAzure"
     },
     "HyperVReplicaBasePolicyDetails": {
       "description": "Base class for HyperVReplica policy details.",
@@ -13411,7 +12759,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "HyperVReplicaPolicyDetails"
+      "x-ms-discriminator-value": "HyperVReplica2012"
     },
     "HyperVReplicaBluePolicyDetails": {
       "description": "Hyper-V Replica Blue specific protection profile details.",
@@ -13472,7 +12820,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "HyperVReplicaBluePolicyDetails"
+      "x-ms-discriminator-value": "HyperVReplica2012R2"
     },
     "InMageBasePolicyDetails": {
       "description": "Base class for the policies of providers using InMage replication.",
@@ -13539,7 +12887,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "InMageAzureV2PolicyDetails"
+      "x-ms-discriminator-value": "InMageAzureV2"
     },
     "InMagePolicyDetails": {
       "description": "InMage specific protection profile details.",
@@ -13570,7 +12918,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "InMagePolicyDetails"
+      "x-ms-discriminator-value": "InMage"
     },
     "A2APolicyDetails": {
       "description": "A2A specific policy details.",
@@ -13606,7 +12954,7 @@
           "type": "integer"
         }
       },
-      "x-ms-discriminator-value": "A2APolicyDetails"
+      "x-ms-discriminator-value": "A2A"
     },
     "HyperVReplicaAzurePolicyInput": {
       "description": "Hyper-V Replica Azure specific input for creating a protection profile.",
@@ -13932,7 +13280,7 @@
           }
         }
       },
-      "x-ms-discriminator-value": "RecoveryPlanScriptActionDetails"
+      "x-ms-discriminator-value": "ScriptActionDetails"
     },
     "RecoveryPlanAutomationRunbookActionDetails": {
       "description": "Recovery plan Automation runbook action details.",
@@ -13967,7 +13315,7 @@
           }
         }
       },
-      "x-ms-discriminator-value": "RecoveryPlanAutomationRunbookActionDetails"
+      "x-ms-discriminator-value": "AutomationRunbookActionDetails"
     },
     "RecoveryPlanManualActionDetails": {
       "description": "Recovery plan manual action details.",
@@ -13983,7 +13331,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "RecoveryPlanManualActionDetails"
+      "x-ms-discriminator-value": "ManualActionDetails"
     },
     "RecoveryPlanHyperVReplicaAzureFailoverInput": {
       "description": "Recovery plan HVR Azure failover input.",
@@ -14191,22 +13539,6 @@
       "description": "The name of the resource group where the recovery services vault is present.",
       "required": true,
       "type": "string"
-    },
-    "ResourceNamespace": {
-      "name": "resourceNamespace",
-      "in": "path",
-      "description": "The namespace of the resource. Supported are Microsoft.SiteRecovery and Microsoft.RecoveryServices for production.",
-      "required": true,
-      "type": "string",
-      "default": "Microsoft.RecoveryServices"
-    },
-    "ResourceType": {
-      "name": "resourceType",
-      "in": "path",
-      "description": "The type of the resource. Supported are SiteRecovery and vault for production.",
-      "required": true,
-      "type": "string",
-      "default": "vaults"
     },
     "ResourceName": {
       "name": "resourceName",
