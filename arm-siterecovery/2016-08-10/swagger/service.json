@@ -9362,7 +9362,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "AzureToAzureCreateNetworkMappingInput"
+      "x-ms-discriminator-value": "AzureToAzure"
     },
     "VmmToAzureCreateNetworkMappingInput": {
       "description": "Create network mappings input properties/behaviour specific to Vmm to Azure Network \r\n            mapping.",
@@ -9373,7 +9373,7 @@
         }
       ],
       "properties": {},
-      "x-ms-discriminator-value": "VmmToAzureCreateNetworkMappingInput"
+      "x-ms-discriminator-value": "VmmToAzure"
     },
     "VmmToVmmCreateNetworkMappingInput": {
       "description": "Create network mappings input properties/behaviour specific to vmm to vmm Network mapping.",
@@ -9384,7 +9384,7 @@
         }
       ],
       "properties": {},
-      "x-ms-discriminator-value": "VmmToVmmCreateNetworkMappingInput"
+      "x-ms-discriminator-value": "VmmToVmm"
     },
     "AzureToAzureUpdateNetworkMappingInput": {
       "description": "Updates network mappings input.",
@@ -9404,7 +9404,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "AzureToAzureUpdateNetworkMappingInput"
+      "x-ms-discriminator-value": "AzureToAzure"
     },
     "VmmToAzureUpdateNetworkMappingInput": {
       "description": "Update network mappings input properties/behaviour specific to vmm to azure.",
@@ -9420,7 +9420,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "VmmToAzureUpdateNetworkMappingInput"
+      "x-ms-discriminator-value": "VmmToAzure"
     },
     "VmmToVmmUpdateNetworkMappingInput": {
       "description": "Update network mappings input properties/behaviour specific to vmm to vmm.",
@@ -9436,7 +9436,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "VmmToVmmUpdateNetworkMappingInput"
+      "x-ms-discriminator-value": "VmmToVmm"
     },
     "AzureFabricSpecificDetails": {
       "description": "Azure Fabric Specific Details.",
@@ -11047,7 +11047,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "HyperVReplicaAzureEnableProtectionInput"
+      "x-ms-discriminator-value": "HyperVReplicaAzure"
     },
     "SanEnableProtectionInput": {
       "description": "San enable protection provider specific input.",
@@ -11058,7 +11058,7 @@
         }
       ],
       "properties": {},
-      "x-ms-discriminator-value": "SanEnableProtectionInput"
+      "x-ms-discriminator-value": "San"
     },
     "InMageAzureV2EnableProtectionInput": {
       "description": "VMware Azure specific enable protection input.",
@@ -11132,7 +11132,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "InMageAzureV2EnableProtectionInput"
+      "x-ms-discriminator-value": "InMageAzureV2"
     },
     "InMageEnableProtectionInput": {
       "description": "VMware Azure specific enable protection input.",
@@ -11187,7 +11187,7 @@
           }
         }
       },
-      "x-ms-discriminator-value": "InMageEnableProtectionInput"
+      "x-ms-discriminator-value": "InMage"
     },
     "A2AEnableProtectionInput": {
       "description": "A2A enable protection input.",
@@ -11226,7 +11226,7 @@
           }
         }
       },
-      "x-ms-discriminator-value": "A2AEnableProtectionInput"
+      "x-ms-discriminator-value": "A2A"
     },
     "Resource": {
       "description": "Azure resource.",
@@ -11271,7 +11271,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "HyperVReplicaAzureUpdateReplicationProtectedItemInput"
+      "x-ms-discriminator-value": "HyperVReplicaAzure"
     },
     "InMageAzureV2UpdateReplicationProtectedItemInput": {
       "description": "InMage Azure V2 input to update replication protected item.",
@@ -11291,7 +11291,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "InMageAzureV2UpdateReplicationProtectedItemInput"
+      "x-ms-discriminator-value": "InMageAzureV2"
     },
     "A2AUpdateReplicationProtectedItemInput": {
       "description": "InMage Azure V2 input to update replication protected item.",
@@ -11311,7 +11311,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "A2AUpdateReplicationProtectedItemInput"
+      "x-ms-discriminator-value": "A2A"
     },
     "HyperVReplicaBaseEventDetails": {
       "description": "Abstract model class for event details of a HyperVReplica E2E event.",
@@ -11367,7 +11367,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "HyperVReplica2012EventDetails"
+      "x-ms-discriminator-value": "HyperVReplica2012"
     },
     "HyperVReplica2012R2EventDetails": {
       "description": "Model class for event details of a HyperVReplica blue E2E event.",
@@ -11395,7 +11395,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "HyperVReplica2012R2EventDetails"
+      "x-ms-discriminator-value": "HyperVReplica2012R2"
     },
     "HyperVReplicaAzureEventDetails": {
       "description": "Model class for event details of a HyperVReplica E2A event.",
@@ -11419,7 +11419,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "HyperVReplicaAzureEventDetails"
+      "x-ms-discriminator-value": "HyperVReplicaAzure"
     },
     "A2AEventDetails": {
       "description": "Model class for event details of a A2A event.",
@@ -11455,7 +11455,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "A2AEventDetails"
+      "x-ms-discriminator-value": "A2A"
     },
     "InMageAzureV2EventDetails": {
       "description": "Model class for event details of a VMwareAzureV2 event.",
@@ -11495,7 +11495,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "InMageAzureV2EventDetails"
+      "x-ms-discriminator-value": "InMageAzureV2"
     },
     "JobStatusEventDetails": {
       "description": "Model class for event details of a job status event.",
@@ -11523,7 +11523,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "JobStatusEventDetails"
+      "x-ms-discriminator-value": "JobStatus"
     },
     "HyperVVirtualMachineDetails": {
       "description": "Hyper V replica provider specific settings",
@@ -11732,7 +11732,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "InMageDisableProtectionProviderSpecificInput"
+      "x-ms-discriminator-value": "InMage"
     },
     "HyperVReplicaAzureFailoverProviderInput": {
       "description": "HvrA provider specific input for failover.",
@@ -11760,7 +11760,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "HyperVReplicaAzureFailoverProviderInput"
+      "x-ms-discriminator-value": "HyperVReplicaAzure"
     },
     "HyperVReplicaAzureFailbackProviderInput": {
       "description": "HvrA provider specific input for failback.",
@@ -11784,7 +11784,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "HyperVReplicaAzureFailbackProviderInput"
+      "x-ms-discriminator-value": "HyperVReplicaAzureFailback"
     },
     "InMageAzureV2FailoverProviderInput": {
       "description": "InMageAzureV2 provider specific input for failover.",
@@ -11804,7 +11804,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "InMageAzureV2FailoverProviderInput"
+      "x-ms-discriminator-value": "InMageAzureV2"
     },
     "InMageFailoverProviderInput": {
       "description": "Provider specific input for InMage failover.",
@@ -11824,7 +11824,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "InMageFailoverProviderInput"
+      "x-ms-discriminator-value": "InMage"
     },
     "A2AFailoverProviderInput": {
       "description": "A2A provider specific input for failover.",
@@ -11844,7 +11844,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "A2AFailoverProviderInput"
+      "x-ms-discriminator-value": "A2A"
     },
     "HyperVReplicaAzureReprotectInput": {
       "description": "Azure specific reprotect input.",
@@ -11880,7 +11880,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "HyperVReplicaAzureReprotectInput"
+      "x-ms-discriminator-value": "HyperVReplicaAzure"
     },
     "InMageAzureV2ReprotectInput": {
       "description": "InMageAzureV2 specific provider input.",
@@ -11923,7 +11923,7 @@
           }
         }
       },
-      "x-ms-discriminator-value": "InMageAzureV2ReprotectInput"
+      "x-ms-discriminator-value": "InMageAzureV2"
     },
     "InMageReprotectInput": {
       "description": "InMageAzureV2 specific provider input.",
@@ -11970,7 +11970,7 @@
           }
         }
       },
-      "x-ms-discriminator-value": "InMageReprotectInput"
+      "x-ms-discriminator-value": "InMage"
     },
     "InMageDiskExclusionInput": {
       "description": "DiskExclusionInput when doing enable protection of virtual machine in InMage provider.",
@@ -12053,7 +12053,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "A2AReprotectInput"
+      "x-ms-discriminator-value": "A2A"
     },
     "A2AVmDiskInputDetails": {
       "description": "Azure VM disk input details.",
@@ -12095,7 +12095,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "HyperVReplicaAzureApplyRecoveryPointInput"
+      "x-ms-discriminator-value": "HyperVReplicaAzure"
     },
     "InMageAzureV2ApplyRecoveryPointInput": {
       "description": "ApplyRecoveryPoint input specific to InMageAzureV2 provider.",
@@ -12111,7 +12111,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "InMageAzureV2ApplyRecoveryPointInput"
+      "x-ms-discriminator-value": "InMageAzureV2"
     },
     "A2AApplyRecoveryPointInput": {
       "description": "ApplyRecoveryPoint input specific to A2A provider.",
@@ -12122,7 +12122,7 @@
         }
       ],
       "properties": {},
-      "x-ms-discriminator-value": "A2AApplyRecoveryPointInput"
+      "x-ms-discriminator-value": "A2A"
     },
     "JobTaskDetails": {
       "description": "This class represents a task which is actually a workflow so that one can navigate\r\n            to its individual drill down.",
@@ -12569,7 +12569,7 @@
         }
       ],
       "properties": {},
-      "x-ms-discriminator-value": "A2AContainerCreationInput"
+      "x-ms-discriminator-value": "A2A"
     },
     "A2ASwitchProtectionInput": {
       "description": "A2A specific switch protection input.",
@@ -12608,7 +12608,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "A2ASwitchProtectionInput"
+      "x-ms-discriminator-value": "A2A"
     },
     "HyperVReplicaAzurePolicyDetails": {
       "description": "Hyper-V Replica Azure specific protection profile details.",
@@ -12996,7 +12996,7 @@
           }
         }
       },
-      "x-ms-discriminator-value": "HyperVReplicaAzurePolicyInput"
+      "x-ms-discriminator-value": "HyperVReplicaAzure"
     },
     "HyperVReplicaPolicyInput": {
       "description": "Hyper-V Replica specific protection profile Input.",
@@ -13052,7 +13052,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "HyperVReplicaPolicyInput"
+      "x-ms-discriminator-value": "HyperVReplica2012"
     },
     "HyperVReplicaBluePolicyInput": {
       "description": "HyperV Replica Blue policy input.",
@@ -13113,7 +13113,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "HyperVReplicaBluePolicyInput"
+      "x-ms-discriminator-value": "HyperVReplica2012R2"
     },
     "InMageAzureV2PolicyInput": {
       "description": "VMWare Azure specific protection profile Input.",
@@ -13160,7 +13160,7 @@
           }
         }
       },
-      "x-ms-discriminator-value": "InMageAzureV2PolicyInput"
+      "x-ms-discriminator-value": "InMageAzureV2"
     },
     "InMagePolicyInput": {
       "description": "VMWare Azure specific protection profile Input.",
@@ -13202,7 +13202,7 @@
           }
         }
       },
-      "x-ms-discriminator-value": "InMagePolicyInput"
+      "x-ms-discriminator-value": "InMage"
     },
     "A2APolicyCreationInput": {
       "description": "A2A Policy creation input.",
@@ -13244,7 +13244,7 @@
           }
         }
       },
-      "x-ms-discriminator-value": "A2APolicyCreationInput"
+      "x-ms-discriminator-value": "A2A"
     },
     "RecoveryPlanScriptActionDetails": {
       "description": "Recovery plan script action details.",
@@ -13371,7 +13371,7 @@
           }
         }
       },
-      "x-ms-discriminator-value": "RecoveryPlanHyperVReplicaAzureFailoverInput"
+      "x-ms-discriminator-value": "HyperVReplicaAzure"
     },
     "RecoveryPlanHyperVReplicaAzureFailbackInput": {
       "description": "Recovery plan HVR Azure failback input.",
@@ -13411,7 +13411,7 @@
           }
         }
       },
-      "x-ms-discriminator-value": "RecoveryPlanHyperVReplicaAzureFailbackInput"
+      "x-ms-discriminator-value": "HyperVReplicaAzureFailback"
     },
     "RecoveryPlanInMageAzureV2FailoverInput": {
       "description": "Recovery plan InMageAzureV2 failover input.",
@@ -13445,7 +13445,7 @@
           }
         }
       },
-      "x-ms-discriminator-value": "RecoveryPlanInMageAzureV2FailoverInput"
+      "x-ms-discriminator-value": "InMageAzureV2"
     },
     "RecoveryPlanInMageFailoverInput": {
       "description": "Recovery plan InMage failover input.",
@@ -13473,7 +13473,7 @@
           }
         }
       },
-      "x-ms-discriminator-value": "RecoveryPlanInMageFailoverInput"
+      "x-ms-discriminator-value": "InMage"
     },
     "RecoveryPlanA2AFailoverInput": {
       "description": "Recovery plan A2A failover input.",
@@ -13506,7 +13506,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "RecoveryPlanA2AFailoverInput"
+      "x-ms-discriminator-value": "A2A"
     },
     "AzureFabricCreationInput": {
       "description": "Fabric provider specific settings.",
@@ -13522,7 +13522,7 @@
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "AzureFabricCreationInput"
+      "x-ms-discriminator-value": "A2A"
     }
   },
   "parameters": {
