@@ -7052,6 +7052,10 @@
           "description": "Gets or sets the recovery network id for network mapping.",
           "type": "string"
         },
+        "recoveryFabricArmId": {
+          "description": "Gets or sets the recovery fabric ARM id.",
+          "type": "string"
+        },
         "recoveryFabricFriendlyName": {
           "description": "Gets or sets the recovery fabric friendly name.",
           "type": "string"
@@ -7913,9 +7917,6 @@
     },
     "RecoveryPlanProtectedItem": {
       "description": "Recovery plan protected item.",
-      "required": [
-        "id"
-      ],
       "type": "object",
       "properties": {
         "id": {
@@ -8393,6 +8394,13 @@
           "type": "array",
           "items": {
             "type": "string"
+          }
+        },
+        "healthErrorDetails": {
+          "description": "Gets or sets the recovery services provider health error details.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/HealthError"
           }
         }
       }
@@ -9789,6 +9797,13 @@
           "items": {
             "$ref": "#/definitions/DataStore"
           }
+        },
+        "validationErrors": {
+          "description": "Gets or sets validation errors.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/HealthError"
+          }
         }
       }
     },
@@ -10173,6 +10188,14 @@
         "recoveryAvailabilitySetId": {
           "description": "Gets or sets the recovery availability set Id.",
           "type": "string"
+        },
+        "useManagedDisks": {
+          "description": "Gets or sets a value indicating whether managed disks should be used during failover.",
+          "type": "boolean"
+        },
+        "licenseType": {
+          "description": "Gets or sets License Type of the VM to be used.",
+          "type": "string"
         }
       },
       "x-ms-discriminator-value": "HyperVReplicaAzure"
@@ -10297,6 +10320,10 @@
           "description": "Gets or sets the multi vm group name.",
           "type": "string"
         },
+        "multiVmSyncStatus": {
+          "description": "Gets or sets a value indicating whether multi vm sync is enabled or disabled.",
+          "type": "string"
+        },
         "protectedDisks": {
           "description": "Gets or sets the list of protected disks.",
           "type": "array",
@@ -10394,6 +10421,21 @@
         "recoveryAvailabilitySetId": {
           "description": "Gets or sets the recovery availability set Id.",
           "type": "string"
+        },
+        "useManagedDisks": {
+          "description": "Gets or sets a value indicating whether managed disks should be used during failover.",
+          "type": "boolean"
+        },
+        "licenseType": {
+          "description": "Gets or sets License Type of the VM to be used.",
+          "type": "string"
+        },
+        "validationErrors": {
+          "description": "Gets or sets the validation errors of the on-premise machine\r\n            Value can be list of validation errors.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/HealthError"
+          }
         }
       },
       "x-ms-discriminator-value": "InMageAzureV2"
@@ -10588,6 +10630,10 @@
           "description": "Gets or sets the multi vm group name, if any.",
           "type": "string"
         },
+        "multiVmSyncStatus": {
+          "description": "Gets or sets a value indicating whether the multi vm sync is enabled or disabled.",
+          "type": "string"
+        },
         "agentDetails": {
           "$ref": "#/definitions/InMageAgentDetails",
           "description": "Gets or sets the agent details."
@@ -10620,6 +10666,13 @@
           "type": "array",
           "items": {
             "type": "string"
+          }
+        },
+        "validationErrors": {
+          "description": "Gets or sets the validation errors of the on-premise machine\r\n            Value can be list of validation errors",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/HealthError"
           }
         }
       },
@@ -10828,6 +10881,10 @@
           "description": "Gets or sets the agent version.",
           "type": "string"
         },
+        "isReplicationAgentUpdateRequired": {
+          "description": "Gets or sets a value indicating whether replication agent update is required.",
+          "type": "boolean"
+        },
         "recoveryFabricObjectId": {
           "description": "Gets or sets the recovery fabric object Id.",
           "type": "string"
@@ -10838,6 +10895,10 @@
         },
         "vmProtectionStateDescription": {
           "description": "Gets or sets the protection state description for the vm.",
+          "type": "string"
+        },
+        "lifecycleId": {
+          "description": "Gets or sets an id associated with the PE that survives actions like switch protection\r\n            which change the backing PE/CPE objects internally.The lifecycle id gets carried\r\n            forward to have a link/continuity in being able to have an Id that denotes the \"same\"\r\n            protected item even though other internal Ids/ARM Id might be changing.",
           "type": "string"
         }
       },
@@ -10855,9 +10916,9 @@
           "description": "Gets or sets the disk name.",
           "type": "string"
         },
-        "diskSize": {
-          "format": "int32",
-          "description": "Gets or sets the disk size.",
+        "diskCapacityInBytes": {
+          "format": "int64",
+          "description": "Gets or sets the disk capacity in bytes.",
           "type": "integer"
         },
         "recoveryAzureStorageAccountId": {
@@ -11045,6 +11106,10 @@
         "targetAzureV2ResourceGroupId": {
           "description": "Gets or sets the Id of the target resource group (for resource manager deployment) in\r\n            which the failover VM is to be created.",
           "type": "string"
+        },
+        "useManagedDisks": {
+          "description": "Gets or sets a value indicating whether managed disks should be used during failover.",
+          "type": "boolean"
         }
       },
       "x-ms-discriminator-value": "HyperVReplicaAzure"
@@ -11130,6 +11195,10 @@
         "targetAzureV2ResourceGroupId": {
           "description": "Gets or sets the Id of the target resource group (for resource manager deployment) in\r\n            which the failover VM is to be created.",
           "type": "string"
+        },
+        "useManagedDisks": {
+          "description": "Gets or sets a value indicating whether managed disks should be used during failover.",
+          "type": "boolean"
         }
       },
       "x-ms-discriminator-value": "InMageAzureV2"
@@ -11269,6 +11338,10 @@
         "recoveryAzureV2ResourceGroupId": {
           "description": "Gets or sets the recovery Azure resource group Id for resource manager deployment.",
           "type": "string"
+        },
+        "useManagedDisks": {
+          "description": "Gets or sets a value indicating whether managed disks should be used during failover.",
+          "type": "boolean"
         }
       },
       "x-ms-discriminator-value": "HyperVReplicaAzure"
@@ -11289,6 +11362,10 @@
         "recoveryAzureV2ResourceGroupId": {
           "description": "Gets or sets the recovery Azure resource group Id for resource manager deployment.",
           "type": "string"
+        },
+        "useManagedDisks": {
+          "description": "Gets or sets a value indicating whether managed disks should be used during failover.",
+          "type": "boolean"
         }
       },
       "x-ms-discriminator-value": "InMageAzureV2"
@@ -11655,6 +11732,13 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/InMageDiskDetails"
+          }
+        },
+        "validationErrors": {
+          "description": "Gets or sets the validation errors.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/HealthError"
           }
         }
       },
@@ -12559,6 +12643,22 @@
         }
       },
       "x-ms-discriminator-value": "ExportJobDetails"
+    },
+    "SwitchProtectionJobDetails": {
+      "description": "This class represents details for switch protection job.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/JobDetails"
+        }
+      ],
+      "properties": {
+        "newReplicationProtectedItemId": {
+          "description": "Gets or sets ARM Id of the new replication protected item.",
+          "type": "string"
+        }
+      },
+      "x-ms-discriminator-value": "SwitchProtectionJobDetails"
     },
     "A2AContainerCreationInput": {
       "description": "A2A cloud creation input.",
