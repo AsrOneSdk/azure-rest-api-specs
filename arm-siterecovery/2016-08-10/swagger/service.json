@@ -6230,6 +6230,9 @@
         "summary": "Gets the details of a Site.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationFabrics_Get",
+        "x-ms-examples": {
+          "Get replication fabric": { "$ref": "../examples/GetReplicationFabric.json" }
+        },
         "produces": [
           "application/json"
         ],
