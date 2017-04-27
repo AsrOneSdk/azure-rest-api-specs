@@ -23,6 +23,9 @@
         "summary": "Gets the list of Replication protected items.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectedItems_ListByReplicationProtectionContainers",
+        "x-ms-examples": {
+          "Gets the list of Replication protected items.": { "$ref": "../examples/ReplicationProtectedItems_ListByReplicationProtectionContainers.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -1207,6 +1210,9 @@
         "summary": "Applies recovery point.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectedItems_ApplyRecoveryPoint",
+        "x-ms-examples": {
+          "Applies recovery point.": { "$ref": "../examples/ReplicationProtectedItems_ApplyRecoveryPoint.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -1414,6 +1420,9 @@
         "summary": "Execute Reverse Replication\\Reprotect",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectedItems_Reprotect",
+        "x-ms-examples": {
+          "Creates replication fabric.": { "$ref": "../examples/ReplicationProtectedItems_Reprotect.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -1487,6 +1496,9 @@
         "summary": "Execute commit failover",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectedItems_FailoverCommit",
+        "x-ms-examples": {
+          "Execute commit failover.": { "$ref": "../examples/ReplicationProtectedItems_FailoverCommit.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -1621,6 +1633,9 @@
         "summary": "Execute test failover",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectedItems_TestFailover",
+        "x-ms-examples": {
+          "Execute test failover.": { "$ref": "../examples/ReplicationProtectedItems_TestFailover.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -1694,6 +1709,9 @@
         "summary": "Execute unplanned failover",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectedItems_UnplannedFailover",
+        "x-ms-examples": {
+          "Execute unplanned failover.": { "$ref": "../examples/ReplicationProtectedItems_UnplannedFailover.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -1767,6 +1785,10 @@
         "summary": "Execute planned failover",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectedItems_PlannedFailover",
+        "x-ms-examples": {
+          "Execute planned failover.": { "$ref": "../examples/ReplicationProtectedItems_PlannedFailover.json" }
+        },
+
         "consumes": [
           "application/json"
         ],
@@ -1840,6 +1862,9 @@
         "summary": "Disables protection.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectedItems_Delete",
+        "x-ms-examples": {
+          "Disables protection.": { "$ref": "../examples/ReplicationProtectedItems_Delete.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -1910,6 +1935,9 @@
         "summary": "Gets the details of a Replication protected item.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectedItems_Get",
+        "x-ms-examples": {
+          "Enables protection.": { "$ref": "../examples/ReplicationProtectedItems_Get.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -1965,6 +1993,9 @@
         "summary": "Enables protection.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectedItems_Create",
+        "x-ms-examples": {
+          "Enables protection.": { "$ref": "../examples/ReplicationProtectedItems_Create.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -2036,6 +2067,9 @@
         "summary": "Purges protection.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectedItems_Purge",
+        "x-ms-examples": {
+          "Purges protection.": { "$ref": "../examples/ReplicationProtectedItems_Purge.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -2092,6 +2126,9 @@
         "summary": "Updates protection.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectedItems_Update",
+        "x-ms-examples": {
+          "Creates replication fabric.": { "$ref": "../examples/ReplicationProtectedItems_Update.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -2228,6 +2265,9 @@
         "summary": "Refresh the data on the provider.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationRecoveryServicesProviders_RefreshProvider",
+        "x-ms-examples": {
+          "Refresh the data on the provider.": { "$ref": "../examples/ReplicationRecoveryServicesProviders_RefreshProvider.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -2282,6 +2322,9 @@
         "summary": "Deletes provider from fabric.\r\n            Note: Deleting provider for any fabric other than SingleHost is unsupported. To\r\n            maintain backward compatibility for released clients the object \"deleteRspInput\" is\r\n            used (if the object is empty we assume that it is old client and continue the old\r\n            behavior).",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationRecoveryServicesProviders_Delete",
+        "x-ms-examples": {
+          "Deletes provider from fabric.": { "$ref": "../examples/ReplicationRecoveryServicesProviders_Delete.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -2333,6 +2376,9 @@
         "summary": "Gets the details of a server.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationRecoveryServicesProviders_Get",
+        "x-ms-examples": {
+          "Gets the details of a server.": { "$ref": "../examples/ReplicationRecoveryServicesProviders_Get.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -2432,6 +2478,9 @@
         "summary": "Gets the list of servers registered.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationRecoveryServicesProviders_ListByReplicationFabrics",
+        "x-ms-examples": {
+          "Gets the list of servers registered.": { "$ref": "../examples/ReplicationRecoveryServicesProviders_ListByReplicationFabrics.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -2517,6 +2566,9 @@
         "summary": "Get a recovery point.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "RecoveryPoints_Get",
+        "x-ms-examples": {
+          "Get a recovery point.": { "$ref": "../examples/RecoveryPoints_Get.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -2581,6 +2633,9 @@
         "summary": "Get recovery points for a protected entity.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "RecoveryPoints_ListByReplicationProtectedItems",
+        "x-ms-examples": {
+          "Get recovery points for a protected entity.": { "$ref": "../examples/RecoveryPoints_ListByReplicationProtectedItems.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -2697,6 +2752,9 @@
         "summary": "Execute reprotect of the recovery plan.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationRecoveryPlans_Reprotect",
+        "x-ms-examples": {
+          "Execute reprotect of the recovery plan.": { "$ref": "../examples/ReplicationRecoveryPlans_Reprotect.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -2744,6 +2802,9 @@
         "summary": "Execute commit failover of the recovery plan.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationRecoveryPlans_FailoverCommit",
+        "x-ms-examples": {
+          "Execute commit failover of the recovery plan.": { "$ref": "../examples/ReplicationRecoveryPlans_FailoverCommit.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -2850,6 +2911,9 @@
         "summary": "Execute test failover of the recovery plan.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationRecoveryPlans_TestFailover",
+        "x-ms-examples": {
+          "Execute test failover of the recovery plan.": { "$ref": "../examples/ReplicationRecoveryPlans_TestFailover.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -2909,6 +2973,9 @@
         "summary": "Execute unplanned failover of the recovery plan.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationRecoveryPlans_UnplannedFailover",
+        "x-ms-examples": {
+          "Execute unplanned failover of the recovery plan.": { "$ref": "../examples/ReplicationRecoveryPlans_UnplannedFailover.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -2968,6 +3035,9 @@
         "summary": "Execute planned failover of the recovery plan.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationRecoveryPlans_PlannedFailover",
+        "x-ms-examples": {
+          "Execute planned failover of the recovery plan.": { "$ref": "../examples/ReplicationRecoveryPlans_PlannedFailover.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -3027,6 +3097,9 @@
         "summary": "Gets the requested recovery plan.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationRecoveryPlans_Get",
+        "x-ms-examples": {
+          "Gets the requested recovery plan.": { "$ref": "../examples/ReplicationRecoveryPlans_Get.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -3068,6 +3141,9 @@
         "summary": "Creates a recovery plan with the given details.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationRecoveryPlans_Create",
+        "x-ms-examples": {
+          "Creates a recovery plan with the given details.": { "$ref": "../examples/ReplicationRecoveryPlans_Create.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -3125,6 +3201,9 @@
         "summary": "Deletes the specified recovery plan.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationRecoveryPlans_Delete",
+        "x-ms-examples": {
+          "Deletes the specified recovery plan.": { "$ref": "../examples/ReplicationRecoveryPlans_Delete.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -3167,6 +3246,9 @@
         "summary": "Updates the given recovery plan.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationRecoveryPlans_Update",
+        "x-ms-examples": {
+          "Updates the given recovery plan.": { "$ref": "../examples/ReplicationRecoveryPlans_Update.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -3226,6 +3308,9 @@
         "summary": "Gets the list of recovery plans.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationRecoveryPlans_List",
+        "x-ms-examples": {
+          "Gets the list of recovery plans.": { "$ref": "../examples/ReplicationRecoveryPlans_List.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -3511,6 +3596,9 @@
         "summary": "Gets the protection container details.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectionContainers_Get",
+        "x-ms-examples": {
+          "Gets replication protection container.": { "$ref": "../examples/ReplicationProtectionContainers_Get.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -3559,6 +3647,9 @@
         "summary": "Create a protection container.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectionContainers_Create",
+        "x-ms-examples": {
+          "Creates replication protection container.": { "$ref": "../examples/ReplicationProtectionContainers_Create.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -3625,6 +3716,9 @@
         "summary": "Gets the list of protection container.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectionContainers_ListByReplicationFabrics",
+        "x-ms-examples": {
+          "Gets the list of all replication protection containers.": { "$ref": "../examples/ReplicationProtectionContainers_ListByReplicationFabrics.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -3671,6 +3765,9 @@
         "summary": "Gets the list of all protection containers in a vault.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectionContainers_List",
+        "x-ms-examples": {
+          "Get list of all replication protection containers in a vault.": { "$ref": "../examples/ReplicationProtectionContainers_List.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -3780,6 +3877,9 @@
         "summary": "Remove container mapping.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectionContainerMappings_Delete",
+        "x-ms-examples": {
+          "Remove container mapping.": { "$ref": "../examples/ReplicationProtectionContainerMappings_Delete.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -3850,6 +3950,9 @@
         "summary": "Gets the list of mappings under a container.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectionContainerMappings_Get",
+        "x-ms-examples": {
+          "Gets replication protection container mapping.": { "$ref": "../examples/ReplicationProtectionContainerMappings_Get.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -3905,6 +4008,9 @@
         "summary": "Create protection container mapping.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectionContainerMappings_Create",
+        "x-ms-examples": {
+          "Creates replication protection container mapping.": { "$ref": "../examples/ReplicationProtectionContainerMappings_Create.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -3976,6 +4082,9 @@
         "summary": "Purges protection container mapping.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectionContainerMappings_Purge",
+        "x-ms-examples": {
+          "Purges protection container mapping.": { "$ref": "../examples/ReplicationProtectionContainerMappings_Purge.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -4034,6 +4143,9 @@
         "summary": "Gets the list of mappings under a container.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectionContainerMappings_ListByReplicationProtectionContainers",
+        "x-ms-examples": {
+          "Gets the list of replication protection container mappings.": { "$ref": "../examples/ReplicationProtectionContainerMappings_ListByReplicationProtectionContainers.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -4087,6 +4199,9 @@
         "summary": "Gets the list of all protection container mappings in a vault.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectionContainerMappings_List",
+        "x-ms-examples": {
+          "Gets the list of replication protection container mappings in a vault.": { "$ref": "../examples/ReplicationProtectionContainerMappings_List.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -4126,6 +4241,9 @@
         "summary": "Gets the details of a protection entity.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectableItems_Get",
+        "x-ms-examples": {
+          "Gets the replication protectable items.": { "$ref": "../examples/ReplicationProtectableItems_Get.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -4183,6 +4301,9 @@
         "summary": "Gets the list of protection entities.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectableItems_ListByReplicationProtectionContainers",
+        "x-ms-examples": {
+          "Gets the list of all replication protectable items.": { "$ref": "../examples/ReplicationProtectableItems_ListByReplicationProtectionContainers.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -4292,6 +4413,9 @@
         "summary": "Gets the requested policy.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationPolicies_Get",
+        "x-ms-examples": {
+          "Gets replication policy.": { "$ref": "../examples/ReplicationPolicies_Get.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -4333,6 +4457,9 @@
         "summary": "Creates the policy.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationPolicies_Create",
+        "x-ms-examples": {
+          "Creates replication policy.": { "$ref": "../examples/ReplicationPolicies_Create.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -4390,6 +4517,9 @@
         "summary": "Delete the policy.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationPolicies_Delete",
+        "x-ms-examples": {
+          "Delete the policy.": { "$ref": "../examples/ReplicationPolicies_Delete.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -4432,6 +4562,9 @@
         "summary": "Updates the protection profile.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationPolicies_Update",
+        "x-ms-examples": {
+          "Updates the protection profile.": { "$ref": "../examples/ReplicationPolicies_Update.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -4491,6 +4624,9 @@
         "summary": "Gets the list of policies",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationPolicies_List",
+        "x-ms-examples": {
+          "Gets all the replication policies.": { "$ref": "../examples/ReplicationPolicies_List.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -5101,7 +5237,7 @@
           {
             "name": "resumeJobParams",
             "in": "body",
-            "description": "Resume rob comments.",
+            "description": "Resume job comments.",
             "required": true,
             "schema": {
               "$ref": "#/definitions/ResumeJobParams"
@@ -5588,6 +5724,9 @@
         "summary": "Deletes the site.\r\n            TODO: put a code based DebugAssert to ensure all HttpPosts have Operation entry made.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationFabrics_Delete",
+        "x-ms-examples": {
+          "Deletes the site.": { "$ref": "../examples/ReplicationFabrics_Delete.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -5633,7 +5772,7 @@
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationFabrics_Get",
         "x-ms-examples": {
-          "Get replication fabric": { "$ref": "../examples/GetReplicationFabric.json" }
+          "Get replication fabric": { "$ref": "../examples/ReplicationFabrics_Get.json" }
         },
         "produces": [
           "application/json"
@@ -5676,6 +5815,9 @@
         "summary": "Creates the site.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationFabrics_Create",
+        "x-ms-examples": {
+          "Creates replication fabric.": { "$ref": "../examples/ReplicationFabrics_Create.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -5733,6 +5875,9 @@
         "summary": "Purges the site.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationFabrics_Purge",
+        "x-ms-examples": {
+          "Purges the site.": { "$ref": "../examples/ReplicationFabrics_Purge.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -5777,6 +5922,9 @@
         "summary": "Gets the list of Site registered.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationFabrics_List",
+        "x-ms-examples": {
+          "Gets the list of all replication fabrics.": { "$ref": "../examples/ReplicationFabrics_List.json" }
+        },
         "produces": [
           "application/json"
         ],

@@ -1,28 +1,26 @@
 {
   "parameters": {
-    "fabricName": "B2ASiteIM128",
+    "fabricName": "cloud1",
     "api-version": "2016-08-10",
-    "resourceName": "b2aRSvaultprod17012017",
-    "resourceType": "vaults",
-    "resourceNamespace": "Microsoft.RecoveryServices",
-    "resourceGroupName": "siterecoveryProd1",
+    "resourceName": "vault1",
+    "resourceGroupName": "resourceGroupPS1",
     "subscriptionId": "c183865e-6077-46f2-a3b1-deb0f4f4650a"
   },
   "responses": {
     "200": {
       "body": {
-        "name": "B2ASiteIM128",
+        "name": "cloud1",
         "type": "Microsoft.RecoveryServices/vaults/replicationFabrics",
-        "id": "/Subscriptions/c183865e-6077-46f2-a3b1-deb0f4f4650a/resourceGroups/siterecoveryProd1/providers/Microsoft.RecoveryServices/vaults/b2aRSvaultprod17012017/replicationFabrics/B2ASiteIM128",
+        "id": "/Subscriptions/c183865e-6077-46f2-a3b1-deb0f4f4650a/resourceGroups/resourceGroupPS1/providers/Microsoft.RecoveryServices/vaults/vault1/replicationFabrics/cloud1",
         "properties": {
-          "friendlyName": "B2ASiteIM128",
+          "friendlyName": "cloud1",
           "encryptionDetails": {
             "kekState": "None"
           },
           "rolloverEncryptionDetails": {
             "kekState": "None"
           },
-          "internalIdentifier": "0f403e28-9201-5060-95ed-cde256b5ab5f",
+          "internalIdentifier": "6d224fc6-f326-5d35-96de-fbf51efb3179",
           "bcdrState": "Valid",
           "customDetails": {
             "instanceType": "HyperVSite"
