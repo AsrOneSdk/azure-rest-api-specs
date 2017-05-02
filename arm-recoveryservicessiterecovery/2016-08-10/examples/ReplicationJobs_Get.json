@@ -31,7 +31,6 @@
               "customDetails": {
                 "instanceType": "TaskDetails"
               },
-              "groupTaskCustomDetails": null,
               "errors": []
             }
           ],
@@ -54,7 +53,6 @@
           }
         },
         "status": "Succeeded",
-        "error": null,
         "startTime": "2017-04-27T11:25:56.800358Z",
         "endTime": "2017-04-27T11:25:57Z"
       }

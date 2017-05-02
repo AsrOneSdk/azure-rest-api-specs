@@ -79,6 +79,9 @@
         "summary": "Gets the list of replication protected items.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectedItems_List",
+        "x-ms-examples": {
+          "Gets the list of replication protected items.": { "$ref": "../examples/ReplicationProtectedItems_List.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -133,6 +136,9 @@
         "summary": "Gets all the network mappings under a vault.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationNetworkMappings_List",
+        "x-ms-examples": {
+          "Gets all the network mappings under a vault.": { "$ref": "../examples/ReplicationNetworkMappings_List.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -172,6 +178,9 @@
         "summary": "Gets all the network mappings under a network.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationNetworkMappings_ListByReplicationNetworks",
+        "x-ms-examples": {
+          "Gets all the network mappings under a network.": { "$ref": "../examples/ReplicationNetworkMappings_ListByReplicationNetworks.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -729,6 +738,9 @@
         "summary": "Gets the details of a storage classification mapping.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationStorageClassificationMappings_Get",
+        "x-ms-examples": {
+          "Gets the details of a storage classification mapping.": { "$ref": "../examples/ReplicationStorageClassificationMappings_Get.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -784,6 +796,9 @@
         "summary": "Pairs two storage objects",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationStorageClassificationMappings_Create",
+        "x-ms-examples": {
+          "Pairs two storage objects.": { "$ref": "../examples/ReplicationStorageClassificationMappings_Create.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -852,9 +867,12 @@
         "tags": [
           "ReplicationStorageClassificationMappings"
         ],
-        "summary": "Pairs two storage objects",
+        "summary": "Unpairs two storage objects",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationStorageClassificationMappings_Delete",
+        "x-ms-examples": {
+          "Unpairs two storage objects": { "$ref": "../examples/ReplicationStorageClassificationMappings_Delete.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -913,6 +931,9 @@
         "summary": "Gets the list of storage classification mappings objects under a storage.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationStorageClassificationMappings_ListByReplicationStorageClassifications",
+        "x-ms-examples": {
+          "Gets the list of storage classification mappings objects under a storage.": { "$ref": "../examples/ReplicationStorageClassificationMappings_ListByReplicationStorageClassifications.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -966,6 +987,9 @@
         "summary": "Gets the list of storage classification mappings objects under a vault.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationStorageClassificationMappings_List",
+        "x-ms-examples": {
+          "Gets the list of storage classification mappings objects under a vault.": { "$ref": "../examples/ReplicationStorageClassificationMappings_List.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -1005,6 +1029,9 @@
         "summary": "Gets the details of a storage classification.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationStorageClassifications_Get",
+        "x-ms-examples": {
+          "Gets the details of a storage classification.": { "$ref": "../examples/ReplicationStorageClassifications_Get.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -1055,6 +1082,9 @@
         "summary": "Gets the list of storage classification objects under a fabric.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationStorageClassifications_ListByReplicationFabrics",
+        "x-ms-examples": {
+          "Gets the list of storage classification objects under a fabric.": { "$ref": "../examples/ReplicationStorageClassifications_ListByReplicationFabrics.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -1101,6 +1131,9 @@
         "summary": "Gets the list of storage classification objects under a vault.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationStorageClassifications_List",
+        "x-ms-examples": {
+          "Gets the list of storage classification objects under a vault.": { "$ref": "../examples/ReplicationStorageClassifications_List.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -1286,6 +1319,9 @@
         "summary": "Repairs replication.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectedItems_RepairReplication",
+        "x-ms-examples": {
+          "Repairs replication.": { "$ref": "../examples/ReplicationProtectedItems_RepairReplication.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -2527,6 +2563,9 @@
         "summary": "Gets the list of servers registered across fabrics.\r\n            This is view only api.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationRecoveryServicesProviders_List",
+        "x-ms-examples": {
+          "Gets the list of servers registered across fabrics.": { "$ref": "../examples/ReplicationRecoveryServicesProviders_List.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -3416,6 +3455,9 @@
         "summary": "Removes a protection container.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectionContainers_Delete",
+        "x-ms-examples": {
+          "Removes a protection container.": { "$ref": "../examples/ReplicationProtectionContainers_Delete.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -4666,6 +4708,9 @@
         "summary": "Gets the list of networks. View-only API.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationNetworks_List",
+        "x-ms-examples": {
+          "Gets the list of networks.": { "$ref": "../examples/ReplicationNetworks_List.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -4705,6 +4750,9 @@
         "summary": "Gets the list of networks under a fabric.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationNetworks_ListByReplicationFabrics",
+        "x-ms-examples": {
+          "Gets the list of networks under a fabric.": { "$ref": "../examples/ReplicationNetworks_ListByReplicationFabrics.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -4751,6 +4799,9 @@
         "summary": "Gets a network with specified server id and network name.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationNetworks_Get",
+        "x-ms-examples": {
+          "Gets a network with specified server id and network name.": { "$ref": "../examples/ReplicationNetworks_Get.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -4801,6 +4852,9 @@
         "summary": "Gets network mapping by name.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationNetworkMappings_Get",
+        "x-ms-examples": {
+          "Gets network mapping by name.": { "$ref": "../examples/ReplicationNetworkMappings_Get.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -4856,6 +4910,9 @@
         "summary": "Creates network mapping.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationNetworkMappings_Create",
+        "x-ms-examples": {
+          "Creates network mapping.": { "$ref": "../examples/ReplicationNetworkMappings_Create.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -4927,6 +4984,9 @@
         "summary": "Delete network mapping.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationNetworkMappings_Delete",
+        "x-ms-examples": {
+          "Delete network mapping.": { "$ref": "../examples/ReplicationNetworkMappings_Delete.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -4983,6 +5043,9 @@
         "summary": "Updates network mapping.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationNetworkMappings_Update",
+        "x-ms-examples": {
+          "Updates network mapping.": { "$ref": "../examples/ReplicationNetworkMappings_Update.json" }
+        },
         "consumes": [
           "application/json"
         ],
