@@ -7,14 +7,7 @@
     "recoveryPlanName": "RPtest1",
     "input": {
       "properties": {
-        "failoverDirection": "PrimaryToRecovery",
-        "networkType": "VmNetworkAsInput",
-        "networkId": "/subscriptions/c183865e-6077-46f2-a3b1-deb0f4f4650a/resourceGroups/siterecoveryProd1/providers/Microsoft.Network/virtualNetworks/vnetavrai",
-        "providerSpecificDetails": [
-          {
-            "instanceType": "HyperVReplicaAzure"
-          }
-        ]
+        "comments": "Test Failover Cleanup"
       }
     }
   },
@@ -35,15 +28,19 @@
             "HyperVReplicaAzure"
           ],
           "allowedOperations": [
-            "TestFailoverCleanup"
+            "PlannedFailover",
+            "UnplannedFailover",
+            "TestFailover"
           ],
+          "lastPlannedFailoverTime": "2017-04-27T07:33:49.1372448Z",
+          "lastTestFailoverTime": "2017-04-27T07:00:27.8354747Z",
           "currentScenario": {
-            "scenarioName": "TestFailover",
-            "jobId": "/Subscriptions/c183865e-6077-46f2-a3b1-deb0f4f4650a/resourceGroups/resourceGroupPS1/providers/Microsoft.RecoveryServices/vaults/vault1/replicationJobs/d40bfb40-aaaa-4c0d-87d3-41b15439a84b",
-            "startTime": "2017-04-27T07:00:58.8191916Z"
+            "scenarioName": "TestFailoverCleanup",
+            "jobId": "/Subscriptions/c183865e-6077-46f2-a3b1-deb0f4f4650a/resourceGroups/resourceGroupPS1/providers/Microsoft.RecoveryServices/vaults/vault1/replicationJobs/4ae8eaa8-a384-42cb-9768-152cb5b8a1ff",
+            "startTime": "2017-04-27T07:10:52.8424747Z"
           },
-          "currentScenarioStatus": "Suspended",
-          "currentScenarioStatusDescription": "WaitingForStopTestFailover",
+          "currentScenarioStatus": "Succeeded",
+          "currentScenarioStatusDescription": "Completed",
           "groups": [
             {
               "groupType": "Shutdown",

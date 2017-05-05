@@ -234,6 +234,9 @@
         "summary": "Renews certificate for the fabric.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationFabrics_RenewCertificate",
+        "x-ms-examples": {
+          "Renews certificate for the fabric.": { "$ref": "../examples/ReplicationFabrics_RenewCertificate.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -293,6 +296,9 @@
         "summary": "Tracks the provider async operation.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationvCenters_GetTrackAsyncOperation",
+        "x-ms-examples": {
+          "Tracks the provider async operation.": { "$ref": "../examples/ReplicationvCenters_GetTrackAsyncOperation.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -356,6 +362,9 @@
         "summary": "Gets the details of a vCenter.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationvCenters_Get",
+        "x-ms-examples": {
+          "Gets the details of a vCenter.": { "$ref": "../examples/ReplicationvCenters_Get.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -404,6 +413,9 @@
         "summary": "Perform Add vCenter operation.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationvCenters_Create",
+        "x-ms-examples": {
+          "Perform Add vCenter operation.": { "$ref": "../examples/ReplicationvCenters_Create.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -468,6 +480,9 @@
         "summary": "Perform remove vCenter operation.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationvCenters_Delete",
+        "x-ms-examples": {
+          "Perform remove vCenter operation.": { "$ref": "../examples/ReplicationvCenters_Delete.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -517,6 +532,9 @@
         "summary": "Perform update vCenter operation.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationvCenters_Update",
+        "x-ms-examples": {
+          "Perform update vCenter operation.": { "$ref": "../examples/ReplicationvCenters_Update.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -583,6 +601,9 @@
         "summary": "Gets the list of vCenter registered under a fabric.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationvCenters_ListByReplicationFabrics",
+        "x-ms-examples": {
+          "Gets the list of vCenter registered under a fabric.": { "$ref": "../examples/ReplicationvCenters_ListByReplicationFabrics.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -629,6 +650,9 @@
         "summary": "Gets the list of vCenter registered under the vault.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationvCenters_List",
+        "x-ms-examples": {
+          "Gets the list of vCenter registered under the vault.": { "$ref": "../examples/ReplicationvCenters_List.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -668,6 +692,9 @@
         "summary": "Tracks async operations.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationStorageClassificationMappings_GetTrackAsyncOperation",
+        "x-ms-examples": {
+          "Tracks async operations.": { "$ref": "../examples/ReplicationStorageClassificationMappings_GetTrackAsyncOperation.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -1173,6 +1200,9 @@
         "summary": "Tracks the Replication protected item async operation.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectedItems_GetTrackAsyncOperation",
+        "x-ms-examples": {
+          "Tracks the Replication protected item async operation.": { "$ref": "../examples/ReplicationProtectedItems_GetTrackAsyncOperation.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -1596,6 +1626,9 @@
         "summary": "Execute test failover cleanup.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectedItems_TestFailoverCleanup",
+        "x-ms-examples": {
+          "Execute test failover cleanup.": { "$ref": "../examples/ReplicationProtectedItems_TestFailoverCleanup.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -2238,6 +2271,9 @@
         "summary": "Tracks the provider async operation.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationRecoveryServicesProviders_GetTrackAsyncOperation",
+        "x-ms-examples": {
+          "Tracks the provider async operation.": { "$ref": "../examples/ReplicationRecoveryServicesProviders_GetTrackAsyncOperation.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -2463,6 +2499,9 @@
         "summary": "Purges provider from fabric",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationRecoveryServicesProviders_Purge",
+        "x-ms-examples": {
+          "Purges provider from fabric": { "$ref": "../examples/ReplicationRecoveryServicesProviders_Purge.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -2735,6 +2774,9 @@
         "summary": "Tracks the recovery plan async operation.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationRecoveryPlans_GetTrackAsyncOperation",
+        "x-ms-examples": {
+          "Tracks the recovery plan async operation.": { "$ref": "../examples/ReplicationRecoveryPlans_GetTrackAsyncOperation.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -2891,6 +2933,9 @@
         "summary": "Execute test failover cleanup of the recovery plan.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationRecoveryPlans_TestFailoverCleanup",
+        "x-ms-examples": {
+          "Execute test failover cleanup of the recovery plan.": { "$ref": "../examples/ReplicationRecoveryPlans_TestFailoverCleanup.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -3509,6 +3554,9 @@
         "summary": "Tracks the provider async operation.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectionContainers_GetTrackAsyncOperation",
+        "x-ms-examples": {
+          "Tracks the provider async operation.": { "$ref": "../examples/ReplicationProtectionContainers_GetTrackAsyncOperation.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -3572,6 +3620,9 @@
         "summary": "Adds a protectable item inside the replication protection container.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectionContainers_DiscoverProtectableItem",
+        "x-ms-examples": {
+          "Adds a protectable item inside the replication protection container.": { "$ref": "../examples/ReplicationProtectionContainers_DiscoverProtectableItem.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -3849,6 +3900,9 @@
         "summary": "Tracks the protection container mapping async operation.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationProtectionContainerMappings_GetTrackAsyncOperation",
+        "x-ms-examples": {
+          "Tracks the protection container mapping async operation.": { "$ref": "../examples/ReplicationProtectionContainerMappings_GetTrackAsyncOperation.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -4399,6 +4453,9 @@
         "summary": "Tracks the protection profiles async operation.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationPolicies_GetTrackAsyncOperation",
+        "x-ms-examples": {
+          "Tracks the protection profiles async operation.": { "$ref": "../examples/ReplicationPolicies_GetTrackAsyncOperation.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -5165,6 +5222,9 @@
         "summary": "Gets a logical network with specified server id and logical network name.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationLogicalNetworks_Get",
+        "x-ms-examples": {
+          "Gets a logical network with specified server id and logical network name.": { "$ref": "../examples/ReplicationLogicalNetworks_Get.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -5566,6 +5626,9 @@
         "summary": "Tracks the Site async operation.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationFabrics_GetTrackAsyncOperation",
+        "x-ms-examples": {
+          "Tracks the Site async operation.": { "$ref": "../examples/ReplicationFabrics_GetTrackAsyncOperation.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -5740,6 +5803,9 @@
         "summary": "Checks the consistency of the site.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationFabrics_CheckConsistency",
+        "x-ms-examples": {
+          "Checks the consistency of the site.": { "$ref": "../examples/ReplicationFabrics_CheckConsistency.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -6027,6 +6093,9 @@
         "summary": "Get a monitoring event.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationEvents_Get",
+        "x-ms-examples": {
+          "Get a monitoring event.": { "$ref": "../examples/ReplicationEvents_Get.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -6070,6 +6139,9 @@
         "summary": "Gets the list of monitoring events.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationEvents_List",
+        "x-ms-examples": {
+          "Gets the list of monitoring events.": { "$ref": "../examples/ReplicationEvents_List.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -6109,6 +6181,9 @@
         "summary": "Gets an alert setting.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationAlertSettings_Get",
+        "x-ms-examples": {
+          "Gets an alert setting.": { "$ref": "../examples/ReplicationAlertSettings_Get.json" }
+        },
         "produces": [
           "application/json"
         ],
@@ -6150,6 +6225,9 @@
         "summary": "Configures the alerts for this vault.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationAlertSettings_Create",
+        "x-ms-examples": {
+          "Configures the alerts for this vault.": { "$ref": "../examples/ReplicationAlertSettings_Create.json" }
+        },
         "consumes": [
           "application/json"
         ],
@@ -6205,6 +6283,9 @@
         "summary": "Gets the list of alerts.",
         "description": "TODO (avrai): Detailed Description.",
         "operationId": "ReplicationAlertSettings_List",
+        "x-ms-examples": {
+          "Gets the list of alerts.": { "$ref": "../examples/ReplicationAlertSettings_List.json" }
+        },
         "produces": [
           "application/json"
         ],
