@@ -18,7 +18,7 @@
               "friendlyName": "corp",
               "networkVirtualizationStatus": "NetworkVirtualizationNotEnabled",
               "logicalNetworkUsage": "NotUsedAsPrivateNetworkForTestFailover",
-              "LogicalNetworkDefinitionsStatus": "LogicalNetworkDefinitionsNotIsolated"
+              "logicalNetworkDefinitionsStatus": "LogicalNetworkDefinitionsNotIsolated"
             }
           },
           {
