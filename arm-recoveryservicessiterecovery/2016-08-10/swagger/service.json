@@ -2730,7 +2730,7 @@
           "RecoveryPoints"
         ],
         "summary": "Get a recovery point.",
-        "description": "Gest the details of specified recovery point.",
+        "description": "Get the details of specified recovery point.",
         "operationId": "RecoveryPoints_Get",
         "produces": [
           "application/json"
