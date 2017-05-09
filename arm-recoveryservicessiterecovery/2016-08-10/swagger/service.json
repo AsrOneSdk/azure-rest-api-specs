@@ -3605,7 +3605,12 @@
           }
         },
         "deprecated": false,
-        "x-ms-long-running-operation": true
+        "x-ms-long-running-operation": true,
+        "x-ms-examples": {
+          "Switches protection from one container to another or one replication provider to\r\n            another.": {
+            "$ref": "../examples/ReplicationProtectionContainers_SwitchProtection.json"
+          }
+        }
       }
     },
     "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/remove": {
@@ -5916,7 +5921,12 @@
           }
         },
         "deprecated": false,
-        "x-ms-long-running-operation": true
+        "x-ms-long-running-operation": true,
+        "x-ms-examples": {
+          "Perform failover of the process server.": {
+            "$ref": "../examples/ReplicationFabrics_ReassociateGateway.json"
+          }
+        }
       }
     },
     "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/deployProcessServerImage": {
