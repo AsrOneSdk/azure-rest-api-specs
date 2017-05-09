@@ -7042,7 +7042,7 @@
         },
         "customDetails": {
           "$ref": "#/definitions/TaskTypeDetails",
-          "description": "The custom task details based on the task type. If the task is one of\r\n            GroupTaskDetails or it's derived types, the details will be in GroupTaskCustomDetails.\r\n            This was done to avoid hydra limitation of not having cyclic dependency, as GroupTasks\r\n            again have child tasks which are of parent type - Task. (Refer Bug 6269808.)"
+          "description": "The custom task details based on the task type."
         },
         "groupTaskCustomDetails": {
           "$ref": "#/definitions/GroupTaskDetails",
