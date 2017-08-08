@@ -1,4 +1,4 @@
-﻿{
+{
   "swagger": "2.0",
   "info": {
     "version": "2016-08-10",
@@ -2342,6 +2342,69 @@
             "$ref": "./examples/ReplicationRecoveryServicesProviders_Get.json"
           }
         }
+      },
+      "put": {
+        "tags": [
+          "ReplicationRecoveryServicesProviders"
+        ],
+        "summary": "Adds a recovery services provider.",
+        "description": "The operation to add a recovery services provider.",
+        "operationId": "ReplicationRecoveryServicesProviders_Create",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/ApiVersion"
+          },
+          {
+            "$ref": "#/parameters/ResourceName"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupName"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionId"
+          },
+          {
+            "name": "fabricName",
+            "in": "path",
+            "description": "Fabric name.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "providerName",
+            "in": "path",
+            "description": "Recovery services provider name.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "addProviderInput",
+            "in": "body",
+            "description": "Add provider input.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AddRecoveryServicesProviderInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RecoveryServicesProvider"
+            }
+          },
+          "202": {
+            "description": "Accepted"
+          }
+        },
+        "x-ms-long-running-operation": true
       },
       "delete": {
         "tags": [
@@ -8376,7 +8439,7 @@
           "type": "integer"
         },
         "allowedScenarios": {
-          "description": "The scenarions allowed on this provider.",
+          "description": "The scenarios allowed on this provider.",
           "type": "array",
           "items": {
             "type": "string"
@@ -8388,8 +8451,94 @@
           "items": {
             "$ref": "#/definitions/HealthError"
           }
+        },
+        "draIdentifier": {
+          "description": "The DRA Id.",
+          "type": "string"
+        },
+        "identityDetails": {
+          "$ref": "#/definitions/IdentityInformation",
+          "description": "The identity details."
         }
       }
+    },
+    "IdentityInformation": {
+      "description": "Identity details.",
+      "type": "object",
+      "properties": {
+        "identityProviderType": {
+          "description": "The identity provider type. Value is the ToString() of a IdentityProviderType value.",
+          "enum": [
+            "RecoveryServicesActiveDirectory",
+            "CustomerActiveDirectory"
+          ],
+          "type": "string",
+          "x-ms-enum": {
+            "name": "IdentityProviderType",
+            "modelAsString": false
+          }
+        },
+        "tenantId": {
+          "description": "The tenant Id for the service principal with which the on-premise management/data plane components would communicate with our Azure services.",
+          "type": "string"
+        },
+        "applicationId": {
+          "description": "The application/client Id for the service principal with which the on-premise management/data plane components would communicate with our Azure services.",
+          "type": "string"
+        },
+        "objectId": {
+          "description": "The object Id of the service principal with which the on-premise management/data plane components would communicate with our Azure services.",
+          "type": "string"
+        },
+        "audience": {
+          "description": "The intended Audience of the service principal with which the on-premise management/data plane components would communicate with our Azure services.",
+          "type": "string"
+        },
+        "aadAuthority": {
+          "description": "The base authority for Azure Active Directory authentication.",
+          "type": "string"
+        },
+        "certificateThumbprint": {
+          "description": "The certificate thumbprint. Applicable only if IdentityProviderType is RecoveryServicesActiveDirectory.",
+          "type": "string"
+        }
+      }
+    },
+    "AddRecoveryServicesProviderInput": {
+      "description": "Input required to add a provider.",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "#/definitions/AddRecoveryServicesProviderInputProperties",
+          "description": "The properties of an add provider request."
+        }
+      }
+    },
+    "AddRecoveryServicesProviderInputProperties": {
+      "description": "The properties of an add provider request.",
+      "type": "object",
+      "properties": {
+        "machineName": {
+          "description": "The name of the machine where the provider is getting added.",
+          "type": "string"
+        },
+        "identityProviderInput": {
+          "$ref": "#/definitions/IdentityProviderInput",
+          "description": "The identity provider input for the DRA."
+        }
+      }
+    },
+    "IdentityProviderInput": {
+      "description": "Identity provider specific settings.",
+      "type": "object",
+      "properties": {
+        "instanceType": {
+          "description": "Gets the class type.",
+          "type": "string",
+          "readOnly": true
+        }
+      },
+      "discriminator": "instanceType"
     },
     "ReplicationProtectedItem": {
       "description": "Replication protected item.",
@@ -9938,7 +10087,16 @@
           "$ref": "#/definitions/FabricSpecificDetails"
         }
       ],
-      "properties": {},
+      "properties": {
+        "srsServiceEndpoint": {
+          "description": "The endpoint for making requests to the SRS Service.",
+          "type": "string"
+        },
+        "rcmServiceEndpoint": {
+          "description": "The endpoint for making requests to the RCM Service.",
+          "type": "string"
+        }
+      },
       "x-ms-discriminator-value": "VMwareV2"
     },
     "HyperVReplicaBaseReplicationDetails": {
@@ -13979,6 +14137,54 @@
       },
       "x-ms-discriminator-value": "A2A"
     },
+    "CustomerAadIdentityProviderInput": {
+      "description": "Identity provider specific settings.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/IdentityProviderInput"
+        }
+      ],
+      "properties": {
+        "tenantId": {
+          "description": "The tenant Id for the service principal with which the on-premise management/data plane components would communicate with our Azure services.",
+          "type": "string"
+        },
+        "applicationId": {
+          "description": "The application/client Id for the service principal with which the on-premise management/data plane components would communicate with our Azure services.",
+          "type": "string"
+        },
+        "objectId": {
+          "description": "The object Id of the service principal with which the on-premise management/data plane components would communicate with our Azure services.",
+          "type": "string"
+        },
+        "audience": {
+          "description": "The intended Audience of the service principal with which the on-premise management/data plane components would communicate with our Azure services.",
+          "type": "string"
+        },
+        "aadAuthority": {
+          "description": "The base authority for Azure Active Directory authentication.",
+          "type": "string"
+        }
+      },
+      "x-ms-discriminator-value": "CustomerActiveDirectory"
+    },
+    "RecoveryServicesAadIdentityProviderInput": {
+      "description": "Identity provider specific settings.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/IdentityProviderInput"
+        }
+      ],
+      "properties": {
+        "rawCertData": {
+          "description": "The raw certificate data (no private key).",
+          "type": "string"
+        }
+      },
+      "x-ms-discriminator-value": "RecoveryServicesActiveDirectory"
+    },
     "AzureFabricCreationInput": {
       "description": "Fabric provider specific settings.",
       "type": "object",
@@ -13994,6 +14200,17 @@
         }
       },
       "x-ms-discriminator-value": "A2A"
+    },
+    "VMwareV2FabricCreationInput": {
+      "description": "Fabric provider specific settings.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/FabricSpecificCreationInput"
+        }
+      ],
+      "properties": {},
+      "x-ms-discriminator-value": "VMwareV2"
     }
   },
   "parameters": {
