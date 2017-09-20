@@ -18,6 +18,49 @@
     "application/json"
   ],
   "paths": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationVaultHealth/default/refresh": {
+      "post": {
+        "tags": [
+          "ReplicationVaultHealth"
+        ],
+        "summary": "Refreshes health summary of the vault.",
+        "operationId": "ReplicationVaultHealth_Refresh",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/ApiVersion"
+          },
+          {
+            "$ref": "#/parameters/ResourceName"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupName"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/VaultHealthDetails"
+            }
+          },
+          "202": {
+            "description": "Accepted"
+          }
+        },
+        "x-ms-long-running-operation": true,
+        "x-ms-examples": {
+          "Refreshes health summary of the vault.": {
+            "$ref": "./examples/ReplicationVaultHealth_Refresh.json"
+          }
+        }
+      }
+    },
     "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationVaultHealth": {
       "get": {
         "tags": [
@@ -8281,7 +8324,7 @@
       "description": "Replication provider specific recovery point details.",
       "type": "object",
       "properties": {
-        "Type": {
+        "instanceType": {
           "description": "Gets the provider type.",
           "type": "string",
           "readOnly": true
@@ -12106,17 +12149,12 @@
         }
       ],
       "properties": {
-        "instanceType": {
-          "description": "Gets the instance type.",
-          "type": "string",
-          "readOnly": true
-        },
         "isMultiVmSyncPoint": {
           "description": "A value indicating whether the recovery point is multi VM consistent.",
           "type": "string"
         }
       },
-      "x-ms-discriminator-value": "InMageAzureV2RecoveryPointDetails"
+      "x-ms-discriminator-value": "InMageAzureV2"
     },
     "InMageDisableProtectionProviderSpecificInput": {
       "description": "InMage disable protection provider specific input.",
