@@ -2675,11 +2675,6 @@
         },
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
-        },
-        "x-ms-examples": {
-          "Gets the list of target compute sizes for the replication protected item.": {
-            "$ref": "./examples/TargetComputeSizes_ListByReplicationProtectedItems.json"
-          }
         }
       }
     },
@@ -6268,8 +6263,12 @@
           "description": "The recovery disk resource group Arm Id.",
           "type": "string"
         },
-        "recoveryDiskId": {
-          "description": "Recovery disk Arm Id.",
+        "recoveryTargetDiskId": {
+          "description": "Recovery target disk Arm Id.",
+          "type": "string"
+        },
+        "recoveryReplicaDiskId": {
+          "description": "Recovery replica disk Arm Id.",
           "type": "string"
         },
         "recoveryReplicaDiskAccountType": {
@@ -6800,131 +6799,6 @@
         }
       },
       "discriminator": "instanceType"
-    },
-    "ARMException": {
-      "description": "ARM inner exception class.",
-      "type": "object",
-      "properties": {
-        "code": {
-          "description": "Gets HTTP status code for the error.",
-          "type": "string"
-        },
-        "message": {
-          "description": "Gets exception message.",
-          "type": "string"
-        },
-        "target": {
-          "description": "Gets exception target.",
-          "type": "string"
-        },
-        "details": {
-          "description": "Gets service based error details.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ARMExceptionDetails"
-          }
-        }
-      }
-    },
-    "ARMExceptionDetails": {
-      "description": "Service based exception details.",
-      "type": "object",
-      "properties": {
-        "code": {
-          "description": "Gets service error code.",
-          "type": "string"
-        },
-        "message": {
-          "description": "Gets error message.",
-          "type": "string"
-        },
-        "possibleCauses": {
-          "description": "Gets possible cause for error.",
-          "type": "string"
-        },
-        "recommendedAction": {
-          "description": "Gets recommended action for the error.",
-          "type": "string"
-        },
-        "clientRequestId": {
-          "description": "Gets the client request Id for the session.",
-          "type": "string"
-        },
-        "activityId": {
-          "description": "Gets the activity Id for the session.",
-          "type": "string"
-        },
-        "target": {
-          "description": "Gets exception target.",
-          "type": "string"
-        }
-      }
-    },
-    "ARMInnerError": {
-      "description": "ARM internal error class for providing additional debug data.",
-      "type": "object",
-      "properties": {
-        "trace": {
-          "description": "Gets complete stack trace of the exception.",
-          "type": "string"
-        },
-        "source": {
-          "description": "Gets exception source.",
-          "type": "string"
-        },
-        "methodStatus": {
-          "$ref": "#/definitions/MethodCallStatus",
-          "description": "Gets data related to method which threw the exception."
-        },
-        "cloudId": {
-          "description": "Gets cloud Id in exception.",
-          "type": "string"
-        },
-        "hVHostId": {
-          "description": "Gets hyperV host ID.",
-          "type": "string"
-        },
-        "hVClusterId": {
-          "description": "Gets hyperV cluster Id.",
-          "type": "string"
-        },
-        "networkId": {
-          "description": "Gets network Id.",
-          "type": "string"
-        },
-        "vmId": {
-          "description": "Gets Vm Id.",
-          "type": "string"
-        },
-        "fabricId": {
-          "description": "Gets Fabric Id.",
-          "type": "string"
-        },
-        "liveId": {
-          "description": "Gets Live Id of the caller.",
-          "type": "string"
-        },
-        "containerId": {
-          "description": "Gets container Id of the caller.",
-          "type": "string"
-        },
-        "resourceId": {
-          "description": "Gets resource id used in the call.",
-          "type": "string"
-        },
-        "resourceName": {
-          "description": "Gets caller resource name.",
-          "type": "string"
-        },
-        "subscriptionId": {
-          "description": "Gets subscription Id.",
-          "type": "string"
-        },
-        "serializedSrsLogContext": {
-          "description": "Gets serialized SRS log context.",
-          "type": "string"
-        }
-      }
     },
     "AsrJobDetails": {
       "description": "This class represents job details based on specific job type.",
@@ -8492,10 +8366,6 @@
         },
         "onlineReplicationStartTime": {
           "description": "The scheduled start time for the initial replication. If this parameter is Null, the initial replication starts immediately.",
-          "type": "string"
-        },
-        "encryption": {
-          "description": "A value indicating whether encryption needs to be enabled for Vms in this cloud.",
           "type": "string"
         },
         "storageAccounts": {
@@ -10630,22 +10500,6 @@
         "properties": {
           "$ref": "#/definitions/JobProperties",
           "description": "The custom data."
-        },
-        "status": {
-          "description": "The status of the Job. ARM expects the terminal status to be one of (1) Succeeded, (2) Failed or (3) Canceled. All other values imply that the operation is still running / being applied.",
-          "type": "string"
-        },
-        "error": {
-          "$ref": "#/definitions/ARMException",
-          "description": "The error."
-        },
-        "startTime": {
-          "description": "The start time.",
-          "type": "string"
-        },
-        "endTime": {
-          "description": "The start time.",
-          "type": "string"
         }
       }
     },
@@ -11051,27 +10905,6 @@
         "marsAgentExpiryDate": {
           "format": "date-time",
           "description": "MARS agent expiry date.",
-          "type": "string"
-        }
-      }
-    },
-    "MethodCallStatus": {
-      "description": "Reports method status where exception was raised.",
-      "type": "object",
-      "properties": {
-        "isVirtual": {
-          "description": "Gets a value indicating whether called method was virtual",
-          "type": "string"
-        },
-        "parameters": {
-          "description": "Gets parameter list passed to method.",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "containsGenericParameters": {
-          "description": "Gets a value indicating whether method container generic params.",
           "type": "string"
         }
       }
@@ -13515,11 +13348,6 @@
     "TargetComputeSizeCollection": {
       "description": "Target compute size collection.",
       "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/Resource"
-        }
-      ],
       "properties": {
         "value": {
           "description": "The list of target compute sizes.",
@@ -13527,6 +13355,10 @@
           "items": {
             "$ref": "#/definitions/TargetComputeSize"
           }
+        },
+        "nextLink": {
+          "description": "The value of next link.",
+          "type": "string"
         }
       }
     },
@@ -13534,11 +13366,11 @@
       "description": "Represents applicable recovery vm sizes properties.",
       "type": "object",
       "properties": {
-        "Name": {
+        "name": {
           "description": "Target compute size name.",
           "type": "string"
         },
-        "FriendlyName": {
+        "friendlyName": {
           "description": "Target compute size display name.",
           "type": "string"
         },
