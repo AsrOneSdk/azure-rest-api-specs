@@ -2675,6 +2675,11 @@
         },
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
+        },
+        "x-ms-examples": {
+          "Gets the list of target compute sizes for the replication protected item.": {
+            "$ref": "./examples/TargetComputeSizes_ListByReplicationProtectedItems.json"
+          }
         }
       }
     },
