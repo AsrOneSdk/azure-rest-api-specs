@@ -7985,6 +7985,10 @@
           "description": "Level of error.",
           "type": "string"
         },
+        "errorCategory": {
+          "description": "Category of error.",
+          "type": "string"
+        },
         "errorCode": {
           "description": "Error code.",
           "type": "string"
@@ -9033,7 +9037,7 @@
       "x-ms-discriminator-value": "HyperVSite"
     },
     "HyperVVirtualMachineDetails": {
-      "description": "Hyper V replica provider specific settings",
+      "description": "Single Host fabric provider specific VM settings.",
       "type": "object",
       "allOf": [
         {
@@ -9059,6 +9063,18 @@
           "items": {
             "$ref": "#/definitions/DiskDetails"
           }
+        },
+        "hasPhysicalDisk": {
+          "description": "A value indicating whether the VM has a physical disk attached.",
+          "type": "boolean"
+        },
+        "hasFibreChannelAdapter": {
+          "description": "A value indicating whether the VM has a fibre channel adapter attached.",
+          "type": "boolean"
+        },
+        "hasSharedVhd": {
+          "description": "A value indicating whether the VM has a shared VHD attached.",
+          "type": "boolean"
         }
       },
       "x-ms-discriminator-value": "HyperVVirtualMachine"
@@ -9185,6 +9201,40 @@
           "format": "date-time",
           "description": "Agent expiry date.",
           "type": "string"
+        }
+      }
+    },
+    "InMageAgentVersionDetails": {
+      "description": "InMage agent version details.",
+      "type": "object",
+      "properties": {
+        "postUpdateRebootStatus": {
+          "description": "A value indicating whether reboot is required after update is applied.",
+          "type": "string"
+        },
+        "version": {
+          "description": "The agent version.",
+          "type": "string"
+        },
+        "expiryDate": {
+          "format": "date-time",
+          "description": "Version expiry date.",
+          "type": "string"
+        },
+        "status": {
+          "description": "A value indicating whether security update required.",
+          "enum": [
+            "Supported",
+            "NotSupported",
+            "Deprecated",
+            "UpdateRequired",
+            "SecurityUpdateRequired"
+          ],
+          "type": "string",
+          "x-ms-enum": {
+            "name": "AgentVersionStatus",
+            "modelAsString": false
+          }
         }
       }
     },
@@ -10434,6 +10484,10 @@
           "description": "Level of error.",
           "type": "string"
         },
+        "errorCategory": {
+          "description": "Category of error.",
+          "type": "string"
+        },
         "errorCode": {
           "description": "Error code.",
           "type": "string"
@@ -10911,6 +10965,14 @@
           "format": "date-time",
           "description": "MARS agent expiry date.",
           "type": "string"
+        },
+        "agentVersionDetails": {
+          "$ref": "#/definitions/VersionDetails",
+          "description": "Agent version details."
+        },
+        "marsAgentVersionDetails": {
+          "$ref": "#/definitions/VersionDetails",
+          "description": "Mars agent version details."
         }
       }
     },
@@ -11389,6 +11451,10 @@
           "format": "date-time",
           "description": "Agent expiry date.",
           "type": "string"
+        },
+        "agentVersionDetails": {
+          "$ref": "#/definitions/VersionDetails",
+          "description": "The agent version details."
         }
       }
     },
@@ -12658,6 +12724,10 @@
         "identityDetails": {
           "$ref": "#/definitions/IdentityInformation",
           "description": "The identity details."
+        },
+        "providerVersionDetails": {
+          "$ref": "#/definitions/VersionDetails",
+          "description": "The provider version details."
         }
       }
     },
@@ -12823,22 +12893,8 @@
           "description": "The consolidated failover health for the VM.",
           "type": "string"
         },
-        "replicationHealthErrors": {
-          "description": "List of replication health errors.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/HealthError"
-          }
-        },
-        "failoverHealthErrors": {
-          "description": "List of failover health errors.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/HealthError"
-          }
-        },
-        "versionExpiryHealthErrors": {
-          "description": "List of version expiry health errors.",
+        "healthErrors": {
+          "description": "List of health errors.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/HealthError"
@@ -13873,6 +13929,36 @@
         }
       }
     },
+    "VersionDetails": {
+      "description": "Version related deatils.",
+      "type": "object",
+      "properties": {
+        "version": {
+          "description": "The agent version.",
+          "type": "string"
+        },
+        "expiryDate": {
+          "format": "date-time",
+          "description": "Version expiry date.",
+          "type": "string"
+        },
+        "status": {
+          "description": "A value indicating whether security update required.",
+          "enum": [
+            "Supported",
+            "NotSupported",
+            "Deprecated",
+            "UpdateRequired",
+            "SecurityUpdateRequired"
+          ],
+          "type": "string",
+          "x-ms-enum": {
+            "name": "AgentVersionStatus",
+            "modelAsString": false
+          }
+        }
+      }
+    },
     "VirtualMachineTaskDetails": {
       "description": "This class represents the virtual machine task details.",
       "type": "object",
@@ -13951,6 +14037,49 @@
       ],
       "properties": {},
       "x-ms-discriminator-value": "VmmToVmm"
+    },
+    "VmmVirtualMachineDetails": {
+      "description": "VMM fabric provider specific VM settings.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ConfigurationSettings"
+        }
+      ],
+      "properties": {
+        "sourceItemId": {
+          "description": "The source id of the object.",
+          "type": "string"
+        },
+        "generation": {
+          "description": "The id of the object in fabric.",
+          "type": "string"
+        },
+        "osDetails": {
+          "$ref": "#/definitions/OSDetails",
+          "description": "The Last replication time."
+        },
+        "diskDetails": {
+          "description": "The Last successful failover time.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DiskDetails"
+          }
+        },
+        "hasPhysicalDisk": {
+          "description": "A value indicating whether the VM has a physical disk attached.",
+          "type": "boolean"
+        },
+        "hasFibreChannelAdapter": {
+          "description": "A value indicating whether the VM has a fibre channel adapter attached.",
+          "type": "boolean"
+        },
+        "hasSharedVhd": {
+          "description": "A value indicating whether the VM has a shared VHD attached.",
+          "type": "boolean"
+        }
+      },
+      "x-ms-discriminator-value": "VmmVirtualMachine"
     },
     "VMNicDetails": {
       "description": "Hyper V VM network details.",
@@ -14260,6 +14389,10 @@
           "format": "date-time",
           "description": "Agent expiry date.",
           "type": "string"
+        },
+        "agentVersionDetails": {
+          "$ref": "#/definitions/VersionDetails",
+          "description": "The agent version details."
         }
       },
       "x-ms-discriminator-value": "VMware"
