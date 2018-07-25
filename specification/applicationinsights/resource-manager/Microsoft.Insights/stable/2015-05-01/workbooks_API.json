@@ -45,9 +45,6 @@
           {
             "$ref": "#/parameters/ResourceGroupNameParameter"
           },
-          {            
-            "$ref": "#/parameters/LocationParameter"
-          },          
           {
             "$ref": "#/parameters/CategoryParameter"
           },
@@ -65,7 +62,49 @@
           "200": {
             "description": "A list containing 0 or more workbook definitions.",
             "schema": {
-              "$ref": "#/definitions/Workbooks"
+              "$ref": "#/definitions/WorkbooksListResult"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "#/definitions/WorkbookError"
+            }
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": null
+        },
+        "x-ms-examples": {
+          "WorkbooksList": {
+            "$ref": "./examples/WorkbooksList.json"
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroup/{resourceGroupName}/providers/microsoft.insights/workbooks/{resourceName}": {  
+      "get": {
+        "description": "Get a single workbook by its resourceName.",
+        "operationId": "Workbooks_Get",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/WorkbookResourceNameParameter"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A workbook definition.",
+            "schema": {
+                "$ref": "#/definitions/Workbook"
             }
           },
           "default": {
@@ -76,16 +115,14 @@
           }
         },
         "x-ms-examples": {
-          "WorkbooksList": {
-            "$ref": "./examples/WorkbooksList.json"
+          "WorkbookGet": {
+            "$ref": "./examples/WorkbookGet.json"
           }
         }
-      }
-    },
-    "/subscriptions/{subscriptionId}/resourceGroup/{resourceGroupName}/providers/microsoft.insights/workbooks/{resourceName}": {  
+      },
       "delete": {
         "description": "Delete a workbook.",
-        "operationId": "Workbook_Delete",
+        "operationId": "Workbooks_Delete",
         "parameters": [
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -96,9 +133,6 @@
           {
             "$ref": "#/parameters/WorkbookResourceNameParameter"
           },
-          {
-            "$ref": "#/parameters/LocationParameter"
-          },          
           {
             "$ref": "#/parameters/ApiVersionParameter"
           }
@@ -125,7 +159,7 @@
       },
       "put": {
         "description": "Create a new workbook.",
-        "operationId": "Workbook_CreateOrUpdate",
+        "operationId": "Workbooks_CreateOrUpdate",
         "parameters": [          
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -177,7 +211,7 @@
       },
       "patch": {
         "description": "Updates a workbook that has already been added.",
-        "operationId": "Workbook_Update",
+        "operationId": "Workbooks_Update",
         "parameters": [          
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -221,97 +255,10 @@
           }
         }
       }
-    },
-    "/subscriptions/{subscriptionId}/providers/microsoft.insights/workbooks/{resourceName}": {  
-      "get": {
-        "description": "Get a single workbook by its resourceName.",
-        "operationId": "Workbook_Get",
-        "parameters": [
-          {
-            "$ref": "#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "#/parameters/WorkbookResourceNameParameter"
-          },
-          {
-            "$ref": "#/parameters/LocationParameter"
-          },
-          {
-            "$ref": "#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "A workbook definition.",
-            "schema": {
-                "$ref": "#/definitions/Workbook"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "#/definitions/WorkbookError"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "WorkbookGet": {
-            "$ref": "./examples/WorkbookGet.json"
-          }
-        }
-      }
-    },
-    "/subscriptions/{subscriptionId}/providers/microsoft.insights/workbooks": {  
-      "get": {
-        "description": "Gets a list of workbooks by sourceId.",
-        "operationId": "Workbook_List",
-        "parameters": [
-          {
-            "$ref": "#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "#/parameters/SourceIdParameter"
-          },
-          {
-            "$ref": "#/parameters/CategoryParameter"
-          },
-          {
-            "$ref": "#/parameters/TagsParameter"
-          },
-          {
-            "$ref": "#/parameters/CanFetchWorkbookContentParameter"
-          },
-          {
-            "$ref": "#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "A list containing 0 or more workbook definitions.",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Workbook"
-              }
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "#/definitions/WorkbookError"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "WorkbooksListLink": {
-            "$ref": "./examples/WorkbooksListBySourceId.json"
-          }
-        }
-      }
     }
   },
   "definitions": {
-    "Resource": {
+    "WorkbookResource": {
       "properties": {
         "id": {
           "type": "string",
@@ -346,10 +293,11 @@
       "x-ms-azure-resource": true,
       "description": "An azure resource object"
     },
-    "Workbooks": {
+    "WorkbooksListResult": {
       "properties": {
         "value": {
           "type": "array",
+          "readOnly": true,
           "items": {
             "$ref": "#/definitions/Workbook"
           },
@@ -362,7 +310,7 @@
       "description": "An Application Insights workbook definition.",
       "allOf": [
         {
-          "$ref": "#/definitions/Resource"
+          "$ref": "#/definitions/WorkbookResource"
         }
       ],
       "properties": {
@@ -536,14 +484,6 @@
       "required": true,
       "type": "string",
       "description": "The name of the Application Insights component resource.",
-      "x-ms-parameter-location": "method"
-    },
-    "LocationParameter": {
-      "name": "location",
-      "in": "query",
-      "required": true,
-      "type": "string",
-      "description": "The name of location where workbook is stored.",
       "x-ms-parameter-location": "method"
     },
     "CategoryParameter": {
