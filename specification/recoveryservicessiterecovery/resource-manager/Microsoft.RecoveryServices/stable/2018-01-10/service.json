@@ -5939,6 +5939,46 @@
         }
       }
     },
+	"/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationSupportedOperatingSystems": {
+      "get": {
+        "tags": [
+          "ReplicationSupportedOperatingSystems"
+        ],
+        "summary": "Gets the data of supported OS's by SRS.",
+        "description": "Gets the health details of the vault.",
+        "operationId": "ReplicationSupportedOperatingSystems_Get",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/ApiVersion"
+          },
+          {
+            "$ref": "#/parameters/ResourceName"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupName"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ReplicationSupportedOperatingSystems"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Gets the data of supported OS's by SRS.": {
+            "$ref": "./examples/ReplicationSupportedOperatingSystems_Get.json"
+          }
+        }
+      }
+    },
     "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationVaultHealth": {
       "get": {
         "tags": [
@@ -13338,6 +13378,24 @@
       },
       "discriminator": "instanceType"
     },
+	"ReplicationSupportedOperatingSystems": {
+      "description": "Response Object for supported os Api.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "description": "Properties.",
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/SupportedOSPropertyObject"
+          }
+        }
+      }
+    },
     "Resource": {
       "description": "Azure resource.",
       "properties": {
@@ -13687,6 +13745,26 @@
           "type": "array",
           "items": {
             "type": "string"
+          }
+        }
+      }
+    },
+   "SupportedOSPropertyObject": {
+      "description": "Property object.",
+      "type": "object",
+      "properties": {
+        "ReplicationProvider": {
+          "description": "Replication provider name.",
+          "type": "string"
+        },
+        "SupportedOs": {
+          "description": "Map of OsName vs supported Os Version.",
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       }
