@@ -6888,6 +6888,45 @@
         }
       }
     },
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationSupportedOperatingSystems": {
+      "get": {
+        "tags": [
+          "ReplicationSupportedOperatingSystems"
+        ],
+        "summary": "Gets the data of supported OS's by SRS.",
+        "operationId": "ReplicationSupportedOperatingSystems_Get",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/ApiVersion"
+          },
+          {
+            "$ref": "#/parameters/ResourceName"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupName"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ReplicationSupportedOperatingSystems"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Gets the data of supported OS's by SRS.": {
+            "$ref": "./examples/ReplicationSupportedOperatingSystems_Get.json"
+          }
+        }
+      }
+    },
     "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationVaultHealth": {
       "get": {
         "tags": [
@@ -10810,6 +10849,19 @@
         "targetAzureV2ResourceGroupId": {
           "description": "The Id of the target resource group (for resource manager deployment) in which the failover VM is to be created.",
           "type": "string"
+        },
+        "diskType": {
+          "description": "The DiskType.",
+          "enum": [
+            "Standard_LRS",
+            "Premium_LRS",
+            "StandardSSD_LRS"
+          ],
+          "type": "string",
+          "x-ms-enum": {
+            "name": "DiskAccountType",
+            "modelAsString": true
+          }
         }
       },
       "x-ms-discriminator-value": "InMageAzureV2"
@@ -14748,6 +14800,24 @@
       },
       "discriminator": "instanceType"
     },
+    "ReplicationSupportedOperatingSystems": {
+      "description": "Response Object for supported os Api.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "description": "Properties.",
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/SupportedOSProperty"
+          }
+        }
+      }
+    },
     "Resource": {
       "description": "Azure resource.",
       "properties": {
@@ -15097,6 +15167,26 @@
           "type": "array",
           "items": {
             "type": "string"
+          }
+        }
+      }
+    },
+    "SupportedOSProperty": {
+      "description": "Property object for supported OS api.",
+      "type": "object",
+      "properties": {
+        "ReplicationProvider": {
+          "description": "Replication provider name.",
+          "type": "string"
+        },
+        "SupportedOs": {
+          "description": "Map of supported OsName to Os Version.",
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       }
@@ -16294,6 +16384,10 @@
         "targetAvailabilitySetId": {
           "description": "The target availability set ARM Id.",
           "type": "string"
+        },
+        "targetBootDiagnosticsStorageAccountId": {
+          "description": "The target boot diagnostics storage account ARM Id.",
+          "type": "string"
         }
       },
       "x-ms-discriminator-value": "VMwareCbt"
@@ -16367,6 +16461,10 @@
           "description": "The target availability set Id.",
           "type": "string"
         },
+        "targetBootDiagnosticsStorageAccountId": {
+          "description": "The target boot diagnostics storage account ARM Id.",
+          "type": "string"
+        },
         "protectedDisks": {
           "description": "The list of protected disks.",
           "type": "array",
@@ -16388,6 +16486,11 @@
         "migrationRecoveryPointId": {
           "description": "The recovery point Id to which the VM was migrated.",
           "type": "string"
+        },
+        "lastRecoveryPointReceived": {
+          "format": "date-time",
+          "description": "The last recovery point received time.",
+          "type": "string"
         }
       },
       "x-ms-discriminator-value": "VMwareCbt"
@@ -16402,27 +16505,51 @@
         },
         "isPrimaryNic": {
           "description": "A value indicating whether this is the primary NIC.",
-          "type": "boolean"
+          "type": "string"
+        },
+        "sourceIPAddress": {
+          "description": "The source IP address.",
+          "type": "string"
+        },
+        "sourceIPAddressType": {
+          "description": "The source IP address type.",
+          "enum": [
+            "Dynamic",
+            "Static"
+          ],
+          "type": "string",
+          "x-ms-enum": {
+            "name": "EthernetAddressType",
+            "modelAsString": true
+          }
         },
         "sourceNetworkId": {
           "description": "Source network Id.",
           "type": "string"
         },
+        "targetIPAddress": {
+          "description": "The target IP address.",
+          "type": "string"
+        },
+        "targetIPAddressType": {
+          "description": "The target IP address type.",
+          "enum": [
+            "Dynamic",
+            "Static"
+          ],
+          "type": "string",
+          "x-ms-enum": {
+            "name": "EthernetAddressType",
+            "modelAsString": true
+          }
+        },
         "targetSubnetName": {
           "description": "Target subnet name.",
           "type": "string"
         },
-        "ipAddressType": {
-          "description": "IP address type.",
-          "type": "string"
-        },
-        "staticIPAddress": {
-          "description": "The static IP address.",
-          "type": "string"
-        },
         "isSelectedForMigration": {
           "description": "A value indicating whether this NIC is selected for migration.",
-          "type": "boolean"
+          "type": "string"
         }
       }
     },
@@ -16447,7 +16574,7 @@
           "description": "Target subnet name.",
           "type": "string"
         },
-        "staticIPAddress": {
+        "targetStaticIPAddress": {
           "description": "The static IP address.",
           "type": "string"
         },
@@ -16523,9 +16650,13 @@
           "description": "The disk name.",
           "type": "string"
         },
+        "diskPath": {
+          "description": "The disk path.",
+          "type": "string"
+        },
         "isOSDisk": {
           "description": "A value indicating whether the disk is the OS disk.",
-          "type": "boolean"
+          "type": "string"
         },
         "capacityInBytes": {
           "format": "int64",
@@ -16629,15 +16760,19 @@
           "type": "string"
         },
         "targetResourceGroupId": {
-          "description": "The target resource group Id.",
+          "description": "The target resource group ARM Id.",
           "type": "string"
         },
         "targetAvailabilitySetId": {
-          "description": "The target availability set Id.",
+          "description": "The target availability set ARM Id.",
+          "type": "string"
+        },
+        "targetBootDiagnosticsStorageAccountId": {
+          "description": "The target boot diagnostics storage account ARM Id.",
           "type": "string"
         },
         "targetNetworkId": {
-          "description": "The target network Id.",
+          "description": "The target network ARM Id.",
           "type": "string"
         },
         "vmNics": {
