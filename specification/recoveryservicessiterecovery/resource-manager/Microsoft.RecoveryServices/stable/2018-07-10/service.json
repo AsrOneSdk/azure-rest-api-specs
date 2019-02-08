@@ -7402,6 +7402,17 @@
           "description": "The data pending at source virtual machine in MB.",
           "type": "number"
         },
+        "diskState": {
+          "description": "The disk state.",
+          "type": "string"
+        },
+        "allowedDiskLevelOperation": {
+          "description": "The disk level operations list.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "isDiskEncrypted": {
           "description": "A value indicating whether vm has encrypted os disk or not.",
           "type": "boolean"
@@ -7495,6 +7506,17 @@
           "format": "double",
           "description": "The data pending at source virtual machine in MB.",
           "type": "number"
+        },
+        "diskState": {
+          "description": "The disk state.",
+          "type": "string"
+        },
+        "allowedDiskLevelOperation": {
+          "description": "The disk level operations list.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "isDiskEncrypted": {
           "description": "A value indicating whether vm has encrypted os disk or not.",
