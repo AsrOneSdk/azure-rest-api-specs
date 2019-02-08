@@ -12,9 +12,7 @@
 			"providerSpecificDetails"= {
 				"instanceType" = "A2A",
 				"vmDisksUris" = [
-					{
 						"https://vmstorage.blob.core.windows.net/vhds/datadisk1.vhd"
-					}
 				]
 		    }
          }	 
