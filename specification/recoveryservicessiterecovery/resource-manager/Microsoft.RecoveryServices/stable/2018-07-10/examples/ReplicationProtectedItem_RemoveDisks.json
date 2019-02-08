@@ -8,10 +8,10 @@
       "resourceGroupName":"resourceGroupPS1",
       "subscriptionId":"c183865e-6077-46f2-a3b1-deb0f4f4650a",
       "input":{
-		  "properties"= {
-			"providerSpecificDetails"= {
-				"instanceType" = "A2A",
-				"vmDisksUris" = [
+		  "properties":{
+			"providerSpecificDetails":{
+				"instanceType": "A2A",
+				"vmDisksUris": [
 						"https://vmstorage.blob.core.windows.net/vhds/datadisk1.vhd"
 				]
 		    }
