@@ -2814,6 +2814,12 @@
           }
         ],
         "responses": {
+		 "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ReplicationProtectedItem"
+            }
+          },
           "202": {
             "description": "Accepted"
           }
@@ -3310,6 +3316,12 @@
           }
         ],
         "responses": {
+		 "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ReplicationProtectedItem"
+            }
+          },
           "202": {
             "description": "Accepted"
           }
@@ -3523,6 +3535,12 @@
           }
         ],
         "responses": {
+		 "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ReplicationProtectedItem"
+            }
+          },
           "202": {
             "description": "Accepted"
           }
@@ -7100,6 +7118,32 @@
     }
   },
   "definitions": {
+    "A2AAddDisksInput": {
+      "description": "A2A add disk(s) input.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/AddDisksProviderSpecificInput"
+        }
+      ],
+      "properties": {
+        "vmDisks": {
+          "description": "The list of vm disk details.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/A2AVmDiskInputDetails"
+          }
+        },
+        "vmManagedDisks": {
+          "description": "The list of vm managed disk details.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/A2AVmManagedDiskInputDetails"
+          }
+        }
+      },
+      "x-ms-discriminator-value": "A2A"
+    },
     "A2AApplyRecoveryPointInput": {
       "description": "ApplyRecoveryPoint input specific to A2A provider.",
       "type": "object",
@@ -7604,6 +7648,32 @@
       },
       "x-ms-discriminator-value": "A2A"
     },
+	"A2ARemoveDisksInput": {
+      "description": "A2A remove disk(s) input.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/RemoveDisksProviderSpecificInput"
+        }
+      ],
+      "properties": {
+        "vmDisksUris": {
+          "description": "The list of vm disk vhd URIs.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "vmManagedDisksIds": {
+          "description": "The list of vm managed disk Ids.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "x-ms-discriminator-value": "A2A"
+    },
     "A2AReplicationDetails": {
       "description": "A2A provider specific settings.",
       "type": "object",
@@ -7978,6 +8048,37 @@
           "type": "string"
         }
       }
+    },
+	 "AddDisksInput": {
+      "description": "Input for add disk(s) operation.",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "#/definitions/AddDisksInputProperties",
+          "description": "Add disks input properties."
+        }
+      }
+    },
+    "AddDisksInputProperties": {
+      "description": "Add Disks input properties.",
+      "type": "object",
+      "properties": {
+        "providerSpecificDetails": {
+          "$ref": "#/definitions/AddDisksProviderSpecificInput",
+          "description": "The ReplicationProviderInput. For HyperVReplicaAzure provider, it will be AzureEnableProtectionInput object. For San provider, it will be SanEnableProtectionInput object. For HyperVReplicaAzure provider, it can be null."
+        }
+      }
+    },
+    "AddDisksProviderSpecificInput": {
+      "description": "Add Disks provider specific input.",
+      "type": "object",
+      "properties": {
+        "instanceType": {
+          "description": "The class type.",
+          "type": "string"
+        }
+      },
+      "discriminator": "instanceType"
     },
     "AddRecoveryServicesProviderInput": {
       "description": "Input required to add a provider.",
@@ -14599,6 +14700,37 @@
         }
       }
     },
+	"RemoveDisksInput": {
+      "description": "Input for remove disk(s) operation.",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "#/definitions/RemoveDisksInputProperties",
+          "description": "Remove disk input properties."
+        }
+      }
+    },
+    "RemoveDisksInputProperties": {
+      "description": "Remove Disk input properties.",
+      "type": "object",
+      "properties": {
+        "providerSpecificDetails": {
+          "$ref": "#/definitions/RemoveDisksProviderSpecificInput",
+          "description": "The ReplicationProviderInput. For HyperVReplicaAzure provider, it will be AzureEnableProtectionInput object. For San provider, it will be SanEnableProtectionInput object. For HyperVReplicaAzure provider, it can be null."
+        }
+      }
+    },
+    "RemoveDisksProviderSpecificInput": {
+      "description": "Remove Disk provider specific input.",
+      "type": "object",
+      "properties": {
+        "instanceType": {
+          "description": "The class type.",
+          "type": "string"
+        }
+      },
+      "discriminator": "instanceType"
+    },
     "RemoveProtectionContainerMappingInput": {
       "description": "Container unpairing input.",
       "type": "object",
@@ -14858,6 +14990,39 @@
         }
       },
       "discriminator": "instanceType"
+    },
+	"ResolveHealthError": {
+      "description": "Resolve health errors input properties.",
+      "type": "object",
+      "properties": {
+        "healthErrorId": {
+          "description": "Health error id.",
+          "type": "string"
+        }
+      }
+    },
+    "ResolveHealthInput": {
+      "description": "Resolve health input.",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "#/definitions/ResolveHealthInputProperties",
+          "description": "Disable resolve health input properties."
+        }
+      }
+    },
+    "ResolveHealthInputProperties": {
+      "description": "Resolve health input properties.",
+      "type": "object",
+      "properties": {
+        "healthErrors": {
+          "description": "Health errors.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ResolveHealthError"
+          }
+        }
+      }
     },
     "Resource": {
       "description": "Azure resource.",
