@@ -9467,6 +9467,22 @@
         "entityId": {
           "description": "ID of the entity.",
           "type": "string"
+        },
+		 "errorId": {
+          "description": "The health error unique id.",
+          "type": "string"
+        },
+        "customerResolvability": {
+		 "description": "Value indicating whether the health error is customer resolvable.",
+          "enum": [
+            "Allowed",
+            "NotAllowed"
+          ],
+          "type": "string",
+          "x-ms-enum": {
+            "name": "HealthErrorCustomerResolvability",
+            "modelAsString": true
+          }
         }
       }
     },
