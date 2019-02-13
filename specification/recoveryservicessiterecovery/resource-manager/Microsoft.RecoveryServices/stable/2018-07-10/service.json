@@ -6990,6 +6990,45 @@
         }
       }
     },
+	"/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationSupportedOperatingSystems": {
+      "get": {
+        "tags": [
+          "SupportedOperatingSystems"
+        ],
+        "summary": "Gets the data of supported OSes by SRS.",
+        "operationId": "SupportedOperatingSystems_Get",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/ApiVersion"
+          },
+          {
+            "$ref": "#/parameters/ResourceName"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupName"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SupportedOperatingSystems"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Gets the data of supported OSes by SRS.": {
+            "$ref": "./examples/SupportedOperatingSystems_Get.json"
+          }
+        }
+      }
+    },
     "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationVaultHealth": {
       "get": {
         "tags": [
@@ -8461,13 +8500,6 @@
           "type": "object",
           "additionalProperties": {
             "type": "string"
-          }
-        },
-        "roleAssignments": {
-          "description": "The Azure role assignments.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/RoleAssignment"
           }
         },
         "inputEndpoints": {
@@ -13141,6 +13173,7 @@
         },
         "productType": {
           "description": "Product type.",
+
           "type": "string"
         },
         "osEdition": {
@@ -13175,6 +13208,20 @@
         },
         "vhdName": {
           "description": "The OS disk VHD name.",
+          "type": "string"
+        }
+      }
+    },
+    "OSVersionWrapper": {
+      "description": "Wrapper model for OSVersion to include version and service pack info.",
+      "type": "object",
+      "properties": {
+        "version": {
+          "description": "The version.",
+          "type": "string"
+        },
+        "servicePack": {
+          "description": "Service pack.",
           "type": "string"
         }
       }
@@ -15373,6 +15420,73 @@
           "type": "array",
           "items": {
             "type": "string"
+          }
+        }
+      }
+    },
+    "SupportedOperatingSystems": {
+      "description": "Response object for supported operating systems API.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "$ref": "#/definitions/SupportedOSProperties",
+          "description": "Properties model for supported OS API."
+        }
+      }
+    },
+    "SupportedOSDetails": {
+      "description": "Supported Operating system details.",
+      "type": "object",
+      "properties": {
+        "osName": {
+          "description": "The name.",
+          "type": "string"
+        },
+        "osType": {
+          "description": "The type.",
+          "type": "string"
+        },
+        "osVersions": {
+          "description": "List of version for OS.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OSVersionWrapper"
+          }
+        }
+      }
+    },
+    "SupportedOSProperties": {
+      "description": "Properties model for supported OS API.",
+      "type": "object",
+      "properties": {
+        "supportedOsList": {
+          "description": "The supported OS List.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SupportedOSProperty"
+          }
+        }
+      }
+    },
+    "SupportedOSProperty": {
+      "description": "Property object for supported OS api.",
+      "type": "object",
+      "properties": {
+        "instanceType": {
+          "description": "Gets the replication provider type.",
+          "type": "string",
+          "readOnly": true
+        },
+        "supportedOs": {
+          "description": "List of supported OS.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SupportedOSDetails"
           }
         }
       }
