@@ -2147,6 +2147,84 @@
         }
       }
     },
+     "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationMigrationItems/{migrationItemName}/resync": {
+      "post": {
+        "tags": [
+          "ReplicationMigrationItems"
+        ],
+        "summary": "Resynchronizes replication.",
+        "description": "The operation to resynchronize replication of an ASR migration item.",
+        "operationId": "ReplicationMigrationItems_Resync",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionId"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupName"
+          },
+          {
+            "$ref": "#/parameters/ResourceName"
+          },
+          {
+            "$ref": "#/parameters/ApiVersion"
+          },
+          {
+            "name": "fabricName",
+            "in": "path",
+            "description": "Fabric name.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "protectionContainerName",
+            "in": "path",
+            "description": "Protection container name.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "migrationItemName",
+            "in": "path",
+            "description": "Migration item name.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "input",
+            "in": "body",
+            "description": "Resync input.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ResyncInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/MigrationItem"
+            }
+          },
+          "202": {
+            "description": "Success"
+          }
+        },
+        "x-ms-long-running-operation": true,
+        "x-ms-examples": {
+           "Sets resync.":
+          {
+          "$ref": "./examples/ReplicationMigrationItems_Resync.json"
+          }
+        } 
+      }
+    },
     "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationMigrationItems/{migrationItemName}/testMigrate": {
       "post": {
         "tags": [
@@ -15170,6 +15248,46 @@
           "type": "string"
         }
       }
+    },
+    "ResyncInput": {
+      "description": "Resync input.",
+      "required": [
+        "properties"
+      ],
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "#/definitions/ResyncInputProperties",
+          "description": "Resync input properties."
+        }
+      }
+    },
+    "ResyncInputProperties": {
+      "description": "Resync input properties.",
+      "required": [
+        "providerSpecificDetails"
+      ],
+      "type": "object",
+      "properties": {
+        "providerSpecificDetails": {
+          "$ref": "#/definitions/ResyncProviderSpecificInput",
+          "description": "Resync provider specific input."
+        }
+      }
+    },
+    "ResyncProviderSpecificInput": {
+      "description": "Resync provider specific input.",
+      "required": [
+        "instanceType"
+      ],
+      "type": "object",
+      "properties": {
+        "instanceType": {
+          "description": "The class type.",
+          "type": "string"
+        }
+      },
+      "x-ms-discriminator-value": "VMwareCbt"
     },
     "TestMigrateInput": {
       "description": "Input for test migrate.",
