@@ -8395,6 +8395,7 @@
       "properties": {
         "providerSpecificInput": {
           "description": "Provider specific inputs for container creation.",
+          "uniqueItems": false,
           "type": "array",
           "items": {
             "$ref": "#/definitions/ReplicationProviderSpecificContainerCreationInput"
@@ -8745,6 +8746,15 @@
         "instanceType": {
           "description": "The class type.",
           "type": "string"
+        },
+        "canWrite": {
+          "description": "Gets a value indicating whether this Newtonsoft.Json.JsonConverter can write JSON.",
+          "type": "boolean",
+          "readOnly": true
+        },
+        "canRead": {
+          "type": "boolean",
+          "readOnly": true
         }
       },
       "discriminator": "instanceType"
@@ -12355,6 +12365,15 @@
         "instanceType": {
           "description": "The class type.",
           "type": "string"
+        },
+        "canWrite": {
+          "description": "Gets a value indicating whether this Newtonsoft.Json.JsonConverter can write JSON.",
+          "type": "boolean",
+          "readOnly": true
+        },
+        "canRead": {
+          "type": "boolean",
+          "readOnly": true
         }
       },
       "discriminator": "instanceType"
@@ -12442,6 +12461,17 @@
           "type": "string",
           "readOnly": true
         },
+         "lastTestMigrationTime": {
+          "format": "date-time",
+          "description": "The last test migration time.",
+          "type": "string",
+          "readOnly": true
+        },
+        "lastTestMigrationStatus": {
+          "description": "The status of the last test migration.",
+          "type": "string",
+          "readOnly": true
+        },
         "testMigrateState": {
           "description": "The test migrate state.",
           "enum": [
@@ -12498,6 +12528,10 @@
           "$ref": "#/definitions/CurrentJobDetails",
           "description": "The current job details.",
           "readOnly": true
+        },
+        "eventCorrelationId": {
+          "description": "The correlation Id for events associated with this migration item.",
+          "type": "string"
         },
         "providerSpecificDetails": {
           "$ref": "#/definitions/MigrationProviderSpecificSettings",
@@ -14517,6 +14551,7 @@
         },
         "allowedOperations": {
           "description": "The allowed operations on the Replication protected item.",
+          "uniqueItems": false,
           "type": "array",
           "items": {
             "type": "string"
@@ -14537,6 +14572,29 @@
             "$ref": "#/definitions/HealthError"
           }
         },
+        "replicationHealthErrors": {
+          "description": "List of replication health errors.",
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2015_11_10.HealthError"
+          }
+        },
+        "failoverHealthErrors": {
+          "description": "List of failover health errors.",
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2015_11_10.HealthError"
+          }
+        },
+        "versionExpiryHealthErrors": {
+          "description": "List of version expiry health errors.",
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2015_11_10.HealthError"
+          },
         "policyId": {
           "description": "The ID of Policy governing this PE.",
           "type": "string"
@@ -15089,6 +15147,11 @@
           "description": "The maximum cpu cores count supported by target compute size.",
           "type": "integer"
         },
+        "vCPUsAvailable": {
+          "format": "int32",
+          "description": "The Available vCPUs supported by target compute size.",
+          "type": "integer"
+        },
         "memoryInGB": {
           "format": "double",
           "description": "The maximum memory in GB supported by target compute size.",
@@ -15106,6 +15169,7 @@
         },
         "errors": {
           "description": "The reasons why the target compute size is not applicable for the protected item.",
+          "uniqueItems": false,
           "type": "array",
           "items": {
             "$ref": "#/definitions/ComputeSizeErrorDetails"
@@ -15114,6 +15178,14 @@
         "highIopsSupported": {
           "description": "The value indicating whether the target compute size supports high Iops.",
           "type": "string"
+        },
+        "hyperVGenerations": {
+          "description": "The supported HyperV Generations.",
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -15325,6 +15397,15 @@
         "instanceType": {
           "description": "The class type.",
           "type": "string"
+        },
+        "canWrite": {
+          "description": "Gets a value indicating whether this Newtonsoft.Json.JsonConverter can write JSON.",
+          "type": "boolean",
+          "readOnly": true
+        },
+        "canRead": {
+          "type": "boolean",
+          "readOnly": true
         }
       },
       "discriminator": "instanceType"
@@ -15387,6 +15468,15 @@
         "instanceType": {
           "description": "The class type.",
           "type": "string"
+        },
+         "canWrite": {
+          "description": "Gets a value indicating whether this Newtonsoft.Json.JsonConverter can write JSON.",
+          "type": "boolean",
+          "readOnly": true
+        },
+        "canRead": {
+          "type": "boolean",
+          "readOnly": true
         }
       },
       "discriminator": "instanceType"
@@ -16057,7 +16147,7 @@
         }
       ],
       "properties": {},
-      "x-ms-discriminator-value": "6c7da455-506f-43ff-a16a-8eb101aebb70"
+      "x-ms-discriminator-value": "VMwareCbt"
     },
     "VMwareCbtContainerMappingInput": {
       "description": "VMwareCbt container mapping input.",
@@ -16132,9 +16222,9 @@
         "diskType": {
           "description": "The disk type.",
           "enum": [
-            "Standard_LRS",
-            "Premium_LRS",
-            "StandardSSD_LRS"
+            "standard_LRS",
+            "premium_LRS",
+            "standardSSD_LRS"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -16168,6 +16258,8 @@
         },
         "disksToInclude": {
           "description": "The disks to include list.",
+          "minLength": 1,
+          "uniqueItems": false,
           "type": "array",
           "items": {
             "$ref": "#/definitions/VMwareCbtDiskInput"
@@ -16176,9 +16268,9 @@
         "licenseType": {
           "description": "License type.",
           "enum": [
-            "NotSpecified",
-            "NoLicenseType",
-            "WindowsServer"
+            "notSpecified",
+            "noLicenseType",
+            "windowsServer"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -16187,11 +16279,11 @@
           }
         },
         "dataMoverRunAsAccountId": {
-          "description": "The data mover RunAs account Id.",
+          "description": "The data mover runas account Id.",
           "type": "string"
         },
         "snapshotRunAsAccountId": {
-          "description": "The snapshot RunAs account Id.",
+          "description": "The snapshot runas account Id.",
           "type": "string"
         },
         "targetVmName": {
@@ -16221,6 +16313,36 @@
         "targetBootDiagnosticsStorageAccountId": {
           "description": "The target boot diagnostics storage account ARM Id.",
           "type": "string"
+        },
+        "performAutoResync": {
+          "description": "A value indicating whether auto resync is to be done.",
+          "type": "string"
+        },
+        "canWrite": {
+          "description": "Gets a value indicating whether this Newtonsoft.Json.JsonConverter can write JSON.",
+          "type": "boolean",
+          "readOnly": true
+        },
+        "canRead": {
+          "type": "boolean",
+          "readOnly": true
+        }
+      },
+      "x-ms-discriminator-value": "VMwareCbt"
+    },
+    "Microsoft.Azure.SiteRecovery.V2018_01_10.VMwareCbtEventDetails": {
+      "description": "Event details for VMwareCbt provider.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/EventProviderSpecificDetails"
+        }
+      ],
+      "properties": {
+        "migrationItemName": {
+          "description": "The migration item name.",
+          "type": "string",
+          "readOnly": true
         }
       },
       "x-ms-discriminator-value": "VMwareCbt"
@@ -16241,12 +16363,21 @@
         "performShutdown": {
           "description": "A value indicating whether VM is to be shutdown.",
           "type": "string"
+        },
+        "canWrite": {
+          "description": "Gets a value indicating whether this Newtonsoft.Json.JsonConverter can write JSON.",
+          "type": "boolean",
+          "readOnly": true
+        },
+        "canRead": {
+          "type": "boolean",
+          "readOnly": true
         }
       },
       "x-ms-discriminator-value": "VMwareCbt"
     },
     "VMwareCbtMigrationDetails": {
-      "description": "VMwareCbt provider specific settings",
+      "description": "VMwareCbt provider specific settings.",
       "type": "object",
       "allOf": [
         {
@@ -16269,12 +16400,12 @@
           "type": "string"
         },
         "dataMoverRunAsAccountId": {
-          "description": "The data mover RunAs account Id.",
+          "description": "The data mover runas account Id.",
           "type": "string",
           "readOnly": true
         },
         "snapshotRunAsAccountId": {
-          "description": "The snapshot RunAs account Id.",
+          "description": "The snapshot runas account Id.",
           "type": "string",
           "readOnly": true
         },
@@ -16305,6 +16436,7 @@
         },
         "protectedDisks": {
           "description": "The list of protected disks.",
+          "uniqueItems": false,
           "type": "array",
           "items": {
             "$ref": "#/definitions/VMwareCbtProtectedDiskDetails"
@@ -16316,6 +16448,7 @@
         },
         "vmNics": {
           "description": "The network details.",
+          "uniqueItems": false,
           "type": "array",
           "items": {
             "$ref": "#/definitions/VMwareCbtNicDetails"
@@ -16331,6 +16464,27 @@
           "description": "The last recovery point received time.",
           "type": "string",
           "readOnly": true
+        },
+          "lastRecoveryPointId": {
+          "description": "The last recovery point Id.",
+          "type": "string",
+          "readOnly": true
+        },
+        "initialSeedingProgressPercentage": {
+          "format": "int32",
+          "description": "The initial seeding progress percentage.",
+          "type": "integer",
+          "readOnly": true
+        },
+        "migrationProgressPercentage": {
+          "format": "int32",
+          "description": "The migration progress percentage.",
+          "type": "integer",
+          "readOnly": true
+        },
+        "performAutoResync": {
+          "description": "A value indicating whether auto resync is to be done.",
+          "type": "string"
         }
       },
       "x-ms-discriminator-value": "VMwareCbt"
@@ -16356,8 +16510,8 @@
         "sourceIPAddressType": {
           "description": "The source IP address type.",
           "enum": [
-            "Dynamic",
-            "Static"
+            "dynamic",
+            "static"
           ],
           "type": "string",
           "readOnly": true,
@@ -16378,8 +16532,8 @@
         "targetIPAddressType": {
           "description": "The target IP address type.",
           "enum": [
-            "Dynamic",
-            "Static"
+            "dynamic",
+            "static"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -16534,9 +16688,9 @@
         "diskType": {
           "description": "The disk type.",
           "enum": [
-            "Standard_LRS",
-            "Premium_LRS",
-            "StandardSSD_LRS"
+            "standard_LRS",
+            "premium_LRS",
+            "standardSSD_LRS"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -16609,6 +16763,15 @@
         "networkId": {
           "description": "The test network Id.",
           "type": "string"
+        },
+        "canWrite": {
+          "description": "Gets a value indicating whether this Newtonsoft.Json.JsonConverter can write JSON.",
+          "type": "boolean",
+          "readOnly": true
+        },
+        "canRead": {
+          "type": "boolean",
+          "readOnly": true
         }
       },
       "x-ms-discriminator-value": "VMwareCbt"
@@ -16648,6 +16811,8 @@
         },
         "vmNics": {
           "description": "The list of NIC details.",
+          "minLength": 1,
+          "uniqueItems": false,
           "type": "array",
           "items": {
             "$ref": "#/definitions/VMwareCbtNicInput"
@@ -16665,6 +16830,19 @@
             "name": "LicenseType",
             "modelAsString": true
           }
+        },
+        "performAutoResync": {
+          "description": "A value indicating whether auto resync is to be done.",
+          "type": "string"
+        },
+        "canWrite": {
+          "description": "Gets a value indicating whether this Newtonsoft.Json.JsonConverter can write JSON.",
+          "type": "boolean",
+          "readOnly": true
+        },
+        "canRead": {
+          "type": "boolean",
+          "readOnly": true
         }
       },
       "x-ms-discriminator-value": "VMwareCbt"
