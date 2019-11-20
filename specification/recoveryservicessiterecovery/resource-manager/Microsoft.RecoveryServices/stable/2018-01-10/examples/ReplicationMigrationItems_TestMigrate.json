@@ -10,7 +10,9 @@
     "testMigrateInput": {
       "properties": {
         "providerSpecificDetails": {
-          "instanceType": "VMwareCbt"
+          "instanceType": "VMwareCbt",
+          "recoveryPointId": "/Subscriptions/7c943c1b-5122-4097-90c8-861411bdd574/resourceGroups/anbhatPhysicalRG/providers/Microsoft.RecoveryServices/vaults/anbhatVMwareProjectSEA7f17rsvault/replicationFabrics/abVMwareAppdb8dreplicationfabric/replicationProtectionContainers/abVMwareAppdb8dreplicationcontainer/replicationMigrationItems/anbhatvm2/migrationRecoveryPoints/9e737191-317e-43d0-8c83-e32ac3b34686",
+          "networkId": "/subscriptions/7c943c1b-5122-4097-90c8-861411bdd574/resourceGroups/anbhatVMwareTargetRG/providers/Microsoft.Network/virtualNetworks/anbhatvirtualnetwork"
         }
       }
     }
