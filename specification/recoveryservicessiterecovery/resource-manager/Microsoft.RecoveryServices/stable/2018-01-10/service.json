@@ -6967,27 +6967,33 @@
     "A2AApplyRecoveryPointInput": {
       "description": "ApplyRecoveryPoint input specific to A2A provider.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ApplyRecoveryPointProviderSpecificInput"
-      }],
+        }
+      ],
       "properties": {},
       "x-ms-discriminator-value": "A2A"
     },
     "A2AContainerCreationInput": {
       "description": "A2A cloud creation input.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ReplicationProviderSpecificContainerCreationInput"
-      }],
+        }
+      ],
       "properties": {},
       "x-ms-discriminator-value": "A2A"
     },
     "A2AContainerMappingInput": {
       "description": "A2A container mapping input.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ReplicationProviderSpecificContainerMappingInput"
-      }],
+        }
+      ],
       "properties": {
         "agentAutoUpdateStatus": {
           "description": "A value indicating whether the auto update is enabled.",
@@ -7011,9 +7017,11 @@
     "A2AEnableProtectionInput": {
       "description": "A2A enable protection input.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/EnableProtectionProviderSpecificInput"
-      }],
+        }
+      ],
       "properties": {
         "fabricObjectId": {
           "description": "The fabric specific object Id of the virtual machine.",
@@ -7067,9 +7075,11 @@
     "A2AEventDetails": {
       "description": "Model class for event details of a A2A event.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/EventProviderSpecificDetails"
-      }],
+        }
+      ],
       "properties": {
         "protectedItemName": {
           "description": "The protected item arm name.",
@@ -7101,9 +7111,11 @@
     "A2AFailoverProviderInput": {
       "description": "A2A provider specific input for failover.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ProviderSpecificFailoverInput"
-      }],
+        }
+      ],
       "properties": {
         "recoveryPointId": {
           "description": "The recovery point id to be passed to failover to a particular recovery point. In case of latest recovery point, null should be passed.",
@@ -7122,9 +7134,11 @@
         "multiVmSyncStatus"
       ],
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/PolicyProviderSpecificInput"
-      }],
+        }
+      ],
       "properties": {
         "recoveryPointHistory": {
           "format": "int32",
@@ -7159,9 +7173,11 @@
     "A2APolicyDetails": {
       "description": "A2A specific policy details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/PolicyProviderSpecificDetails"
-      }],
+        }
+      ],
       "properties": {
         "recoveryPointThresholdInMinutes": {
           "format": "int32",
@@ -7373,9 +7389,11 @@
     "A2AProtectionContainerMappingDetails": {
       "description": "A2A provider specific settings.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ProtectionContainerMappingProviderSpecificDetails"
-      }],
+        }
+      ],
       "properties": {
         "agentAutoUpdateStatus": {
           "description": "A value indicating whether the auto update is enabled.",
@@ -7407,9 +7425,11 @@
     "A2ARecoveryPointDetails": {
       "description": "A2A provider specific recovery point details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ProviderSpecificRecoveryPointDetails"
-      }],
+        }
+      ],
       "properties": {
         "recoveryPointSyncType": {
           "description": "A value indicating whether the recovery point is multi VM consistent.",
@@ -7429,9 +7449,11 @@
     "A2AReplicationDetails": {
       "description": "A2A provider specific settings.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ReplicationProviderSpecificSettings"
-      }],
+        }
+      ],
       "properties": {
         "fabricObjectId": {
           "description": "The fabric specific object Id of the virtual machine.",
@@ -7584,9 +7606,11 @@
     "A2AReprotectInput": {
       "description": "Azure specific reprotect input.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ReverseReplicationProviderSpecificInput"
-      }],
+        }
+      ],
       "properties": {
         "recoveryContainerId": {
           "description": "The recovery container Id.",
@@ -7621,9 +7645,11 @@
     "A2ASwitchProtectionInput": {
       "description": "A2A specific switch protection input.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/SwitchProtectionProviderSpecificInput"
-      }],
+        }
+      ],
       "properties": {
         "recoveryContainerId": {
           "description": "The recovery container Id.",
@@ -7673,9 +7699,11 @@
     "A2AUpdateContainerMappingInput": {
       "description": "A2A update protection container mapping.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ReplicationProviderSpecificUpdateContainerMappingInput"
-      }],
+        }
+      ],
       "properties": {
         "agentAutoUpdateStatus": {
           "description": "A value indicating whether the auto update is enabled.",
@@ -7699,9 +7727,11 @@
     "A2AUpdateReplicationProtectedItemInput": {
       "description": "InMage Azure V2 input to update replication protected item.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/UpdateReplicationProtectedItemProviderInput"
-      }],
+        }
+      ],
       "properties": {
         "recoveryCloudServiceId": {
           "description": "The target cloud service ARM Id (for V1).",
@@ -7866,9 +7896,11 @@
     "Alert": {
       "description": "Implements the Alert class.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/Resource"
-      }],
+        }
+      ],
       "properties": {
         "properties": {
           "$ref": "#/definitions/AlertProperties",
@@ -7952,9 +7984,11 @@
     "AsrJobDetails": {
       "description": "This class represents job details based on specific job type.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/JobDetails"
-      }],
+        }
+      ],
       "properties": {},
       "x-ms-discriminator-value": "AsrJobDetails"
     },
@@ -8023,9 +8057,11 @@
     "AutomationRunbookTaskDetails": {
       "description": "This class represents the task details for an automation runbook.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/TaskTypeDetails"
-      }],
+        }
+      ],
       "properties": {
         "name": {
           "description": "The recovery plan task name.",
@@ -8069,9 +8105,11 @@
     "AzureFabricCreationInput": {
       "description": "Fabric provider specific settings.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/FabricSpecificCreationInput"
-      }],
+        }
+      ],
       "properties": {
         "location": {
           "description": "The Location.",
@@ -8083,9 +8121,11 @@
     "AzureFabricSpecificDetails": {
       "description": "Azure Fabric Specific Details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/FabricSpecificDetails"
-      }],
+        }
+      ],
       "properties": {
         "location": {
           "description": "The Location for the Azure fabric.",
@@ -8104,9 +8144,11 @@
     "AzureToAzureCreateNetworkMappingInput": {
       "description": "Create network mappings input properties/behavior specific to Azure to Azure Network mapping.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/FabricSpecificCreateNetworkMappingInput"
-      }],
+        }
+      ],
       "properties": {
         "primaryNetworkId": {
           "description": "The primary azure vnet Id.",
@@ -8118,9 +8160,11 @@
     "AzureToAzureNetworkMappingSettings": {
       "description": "A2A Network Mapping fabric specific settings.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/NetworkMappingFabricSpecificSettings"
-      }],
+        }
+      ],
       "properties": {
         "primaryFabricLocation": {
           "description": "The primary fabric location.",
@@ -8136,9 +8180,11 @@
     "AzureToAzureUpdateNetworkMappingInput": {
       "description": "Updates network mappings input.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/FabricSpecificUpdateNetworkMappingInput"
-      }],
+        }
+      ],
       "properties": {
         "primaryNetworkId": {
           "description": "The primary azure vnet Id.",
@@ -8268,9 +8314,11 @@
     "ConsistencyCheckTaskDetails": {
       "description": "This class contains monitoring details of all the inconsistent Protected Entities in Vmm.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/TaskTypeDetails"
-      }],
+        }
+      ],
       "properties": {
         "vmDetails": {
           "description": "The list of inconsistent Vm details.",
@@ -8771,9 +8819,11 @@
     "Event": {
       "description": "Implements the Event class.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/Resource"
-      }],
+        }
+      ],
       "properties": {
         "properties": {
           "$ref": "#/definitions/EventProperties",
@@ -8911,9 +8961,11 @@
     "ExportJobDetails": {
       "description": "This class represents details for export jobs workflow.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/JobDetails"
-      }],
+        }
+      ],
       "properties": {
         "blobUri": {
           "description": "BlobUri of the exported jobs.",
@@ -8929,9 +8981,11 @@
     "Fabric": {
       "description": "Fabric definition.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/Resource"
-      }],
+        }
+      ],
       "properties": {
         "properties": {
           "$ref": "#/definitions/FabricProperties",
@@ -9020,9 +9074,11 @@
     "FabricReplicationGroupTaskDetails": {
       "description": "This class represents the fabric replication group task details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/TaskTypeDetails"
-      }],
+        }
+      ],
       "properties": {
         "skippedReason": {
           "description": "The skipped reason.",
@@ -9088,9 +9144,11 @@
     "FailoverJobDetails": {
       "description": "This class represents the details for a failover job.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/JobDetails"
-      }],
+        }
+      ],
       "properties": {
         "protectedItemDetails": {
           "description": "The test VM details.",
@@ -9327,9 +9385,11 @@
     "HyperVReplica2012EventDetails": {
       "description": "Model class for event details of a HyperVReplica E2E event.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/EventProviderSpecificDetails"
-      }],
+        }
+      ],
       "properties": {
         "containerName": {
           "description": "The container friendly name.",
@@ -9353,9 +9413,11 @@
     "HyperVReplica2012R2EventDetails": {
       "description": "Model class for event details of a HyperVReplica blue E2E event.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/EventProviderSpecificDetails"
-      }],
+        }
+      ],
       "properties": {
         "containerName": {
           "description": "The container friendly name.",
@@ -9379,9 +9441,11 @@
     "HyperVReplicaAzureApplyRecoveryPointInput": {
       "description": "ApplyRecoveryPoint input specific to HyperVReplicaAzure provider.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ApplyRecoveryPointProviderSpecificInput"
-      }],
+        }
+      ],
       "properties": {
         "vaultLocation": {
           "description": "The vault location where the recovery Vm resides.",
@@ -9401,9 +9465,11 @@
     "HyperVReplicaAzureEnableProtectionInput": {
       "description": "Azure specific enable protection input.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/EnableProtectionProviderSpecificInput"
-      }],
+        }
+      ],
       "properties": {
         "hvHostVmId": {
           "description": "The Hyper-V host Vm Id.",
@@ -9470,9 +9536,11 @@
     "HyperVReplicaAzureEventDetails": {
       "description": "Model class for event details of a HyperVReplica E2A event.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/EventProviderSpecificDetails"
-      }],
+        }
+      ],
       "properties": {
         "containerName": {
           "description": "The container friendly name.",
@@ -9492,9 +9560,11 @@
     "HyperVReplicaAzureFailbackProviderInput": {
       "description": "HvrA provider specific input for failback.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ProviderSpecificFailoverInput"
-      }],
+        }
+      ],
       "properties": {
         "dataSyncOption": {
           "description": "Data sync option.",
@@ -9514,9 +9584,11 @@
     "HyperVReplicaAzureFailoverProviderInput": {
       "description": "HvrA provider specific input for failover.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ProviderSpecificFailoverInput"
-      }],
+        }
+      ],
       "properties": {
         "vaultLocation": {
           "description": "Location of the vault.",
@@ -9540,9 +9612,11 @@
     "HyperVReplicaAzurePolicyDetails": {
       "description": "Hyper-V Replica Azure specific protection profile details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/PolicyProviderSpecificDetails"
-      }],
+        }
+      ],
       "properties": {
         "recoveryPointHistoryDurationInHours": {
           "format": "int32",
@@ -9577,9 +9651,11 @@
     "HyperVReplicaAzurePolicyInput": {
       "description": "Hyper-V Replica Azure specific input for creating a protection profile.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/PolicyProviderSpecificInput"
-      }],
+        }
+      ],
       "properties": {
         "recoveryPointHistoryDuration": {
           "format": "int32",
@@ -9613,9 +9689,11 @@
     "HyperVReplicaAzureReplicationDetails": {
       "description": "Hyper V Replica Azure provider specific settings.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ReplicationProviderSpecificSettings"
-      }],
+        }
+      ],
       "properties": {
         "azureVmDiskDetails": {
           "description": "Azure VM Disk details.",
@@ -9730,9 +9808,11 @@
     "HyperVReplicaAzureReprotectInput": {
       "description": "Azure specific reprotect input.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ReverseReplicationProviderSpecificInput"
-      }],
+        }
+      ],
       "properties": {
         "hvHostVmId": {
           "description": "The Hyper-V host Vm Id.",
@@ -9764,9 +9844,11 @@
     "HyperVReplicaAzureUpdateReplicationProtectedItemInput": {
       "description": "HyperV replica Azure input to update replication protected item.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/UpdateReplicationProtectedItemProviderInput"
-      }],
+        }
+      ],
       "properties": {
         "recoveryAzureV1ResourceGroupId": {
           "description": "The recovery Azure resource group Id for classic deployment.",
@@ -9786,9 +9868,11 @@
     "HyperVReplicaBaseEventDetails": {
       "description": "Abstract model class for event details of a HyperVReplica E2E event.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/EventProviderSpecificDetails"
-      }],
+        }
+      ],
       "properties": {
         "containerName": {
           "description": "The container friendly name.",
@@ -9812,9 +9896,11 @@
     "HyperVReplicaBasePolicyDetails": {
       "description": "Base class for HyperVReplica policy details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/PolicyProviderSpecificDetails"
-      }],
+        }
+      ],
       "properties": {
         "recoveryPoints": {
           "format": "int32",
@@ -9866,9 +9952,11 @@
     "HyperVReplicaBaseReplicationDetails": {
       "description": "Hyper V replica provider specific settings base class.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ReplicationProviderSpecificSettings"
-      }],
+        }
+      ],
       "properties": {
         "lastReplicatedTime": {
           "format": "date-time",
@@ -9911,9 +9999,11 @@
     "HyperVReplicaBluePolicyDetails": {
       "description": "Hyper-V Replica Blue specific protection profile details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/PolicyProviderSpecificDetails"
-      }],
+        }
+      ],
       "properties": {
         "replicationFrequencyInSeconds": {
           "format": "int32",
@@ -9970,9 +10060,11 @@
     "HyperVReplicaBluePolicyInput": {
       "description": "HyperV Replica Blue policy input.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/PolicyProviderSpecificInput"
-      }],
+        }
+      ],
       "properties": {
         "replicationFrequencyInSeconds": {
           "format": "int32",
@@ -10029,9 +10121,11 @@
     "HyperVReplicaBlueReplicationDetails": {
       "description": "HyperV replica 2012 R2 (Blue) replication details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ReplicationProviderSpecificSettings"
-      }],
+        }
+      ],
       "properties": {
         "lastReplicatedTime": {
           "format": "date-time",
@@ -10074,9 +10168,11 @@
     "HyperVReplicaPolicyDetails": {
       "description": "Hyper-V Replica Blue specific protection profile details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/PolicyProviderSpecificDetails"
-      }],
+        }
+      ],
       "properties": {
         "recoveryPoints": {
           "format": "int32",
@@ -10128,9 +10224,11 @@
     "HyperVReplicaPolicyInput": {
       "description": "Hyper-V Replica specific policy Input.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/PolicyProviderSpecificInput"
-      }],
+        }
+      ],
       "properties": {
         "recoveryPoints": {
           "format": "int32",
@@ -10182,9 +10280,11 @@
     "HyperVReplicaReplicationDetails": {
       "description": "HyperV replica 2012 replication details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ReplicationProviderSpecificSettings"
-      }],
+        }
+      ],
       "properties": {
         "lastReplicatedTime": {
           "format": "date-time",
@@ -10227,18 +10327,22 @@
     "HyperVSiteDetails": {
       "description": "HyperVSite fabric specific details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/FabricSpecificDetails"
-      }],
+        }
+      ],
       "properties": {},
       "x-ms-discriminator-value": "HyperVSite"
     },
     "HyperVVirtualMachineDetails": {
       "description": "Single Host fabric provider specific VM settings.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ConfigurationSettings"
-      }],
+        }
+      ],
       "properties": {
         "sourceItemId": {
           "description": "The source id of the object.",
@@ -10405,9 +10509,11 @@
     "InlineWorkflowTaskDetails": {
       "description": "This class represents the inline workflow task details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/GroupTaskDetails"
-      }],
+        }
+      ],
       "properties": {
         "workflowIds": {
           "description": "The list of child workflow ids.",
@@ -10479,9 +10585,11 @@
     "InMageAzureV2ApplyRecoveryPointInput": {
       "description": "ApplyRecoveryPoint input specific to InMageAzureV2 provider.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ApplyRecoveryPointProviderSpecificInput"
-      }],
+        }
+      ],
       "properties": {
         "vaultLocation": {
           "description": "The vault location where the recovery Vm resides.",
@@ -10496,9 +10604,11 @@
         "storageAccountId"
       ],
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/EnableProtectionProviderSpecificInput"
-      }],
+        }
+      ],
       "properties": {
         "masterTargetId": {
           "description": "The Master target Id.",
@@ -10569,9 +10679,11 @@
     "InMageAzureV2EventDetails": {
       "description": "Model class for event details of a VMwareAzureV2 event.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/EventProviderSpecificDetails"
-      }],
+        }
+      ],
       "properties": {
         "eventType": {
           "description": "InMage Event type. Takes one of the values of {InMageDataContract.InMageMonitoringEventType}.",
@@ -10607,9 +10719,11 @@
     "InMageAzureV2FailoverProviderInput": {
       "description": "InMageAzureV2 provider specific input for failover.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ProviderSpecificFailoverInput"
-      }],
+        }
+      ],
       "properties": {
         "vaultLocation": {
           "description": "Location of the vault.",
@@ -10625,9 +10739,11 @@
     "InMageAzureV2PolicyDetails": {
       "description": "InMage Azure v2 specific protection profile details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/PolicyProviderSpecificDetails"
-      }],
+        }
+      ],
       "properties": {
         "crashConsistentFrequencyInMinutes": {
           "format": "int32",
@@ -10662,9 +10778,11 @@
         "multiVmSyncStatus"
       ],
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/PolicyProviderSpecificInput"
-      }],
+        }
+      ],
       "properties": {
         "recoveryPointThresholdInMinutes": {
           "format": "int32",
@@ -10779,9 +10897,11 @@
     "InMageAzureV2RecoveryPointDetails": {
       "description": "InMage Azure V2 provider specific recovery point details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ProviderSpecificRecoveryPointDetails"
-      }],
+        }
+      ],
       "properties": {
         "isMultiVmSyncPoint": {
           "description": "A value indicating whether the recovery point is multi VM consistent.",
@@ -10793,9 +10913,11 @@
     "InMageAzureV2ReplicationDetails": {
       "description": "InMageAzureV2 provider specific settings",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ReplicationProviderSpecificSettings"
-      }],
+        }
+      ],
       "properties": {
         "infrastructureVmId": {
           "description": "The infrastructure VM Id.",
@@ -11024,9 +11146,11 @@
     "InMageAzureV2ReprotectInput": {
       "description": "InMageAzureV2 specific provider input.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ReverseReplicationProviderSpecificInput"
-      }],
+        }
+      ],
       "properties": {
         "masterTargetId": {
           "description": "The Master target Id.",
@@ -11065,9 +11189,11 @@
     "InMageAzureV2UpdateReplicationProtectedItemInput": {
       "description": "InMage Azure V2 input to update replication protected item.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/UpdateReplicationProtectedItemProviderInput"
-      }],
+        }
+      ],
       "properties": {
         "recoveryAzureV1ResourceGroupId": {
           "description": "The recovery Azure resource group Id for classic deployment.",
@@ -11087,9 +11213,11 @@
     "InMageBasePolicyDetails": {
       "description": "Base class for the policies of providers using InMage replication.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/PolicyProviderSpecificDetails"
-      }],
+        }
+      ],
       "properties": {
         "recoveryPointThresholdInMinutes": {
           "format": "int32",
@@ -11116,9 +11244,11 @@
     "InMageDisableProtectionProviderSpecificInput": {
       "description": "InMage disable protection provider specific input.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/DisableProtectionProviderSpecificInput"
-      }],
+        }
+      ],
       "properties": {
         "replicaVmDeletionStatus": {
           "description": "A value indicating whether the replica VM should be destroyed or retained. Values from Delete and Retain.",
@@ -11200,9 +11330,11 @@
         "multiVmGroupName"
       ],
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/EnableProtectionProviderSpecificInput"
-      }],
+        }
+      ],
       "properties": {
         "vmFriendlyName": {
           "description": "The Vm Name.",
@@ -11253,9 +11385,11 @@
     "InMageFailoverProviderInput": {
       "description": "Provider specific input for InMage failover.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ProviderSpecificFailoverInput"
-      }],
+        }
+      ],
       "properties": {
         "recoveryPointType": {
           "description": "The recovery point type. Values from LatestTime, LatestTag or Custom. In the case of custom, the recovery point provided by RecoveryPointId will be used. In the other two cases, recovery point id will be ignored.",
@@ -11280,9 +11414,11 @@
     "InMagePolicyDetails": {
       "description": "InMage specific protection profile details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/PolicyProviderSpecificDetails"
-      }],
+        }
+      ],
       "properties": {
         "recoveryPointThresholdInMinutes": {
           "format": "int32",
@@ -11312,9 +11448,11 @@
         "multiVmSyncStatus"
       ],
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/PolicyProviderSpecificInput"
-      }],
+        }
+      ],
       "properties": {
         "recoveryPointThresholdInMinutes": {
           "format": "int32",
@@ -11424,9 +11562,11 @@
     "InMageReplicationDetails": {
       "description": "InMage provider specific settings",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ReplicationProviderSpecificSettings"
-      }],
+        }
+      ],
       "properties": {
         "activeSiteType": {
           "description": "The active location of the VM. If the VM is being protected from Azure, this field will take values from { Azure, OnPrem }. If the VM is being protected between two data-centers, this field will be OnPrem always.",
@@ -11614,9 +11754,11 @@
         "profileId"
       ],
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ReverseReplicationProviderSpecificInput"
-      }],
+        }
+      ],
       "properties": {
         "masterTargetId": {
           "description": "The Master Target Id.",
@@ -11752,9 +11894,11 @@
     "Job": {
       "description": "Job details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/Resource"
-      }],
+        }
+      ],
       "properties": {
         "properties": {
           "$ref": "#/definitions/JobProperties",
@@ -11957,9 +12101,11 @@
     "JobStatusEventDetails": {
       "description": "Model class for event details of a job status event.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/EventSpecificDetails"
-      }],
+        }
+      ],
       "properties": {
         "jobId": {
           "description": "Job arm id for the event.",
@@ -11983,9 +12129,11 @@
     "JobTaskDetails": {
       "description": "This class represents a task which is actually a workflow so that one can navigate to its individual drill down.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/TaskTypeDetails"
-      }],
+        }
+      ],
       "properties": {
         "jobTask": {
           "$ref": "#/definitions/JobEntity",
@@ -12011,9 +12159,11 @@
     "LogicalNetwork": {
       "description": "Logical network data model.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/Resource"
-      }],
+        }
+      ],
       "properties": {
         "properties": {
           "$ref": "#/definitions/LogicalNetworkProperties",
@@ -12063,9 +12213,11 @@
     "ManualActionTaskDetails": {
       "description": "This class represents the manual action task details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/TaskTypeDetails"
-      }],
+        }
+      ],
       "properties": {
         "name": {
           "description": "The name.",
@@ -12228,9 +12380,11 @@
     "MigrationItem": {
       "description": "Migration item.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/Resource"
-      }],
+        }
+      ],
       "properties": {
         "properties": {
           "$ref": "#/definitions/MigrationItemProperties",
@@ -12413,9 +12567,11 @@
     "MigrationRecoveryPoint": {
       "description": "Recovery point for a migration item.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/Resource"
-      }],
+        }
+      ],
       "properties": {
         "properties": {
           "$ref": "#/definitions/MigrationRecoveryPointProperties",
@@ -12487,9 +12643,11 @@
     "Network": {
       "description": "Network model.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/Resource"
-      }],
+        }
+      ],
       "properties": {
         "properties": {
           "$ref": "#/definitions/NetworkProperties",
@@ -12517,9 +12675,11 @@
     "NetworkMapping": {
       "description": "Network Mapping model. Ideally it should have been possible to inherit this class from prev version in InheritedModels as long as there is no difference in structure or method signature. Since there were no base Models for certain fields and methods viz NetworkMappingProperties and Load with required return type, the class has been introduced in its entirety with references to base models to facilitate extensions in subsequent versions.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/Resource"
-      }],
+        }
+      ],
       "properties": {
         "properties": {
           "$ref": "#/definitions/NetworkMappingProperties",
@@ -12747,9 +12907,11 @@
     "Policy": {
       "description": "Protection profile details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/Resource"
-      }],
+        }
+      ],
       "properties": {
         "properties": {
           "$ref": "#/definitions/PolicyProperties",
@@ -12946,9 +13108,11 @@
     "ProtectableItem": {
       "description": "Replication protected item",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/Resource"
-      }],
+        }
+      ],
       "properties": {
         "properties": {
           "$ref": "#/definitions/ProtectableItemProperties",
@@ -13060,9 +13224,11 @@
     "ProtectionContainer": {
       "description": "Protection container details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/Resource"
-      }],
+        }
+      ],
       "properties": {
         "properties": {
           "$ref": "#/definitions/ProtectionContainerProperties",
@@ -13101,9 +13267,11 @@
     "ProtectionContainerMapping": {
       "description": "Protection container mapping object.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/Resource"
-      }],
+        }
+      ],
       "properties": {
         "properties": {
           "$ref": "#/definitions/ProtectionContainerMappingProperties",
@@ -13281,9 +13449,11 @@
     "RcmAzureMigrationPolicyDetails": {
       "description": "RCM based Azure migration specific policy details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/PolicyProviderSpecificDetails"
-      }],
+        }
+      ],
       "properties": {
         "recoveryPointThresholdInMinutes": {
           "format": "int32",
@@ -13323,9 +13493,11 @@
     "RecoveryPlan": {
       "description": "Recovery plan details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/Resource"
-      }],
+        }
+      ],
       "properties": {
         "properties": {
           "$ref": "#/definitions/RecoveryPlanProperties",
@@ -13339,9 +13511,11 @@
         "recoveryPointType"
       ],
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/RecoveryPlanProviderSpecificFailoverInput"
-      }],
+        }
+      ],
       "properties": {
         "recoveryPointType": {
           "description": "The recovery point type.",
@@ -13455,9 +13629,11 @@
         "fabricLocation"
       ],
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/RecoveryPlanActionDetails"
-      }],
+        }
+      ],
       "properties": {
         "runbookId": {
           "description": "The runbook ARM Id.",
@@ -13545,9 +13721,11 @@
     "RecoveryPlanGroupTaskDetails": {
       "description": "This class represents the recovery plan group task.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/GroupTaskDetails"
-      }],
+        }
+      ],
       "properties": {
         "name": {
           "description": "The name.",
@@ -13571,9 +13749,11 @@
         "recoveryVmCreationOption"
       ],
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/RecoveryPlanProviderSpecificFailoverInput"
-      }],
+        }
+      ],
       "properties": {
         "dataSyncOption": {
           "description": "The data sync option.",
@@ -13608,9 +13788,11 @@
         "vaultLocation"
       ],
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/RecoveryPlanProviderSpecificFailoverInput"
-      }],
+        }
+      ],
       "properties": {
         "vaultLocation": {
           "description": "The vault location.",
@@ -13647,9 +13829,11 @@
         "recoveryPointType"
       ],
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/RecoveryPlanProviderSpecificFailoverInput"
-      }],
+        }
+      ],
       "properties": {
         "vaultLocation": {
           "description": "The vault location.",
@@ -13682,9 +13866,11 @@
         "recoveryPointType"
       ],
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/RecoveryPlanProviderSpecificFailoverInput"
-      }],
+        }
+      ],
       "properties": {
         "recoveryPointType": {
           "description": "The recovery point type.",
@@ -13705,9 +13891,11 @@
     "RecoveryPlanManualActionDetails": {
       "description": "Recovery plan manual action details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/RecoveryPlanActionDetails"
-      }],
+        }
+      ],
       "properties": {
         "description": {
           "description": "The manual action description.",
@@ -13867,9 +14055,11 @@
         "fabricLocation"
       ],
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/RecoveryPlanActionDetails"
-      }],
+        }
+      ],
       "properties": {
         "path": {
           "description": "The script path.",
@@ -13897,9 +14087,11 @@
     "RecoveryPlanShutdownGroupTaskDetails": {
       "description": "This class represents the recovery plan shutdown group task details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/GroupTaskDetails"
-      }],
+        }
+      ],
       "properties": {
         "name": {
           "description": "The name.",
@@ -14050,9 +14242,11 @@
     "RecoveryPoint": {
       "description": "Base class representing a recovery point.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/Resource"
-      }],
+        }
+      ],
       "properties": {
         "properties": {
           "$ref": "#/definitions/RecoveryPointProperties",
@@ -14099,9 +14293,11 @@
     "RecoveryServicesProvider": {
       "description": "Provider details.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/Resource"
-      }],
+        }
+      ],
       "properties": {
         "properties": {
           "$ref": "#/definitions/RecoveryServicesProviderProperties",
@@ -14248,18 +14444,22 @@
     "ReplicationGroupDetails": {
       "description": "Replication group details. This will be used in case of San and Wvr.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/ConfigurationSettings"
-      }],
+        }
+      ],
       "properties": {},
       "x-ms-discriminator-value": "ReplicationGroupDetails"
     },
     "ReplicationProtectedItem": {
       "description": "Replication protected item.",
       "type": "object",
-      "allOf": [{
+      "allOf": [
+        {
         "$ref": "#/definitions/Resource"
-      }],
+        }
+      ],
       "properties": {
         "properties": {
           "$ref": "#/definitions/ReplicationProtectedItemProperties",
@@ -14652,18 +14852,22 @@
       "SanEnableProtectionInput": {
         "description": "San enable protection provider specific input.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/EnableProtectionProviderSpecificInput"
-        }],
+          }
+        ],
         "properties": {},
         "x-ms-discriminator-value": "San"
       },
       "ScriptActionTaskDetails": {
         "description": "This class represents the script action task details.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/TaskTypeDetails"
-        }],
+          }
+        ],
         "properties": {
           "name": {
             "description": "The name.",
@@ -14713,9 +14917,11 @@
       "StorageClassification": {
         "description": "Storage object definition.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/Resource"
-        }],
+          }
+        ],
         "properties": {
           "properties": {
             "$ref": "#/definitions/StorageClassificationProperties",
@@ -14743,9 +14949,11 @@
       "StorageClassificationMapping": {
         "description": "Storage mapping object.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/Resource"
-        }],
+          }
+        ],
         "properties": {
           "properties": {
             "$ref": "#/definitions/StorageClassificationMappingProperties",
@@ -14858,9 +15066,11 @@
       "SwitchProtectionJobDetails": {
         "description": "This class represents details for switch protection job.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/JobDetails"
-        }],
+          }
+        ],
         "properties": {
           "newReplicationProtectedItemId": {
             "description": "ARM Id of the new replication protected item.",
@@ -15052,9 +15262,11 @@
       "TestFailoverJobDetails": {
         "description": "This class represents the details for a test failover job.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/JobDetails"
-        }],
+          }
+        ],
         "properties": {
           "testFailoverStatus": {
             "description": "The test failover status.",
@@ -15499,9 +15711,11 @@
       "VaultHealthDetails": {
         "description": "Vault health details definition.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/Resource"
-        }],
+          }
+        ],
         "properties": {
           "properties": {
             "$ref": "#/definitions/VaultHealthProperties",
@@ -15537,9 +15751,11 @@
       "VCenter": {
         "description": "vCenter definition.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/Resource"
-        }],
+          }
+        ],
         "properties": {
           "properties": {
             "$ref": "#/definitions/VCenterProperties",
@@ -15651,9 +15867,11 @@
       "VirtualMachineTaskDetails": {
         "description": "This class represents the virtual machine task details.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/TaskTypeDetails"
-        }],
+          }
+        ],
         "properties": {
           "skippedReason": {
             "description": "The skipped reason.",
@@ -15673,72 +15891,88 @@
       "VmmDetails": {
         "description": "VMM fabric specific details.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/FabricSpecificDetails"
-        }],
+          }
+        ],
         "properties": {},
         "x-ms-discriminator-value": "VMM"
       },
       "VmmToAzureCreateNetworkMappingInput": {
         "description": "Create network mappings input properties/behavior specific to Vmm to Azure Network mapping.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/FabricSpecificCreateNetworkMappingInput"
-        }],
+          }
+        ],
         "properties": {},
         "x-ms-discriminator-value": "VmmToAzure"
       },
       "VmmToAzureNetworkMappingSettings": {
         "description": "E2A Network Mapping fabric specific settings.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/NetworkMappingFabricSpecificSettings"
-        }],
+          }
+        ],
         "properties": {},
         "x-ms-discriminator-value": "VmmToAzure"
       },
       "VmmToAzureUpdateNetworkMappingInput": {
         "description": "Update network mappings input properties/behavior specific to vmm to azure.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/FabricSpecificUpdateNetworkMappingInput"
-        }],
+          }
+        ],
         "properties": {},
         "x-ms-discriminator-value": "VmmToAzure"
       },
       "VmmToVmmCreateNetworkMappingInput": {
         "description": "Create network mappings input properties/behavior specific to vmm to vmm Network mapping.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/FabricSpecificCreateNetworkMappingInput"
-        }],
+          }
+        ],
         "properties": {},
         "x-ms-discriminator-value": "VmmToVmm"
       },
       "VmmToVmmNetworkMappingSettings": {
         "description": "E2E Network Mapping fabric specific settings.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/NetworkMappingFabricSpecificSettings"
-        }],
+          }
+        ],
         "properties": {},
         "x-ms-discriminator-value": "VmmToVmm"
       },
       "VmmToVmmUpdateNetworkMappingInput": {
         "description": "Update network mappings input properties/behavior specific to vmm to vmm.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/FabricSpecificUpdateNetworkMappingInput"
-        }],
+          }
+        ],
         "properties": {},
         "x-ms-discriminator-value": "VmmToVmm"
       },
       "VmmVirtualMachineDetails": {
         "description": "VMM fabric provider specific VM settings.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/ConfigurationSettings"
-        }],
+          }
+        ],
         "properties": {
           "sourceItemId": {
             "description": "The source id of the object.",
@@ -15888,9 +16122,11 @@
       "VmNicUpdatesTaskDetails": {
         "description": "This class represents the vm NicUpdates task details.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/TaskTypeDetails"
-        }],
+          }
+        ],
         "properties": {
           "vmId": {
             "description": "Virtual machine Id.",
@@ -15910,9 +16146,11 @@
       "VMwareCbtContainerCreationInput": {
         "description": "VMwareCbt container creation input.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/ReplicationProviderSpecificContainerCreationInput"
-        }],
+          }
+        ],
         "properties": {},
         "x-ms-discriminator-value": "VMwareCbt"
       },
@@ -15927,9 +16165,11 @@
           "targetLocation"
         ],
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/ReplicationProviderSpecificContainerMappingInput"
-        }],
+          }
+        ],
         "properties": {
           "keyVaultId": {
             "description": "The target key vault ARM Id.",
@@ -16011,9 +16251,11 @@
           "instanceType"
         ],
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/EnableMigrationProviderSpecificInput"
-        }],
+          }
+        ],
         "properties": {
           "vmwareMachineId": {
             "description": "The ARM Id of the VM discovered in VMware.",
@@ -16096,9 +16338,11 @@
       "VMwareCbtEventDetails": {
         "description": "Event details for VMwareCbt provider.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/EventProviderSpecificDetails"
-        }],
+          }
+        ],
         "properties": {
           "migrationItemName": {
             "description": "The migration item name.",
@@ -16115,9 +16359,11 @@
           "instanceType"
         ],
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/MigrateProviderSpecificInput"
-        }],
+          }
+        ],
         "properties": {
           "performShutdown": {
             "description": "A value indicating whether VM is to be shutdown.",
@@ -16138,9 +16384,11 @@
       "VMwareCbtMigrationDetails": {
         "description": "VMwareCbt provider specific settings.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/MigrationProviderSpecificSettings"
-        }],
+          }
+        ],
         "properties": {
           "vmwareMachineId": {
             "description": "The ARM Id of the VM discovered in VMware.",
@@ -16341,9 +16589,11 @@
       "VMwareCbtPolicyCreationInput": {
         "description": "VMware Cbt policy creation input.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/PolicyProviderSpecificInput"
-        }],
+          }
+        ],
         "properties": {
           "recoveryPointHistoryInMinutes": {
             "format": "int32",
@@ -16366,9 +16616,11 @@
       "VmwareCbtPolicyDetails": {
         "description": "VMware Cbt specific policy details.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/PolicyProviderSpecificDetails"
-        }],
+          }
+        ],
         "properties": {
           "recoveryPointHistoryInMinutes": {
             "format": "int32",
@@ -16456,9 +16708,11 @@
       "VMwareCbtProtectionContainerMappingDetails": {
         "description": "VMwareCbt provider specific container mapping details.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/ProtectionContainerMappingProviderSpecificDetails"
-        }],
+          }
+        ],
         "properties": {
           "keyVaultId": {
             "description": "The target key vault ARM Id.",
@@ -16501,9 +16755,11 @@
           "instanceType"
         ],
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/TestMigrateProviderSpecificInput"
-        }],
+          }
+        ],
         "properties": {
           "recoveryPointId": {
             "description": "The recovery point Id.",
@@ -16531,9 +16787,11 @@
           "instanceType"
         ],
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/UpdateMigrationItemProviderSpecificInput"
-        }],
+          }
+        ],
         "properties": {
           "targetVmName": {
             "description": "The target VM name.",
@@ -16600,9 +16858,11 @@
       "VMwareDetails": {
         "description": "Store the fabric details specific to the VMware fabric.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/FabricSpecificDetails"
-        }],
+          }
+        ],
         "properties": {
           "processServers": {
             "description": "The list of Process Servers associated with the fabric.",
@@ -16759,9 +17019,11 @@
           "migrationSolutionId"
         ],
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/FabricSpecificCreationInput"
-        }],
+          }
+        ],
         "properties": {
           "vmwareSiteId": {
             "description": "The ARM Id of the VMware site.",
@@ -16777,9 +17039,11 @@
       "VMwareV2FabricSpecificDetails": {
         "description": "VMwareV2 fabric specific details.",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/FabricSpecificDetails"
-        }],
+          }
+        ],
         "properties": {
           "vmwareSiteId": {
             "description": "The ARM Id of the VMware site.",
@@ -16802,9 +17066,11 @@
       "VMwareVirtualMachineDetails": {
         "description": "VMware provider specific settings",
         "type": "object",
-        "allOf": [{
+        "allOf": [
+          {
           "$ref": "#/definitions/ConfigurationSettings"
-        }],
+          }
+        ],
         "properties": {
           "agentGeneratedId": {
             "description": "The ID generated by the InMage agent after it gets installed on guest. This is the ID to be used during InMage CreateProtection.",
