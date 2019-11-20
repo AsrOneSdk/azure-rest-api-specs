@@ -29,7 +29,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -68,7 +69,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -110,7 +112,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -157,7 +160,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -212,7 +216,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -262,7 +267,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -308,7 +314,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -350,7 +357,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -397,7 +405,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -454,7 +463,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -501,7 +511,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -551,7 +562,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -601,7 +613,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -660,7 +673,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -710,7 +724,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -769,7 +784,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -818,7 +834,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -871,7 +888,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -920,7 +938,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -973,7 +992,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -1029,7 +1049,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -1090,7 +1111,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -1161,7 +1183,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -1223,7 +1246,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -1296,7 +1320,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -1345,7 +1370,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -1399,7 +1425,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -1468,7 +1495,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -1534,7 +1562,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -1588,7 +1617,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -1643,7 +1673,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -1704,7 +1735,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -1775,7 +1807,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -1844,7 +1877,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -1920,7 +1954,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -1992,7 +2027,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -2054,7 +2090,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -2124,7 +2161,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/SubscriptionId"
           },
           {
@@ -2200,7 +2238,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -2276,7 +2315,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -2349,7 +2389,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -2413,7 +2454,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -2473,7 +2515,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -2529,7 +2572,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -2590,7 +2634,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -2661,7 +2706,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -2723,7 +2769,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -2799,7 +2846,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -2872,7 +2920,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -2939,7 +2988,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -3012,7 +3062,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -3075,7 +3126,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -3145,7 +3197,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -3215,7 +3268,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -3282,7 +3336,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -3355,7 +3410,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -3421,7 +3477,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -3497,7 +3554,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -3573,7 +3631,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -3649,7 +3708,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -3722,7 +3782,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -3778,7 +3839,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -3839,7 +3901,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -3910,7 +3973,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -3972,7 +4036,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -4048,7 +4113,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -4121,7 +4187,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -4187,7 +4254,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -4236,7 +4304,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -4290,7 +4359,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -4354,7 +4424,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -4408,7 +4479,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -4465,7 +4537,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -4519,7 +4592,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -4568,7 +4642,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -4621,7 +4696,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -4677,7 +4753,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -4738,7 +4815,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -4809,7 +4887,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -4870,7 +4949,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -4919,7 +4999,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -4973,7 +5054,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -5037,7 +5119,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -5092,7 +5175,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -5158,7 +5242,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -5208,7 +5293,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -5254,7 +5340,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -5304,7 +5391,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -5357,7 +5445,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -5419,7 +5508,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -5470,7 +5560,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -5527,7 +5618,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -5569,7 +5661,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -5611,7 +5704,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -5653,7 +5747,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -5700,7 +5795,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -5757,7 +5853,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -5805,7 +5902,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -5864,7 +5962,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -5921,7 +6020,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -5963,7 +6063,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -6005,7 +6106,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -6047,7 +6149,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -6094,7 +6197,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -6151,7 +6255,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -6199,7 +6304,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -6258,7 +6364,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -6311,7 +6418,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -6370,7 +6478,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -6423,7 +6532,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -6485,7 +6595,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -6547,7 +6658,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -6606,7 +6718,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -6648,7 +6761,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -6690,7 +6804,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -6732,7 +6847,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -6770,7 +6886,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
@@ -6813,7 +6930,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "#/parameters/ApiVersion"
           },
           {
