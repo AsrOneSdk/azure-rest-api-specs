@@ -9112,8 +9112,7 @@
       "properties": {
         "instanceType": {
           "description": "Gets the class type.",
-          "type": "string",
-          "readOnly": true
+          "type": "string"
         }
       },
       "discriminator": "instanceType"
@@ -12428,11 +12427,6 @@
           "type": "string",
           "readOnly": true
         },
-        "recoveryServicesProviderId": {
-          "description": "The recovery services provider ARM Id.",
-          "type": "string",
-          "readOnly": true
-        },
         "migrationState": {
           "description": "The migration status.",
           "enum": [
@@ -13489,6 +13483,22 @@
         }
       },
       "x-ms-discriminator-value": "RcmAzureMigration"
+    },
+    "RcmProcessServerInfo": {
+      "description": "RCM process server info.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "The process server Id.",
+          "type": "string",
+          "readOnly": true
+        },
+        "name": {
+          "description": "The list of process servers.",
+          "type": "string",
+          "readOnly": true
+        }
+      }
     },
     "RecoveryPlan": {
       "description": "Recovery plan details.",
@@ -16756,6 +16766,35 @@
       },
       "x-ms-discriminator-value": "VMwareCbt"
     },
+    "VMwareCbtResyncInput": {
+      "description": "VMwareCbt specific resync input.",
+      "required": [
+        "skipCbtReset",
+        "instanceType"
+      ],
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ResyncProviderSpecificInput"
+        }
+      ],
+      "properties": {
+        "skipCbtReset": {
+          "description": "A value indicating whether CBT is to be reset.",
+          "type": "string"
+        },
+        "canWrite": {
+          "description": "Gets a value indicating whether this Newtonsoft.Json.JsonConverter can write JSON.",
+          "type": "boolean",
+          "readOnly": true
+        },
+        "canRead": {
+          "type": "boolean",
+          "readOnly": true
+        }
+      },
+      "x-ms-discriminator-value": "VMwareCbt"
+    },
     "VMwareCbtTestMigrateInput": {
       "description": "VMwareCbt specific test migrate input.",
       "required": [
@@ -17024,7 +17063,6 @@
     "VMwareV2FabricCreationInput": {
       "description": "VMwareV2 fabric provider specific settings.",
       "required": [
-        "vmwareSiteId",
         "migrationSolutionId"
       ],
       "type": "object",
@@ -17036,6 +17074,10 @@
       "properties": {
         "vmwareSiteId": {
           "description": "The ARM Id of the VMware site.",
+          "type": "string"
+        },
+        "physicalSiteId": {
+          "description": "The ARM Id of the physical site.",
           "type": "string"
         },
         "migrationSolutionId": {
@@ -17059,6 +17101,11 @@
           "type": "string",
           "readOnly": true
         },
+        "physicalSiteId": {
+          "description": "The ARM Id of the physical site.",
+          "type": "string",
+          "readOnly": true
+        },
         "migrationSolutionId": {
           "description": "The Migration solution ARM Id.",
           "type": "string",
@@ -17067,6 +17114,20 @@
         "serviceEndpoint": {
           "description": "The service endpoint.",
           "type": "string",
+          "readOnly": true
+        },
+        "serviceResourceId": {
+          "description": "The service resource Id.",
+          "type": "string",
+          "readOnly": true
+        },
+        "processServers": {
+          "description": "The list of process servers.",
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RcmProcessServerInfo"
+          },
           "readOnly": true
         }
       },
