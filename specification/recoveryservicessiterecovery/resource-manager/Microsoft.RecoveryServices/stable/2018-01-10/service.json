@@ -8394,7 +8394,6 @@
       "properties": {
         "providerSpecificInput": {
           "description": "Provider specific inputs for container creation.",
-          "uniqueItems": false,
           "type": "array",
           "items": {
             "$ref": "#/definitions/ReplicationProviderSpecificContainerCreationInput"
@@ -8745,15 +8744,6 @@
         "instanceType": {
           "description": "The class type.",
           "type": "string"
-        },
-        "canWrite": {
-          "description": "Gets a value indicating whether this Newtonsoft.Json.JsonConverter can write JSON.",
-          "type": "boolean",
-          "readOnly": true
-        },
-        "canRead": {
-          "type": "boolean",
-          "readOnly": true
         }
       },
       "discriminator": "instanceType"
@@ -12363,15 +12353,6 @@
         "instanceType": {
           "description": "The class type.",
           "type": "string"
-        },
-        "canWrite": {
-          "description": "Gets a value indicating whether this Newtonsoft.Json.JsonConverter can write JSON.",
-          "type": "boolean",
-          "readOnly": true
-        },
-        "canRead": {
-          "type": "boolean",
-          "readOnly": true
         }
       },
       "discriminator": "instanceType"
@@ -14560,7 +14541,6 @@
         },
         "allowedOperations": {
           "description": "The allowed operations on the Replication protected item.",
-          "uniqueItems": false,
           "type": "array",
           "items": {
             "type": "string"
@@ -14576,30 +14556,6 @@
         },
         "healthErrors": {
           "description": "List of health errors.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/HealthError"
-          }
-        },
-        "replicationHealthErrors": {
-          "description": "List of replication health errors.",
-          "uniqueItems": false,
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/HealthError"
-          }
-        },
-        "failoverHealthErrors": {
-          "description": "List of failover health errors.",
-          "uniqueItems": false,
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/HealthError"
-          }
-        },
-        "versionExpiryHealthErrors": {
-          "description": "List of version expiry health errors.",
-          "uniqueItems": false,
           "type": "array",
           "items": {
             "$ref": "#/definitions/HealthError"
@@ -15157,11 +15113,6 @@
           "description": "The maximum cpu cores count supported by target compute size.",
           "type": "integer"
         },
-        "vCPUsAvailable": {
-          "format": "int32",
-          "description": "The Available vCPUs supported by target compute size.",
-          "type": "integer"
-        },
         "memoryInGB": {
           "format": "double",
           "description": "The maximum memory in GB supported by target compute size.",
@@ -15179,7 +15130,6 @@
         },
         "errors": {
           "description": "The reasons why the target compute size is not applicable for the protected item.",
-          "uniqueItems": false,
           "type": "array",
           "items": {
             "$ref": "#/definitions/ComputeSizeErrorDetails"
@@ -15188,14 +15138,6 @@
         "highIopsSupported": {
           "description": "The value indicating whether the target compute size supports high Iops.",
           "type": "string"
-        },
-        "hyperVGenerations": {
-          "description": "The supported HyperV Generations.",
-          "uniqueItems": false,
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         }
       }
     },
@@ -15367,15 +15309,6 @@
         "instanceType": {
           "description": "The class type.",
           "type": "string"
-        },
-        "canWrite": {
-          "description": "Gets a value indicating whether this Newtonsoft.Json.JsonConverter can write JSON.",
-          "type": "boolean",
-          "readOnly": true
-        },
-        "canRead": {
-          "type": "boolean",
-          "readOnly": true
         }
       },
       "discriminator": "instanceType"
@@ -15416,15 +15349,6 @@
         "instanceType": {
           "description": "The class type.",
           "type": "string"
-        },
-        "canWrite": {
-          "description": "Gets a value indicating whether this Newtonsoft.Json.JsonConverter can write JSON.",
-          "type": "boolean",
-          "readOnly": true
-        },
-        "canRead": {
-          "type": "boolean",
-          "readOnly": true
         }
       },
       "discriminator": "instanceType"
@@ -15459,9 +15383,6 @@
     },
     "UpdateMigrationItemInput": {
       "description": "Update migration item input.",
-      "required": [
-        "properties"
-      ],
       "type": "object",
       "properties": {
         "properties": {
@@ -15492,15 +15413,6 @@
         "instanceType": {
           "description": "The class type.",
           "type": "string"
-        },
-        "canWrite": {
-          "description": "Gets a value indicating whether this Newtonsoft.Json.JsonConverter can write JSON.",
-          "type": "boolean",
-          "readOnly": true
-        },
-        "canRead": {
-          "type": "boolean",
-          "readOnly": true
         }
       },
       "discriminator": "instanceType"
@@ -16246,9 +16158,9 @@
         "diskType": {
           "description": "The disk type.",
           "enum": [
-            "standard_LRS",
-            "premium_LRS",
-            "standardSSD_LRS"
+            "Standard_LRS",
+            "Premium_LRS",
+            "StandardSSD_LRS"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -16283,7 +16195,6 @@
         "disksToInclude": {
           "description": "The disks to include list.",
           "minLength": 1,
-          "uniqueItems": false,
           "type": "array",
           "items": {
             "$ref": "#/definitions/VMwareCbtDiskInput"
@@ -16292,9 +16203,9 @@
         "licenseType": {
           "description": "License type.",
           "enum": [
-            "notSpecified",
-            "noLicenseType",
-            "windowsServer"
+            "NotSpecified",
+            "NoLicenseType",
+            "WindowsServer"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -16341,15 +16252,6 @@
         "performAutoResync": {
           "description": "A value indicating whether auto resync is to be done.",
           "type": "string"
-        },
-        "canWrite": {
-          "description": "Gets a value indicating whether this Newtonsoft.Json.JsonConverter can write JSON.",
-          "type": "boolean",
-          "readOnly": true
-        },
-        "canRead": {
-          "type": "boolean",
-          "readOnly": true
         }
       },
       "x-ms-discriminator-value": "VMwareCbt"
@@ -16387,15 +16289,6 @@
         "performShutdown": {
           "description": "A value indicating whether VM is to be shutdown.",
           "type": "string"
-        },
-        "canWrite": {
-          "description": "Gets a value indicating whether this Newtonsoft.Json.JsonConverter can write JSON.",
-          "type": "boolean",
-          "readOnly": true
-        },
-        "canRead": {
-          "type": "boolean",
-          "readOnly": true
         }
       },
       "x-ms-discriminator-value": "VMwareCbt"
@@ -16460,7 +16353,6 @@
         },
         "protectedDisks": {
           "description": "The list of protected disks.",
-          "uniqueItems": false,
           "type": "array",
           "items": {
             "$ref": "#/definitions/VMwareCbtProtectedDiskDetails"
@@ -16472,7 +16364,6 @@
         },
         "vmNics": {
           "description": "The network details.",
-          "uniqueItems": false,
           "type": "array",
           "items": {
             "$ref": "#/definitions/VMwareCbtNicDetails"
@@ -16534,8 +16425,8 @@
         "sourceIPAddressType": {
           "description": "The source IP address type.",
           "enum": [
-            "dynamic",
-            "static"
+            "Dynamic",
+            "Static"
           ],
           "type": "string",
           "readOnly": true,
@@ -16712,9 +16603,9 @@
         "diskType": {
           "description": "The disk type.",
           "enum": [
-            "standard_LRS",
-            "premium_LRS",
-            "standardSSD_LRS"
+            "Standard_LRS",
+            "Premium_LRS",
+            "StandardSSD_LRS"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -16782,15 +16673,6 @@
         "skipCbtReset": {
           "description": "A value indicating whether CBT is to be reset.",
           "type": "string"
-        },
-        "canWrite": {
-          "description": "Gets a value indicating whether this Newtonsoft.Json.JsonConverter can write JSON.",
-          "type": "boolean",
-          "readOnly": true
-        },
-        "canRead": {
-          "type": "boolean",
-          "readOnly": true
         }
       },
       "x-ms-discriminator-value": "VMwareCbt"
@@ -16816,15 +16698,6 @@
         "networkId": {
           "description": "The test network Id.",
           "type": "string"
-        },
-        "canWrite": {
-          "description": "Gets a value indicating whether this Newtonsoft.Json.JsonConverter can write JSON.",
-          "type": "boolean",
-          "readOnly": true
-        },
-        "canRead": {
-          "type": "boolean",
-          "readOnly": true
         }
       },
       "x-ms-discriminator-value": "VMwareCbt"
@@ -16868,7 +16741,6 @@
         "vmNics": {
           "description": "The list of NIC details.",
           "minLength": 1,
-          "uniqueItems": false,
           "type": "array",
           "items": {
             "$ref": "#/definitions/VMwareCbtNicInput"
@@ -16890,15 +16762,6 @@
         "performAutoResync": {
           "description": "A value indicating whether auto resync is to be done.",
           "type": "string"
-        },
-        "canWrite": {
-          "description": "Gets a value indicating whether this Newtonsoft.Json.JsonConverter can write JSON.",
-          "type": "boolean",
-          "readOnly": true
-        },
-        "canRead": {
-          "type": "boolean",
-          "readOnly": true
         }
       },
       "x-ms-discriminator-value": "VMwareCbt"
@@ -17123,7 +16986,6 @@
         },
         "processServers": {
           "description": "The list of process servers.",
-          "uniqueItems": false,
           "type": "array",
           "items": {
             "$ref": "#/definitions/RcmProcessServerInfo"
