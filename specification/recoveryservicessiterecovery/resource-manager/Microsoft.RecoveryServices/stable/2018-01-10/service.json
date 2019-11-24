@@ -9102,7 +9102,8 @@
       "properties": {
         "instanceType": {
           "description": "Gets the class type.",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         }
       },
       "discriminator": "instanceType"
@@ -12469,8 +12470,18 @@
         },
         "health": {
           "description": "The consolidated health.",
+          "enum": [
+            "none",
+            "normal",
+            "warning",
+            "critical"
+          ],
           "type": "string",
-          "readOnly": true
+          "readOnly": true,
+          "x-ms-enum": {
+            "name": "ProtectionHealth",
+            "modelAsString": true
+          }
         },
         "healthErrors": {
           "description": "The list of health errors.",
@@ -12488,7 +12499,8 @@
               "DisableMigration",
               "TestMigrate",
               "TestMigrateCleanup",
-              "Migrate"
+              "Migrate",
+              "startResync"
             ],
             "type": "string",
             "x-ms-enum": {
@@ -13464,22 +13476,6 @@
         }
       },
       "x-ms-discriminator-value": "RcmAzureMigration"
-    },
-    "RcmProcessServerInfo": {
-      "description": "RCM process server info.",
-      "type": "object",
-      "properties": {
-        "id": {
-          "description": "The process server Id.",
-          "type": "string",
-          "readOnly": true
-        },
-        "name": {
-          "description": "The list of process servers.",
-          "type": "string",
-          "readOnly": true
-        }
-      }
     },
     "RecoveryPlan": {
       "description": "Recovery plan details.",
@@ -15406,8 +15402,6 @@
     },
     "UpdateMigrationItemProviderSpecificInput": {
       "description": "Update migration item provider specific input.",
-      "required": [
-        "instanceType"],
       "type": "object",
       "properties": {
         "instanceType": {
@@ -16397,6 +16391,26 @@
           "type": "integer",
           "readOnly": true
         },
+        "resyncProgressPercentage": {
+          "format": "int32",
+          "description": "The resync progress percentage.",
+          "type": "integer",
+          "readOnly": true
+        },
+        "resyncState": {
+          "description": "The resync state.",
+          "enum": [
+            "none",
+            "replicationSuspended",
+            "replicationResumed"
+          ],
+          "type": "string",
+          "readOnly": true,
+          "x-ms-enum": {
+            "name": "ResyncState",
+            "modelAsString": true
+          }
+        },
         "performAutoResync": {
           "description": "A value indicating whether auto resync is to be done.",
           "type": "string"
@@ -16447,8 +16461,8 @@
         "targetIPAddressType": {
           "description": "The target IP address type.",
           "enum": [
-            "dynamic",
-            "static"
+            "Dynamic",
+            "Static"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -16704,9 +16718,6 @@
     },
     "VMwareCbtUpdateMigrationItemInput": {
       "description": "VMwareCbt specific update migration item input.",
-      "required": [
-        "instanceType"
-      ],
       "type": "object",
       "allOf": [
         {
@@ -16984,14 +16995,6 @@
           "type": "string",
           "readOnly": true
         },
-        "processServers": {
-          "description": "The list of process servers.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/RcmProcessServerInfo"
-          },
-          "readOnly": true
-        }
       },
       "x-ms-discriminator-value": "VMwareV2"
     },
@@ -17097,9 +17100,11 @@
       }
     }
   },
-  "security": [{
-    "azure_auth": [
-      "user_impersonation"
-    ]
-  }]
+  "security": [
+    {
+      "azure_auth": [
+        "user_impersonation"
+      ]
+    }
+  ]
 }
