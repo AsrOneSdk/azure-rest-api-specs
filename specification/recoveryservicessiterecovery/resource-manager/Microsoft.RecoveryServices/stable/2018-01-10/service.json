@@ -16994,7 +16994,7 @@
           "description": "The service resource Id.",
           "type": "string",
           "readOnly": true
-        },
+        }
       },
       "x-ms-discriminator-value": "VMwareV2"
     },
