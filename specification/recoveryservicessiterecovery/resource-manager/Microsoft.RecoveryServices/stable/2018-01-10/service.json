@@ -18,7 +18,7 @@
     "application/json"
   ],
   "paths": {
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/{providerNamespace}/vaults/exposedOperations": {
+    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/operations": {
       "get": {
         "tags": [
           "Operations"
@@ -51,9 +51,8 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
-          "Gets the list of Site registered.": {
+          "Returns the list of available operations.": {
             "$ref": "./examples/Operations_List.json"
           }
         }
@@ -95,7 +94,6 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of configured email notification(alert) configurations.": {
             "$ref": "./examples/ReplicationAlertSettings_List.json"
@@ -143,7 +141,6 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets an email notification(alert) configuration.": {
             "$ref": "./examples/ReplicationAlertSettings_Get.json"
@@ -201,7 +198,6 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Configures email notifications for this vault.": {
             "$ref": "./examples/ReplicationAlertSettings_Create.json"
@@ -237,7 +233,7 @@
             "name": "$filter",
             "in": "query",
             "description": "OData filter options.",
-            "required": true,
+            "required": false,
             "type": "string"
           }
         ],
@@ -253,7 +249,6 @@
           "nextLinkName": "nextLink"
         },
         "x-ms-odata": "#/definitions/EventQueryParameter",
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of Azure Site Recovery events.": {
             "$ref": "./examples/ReplicationEvents_List.json"
@@ -301,7 +296,6 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Get the details of an Azure Site recovery event.": {
             "$ref": "./examples/ReplicationEvents_Get.json"
@@ -314,7 +308,7 @@
         "tags": [
           "ReplicationFabrics"
         ],
-        "summary": "Gets the list of ASR fabrics.",
+        "summary": "Gets the list of ASR fabrics",
         "description": "Gets a list of the Azure Site Recovery fabrics in the vault.",
         "operationId": "ReplicationFabrics_List",
         "produces": [
@@ -345,9 +339,8 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
-          "Gets the list of ASR fabrics.": {
+          "Gets the list of ASR fabrics": {
             "$ref": "./examples/ReplicationFabrics_List.json"
           }
         }
@@ -393,7 +386,6 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the details of an ASR fabric.": {
             "$ref": "./examples/ReplicationFabrics_Get.json"
@@ -405,7 +397,7 @@
           "ReplicationFabrics"
         ],
         "summary": "Creates an Azure Site Recovery fabric.",
-        "description": "The operation to create an Azure Site Recovery fabric (for e.g. Hyper-V site).",
+        "description": "The operation to create an Azure Site Recovery fabric (for e.g. Hyper-V site)",
         "operationId": "ReplicationFabrics_Create",
         "consumes": [
           "application/json"
@@ -468,6 +460,9 @@
         "summary": "Purges the site.",
         "description": "The operation to purge(force delete) an Azure Site Recovery fabric.",
         "operationId": "ReplicationFabrics_Purge",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "$ref": "#/parameters/ApiVersion"
@@ -556,65 +551,6 @@
         }
       }
     },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/deployProcessServerImage": {
-      "post": {
-        "tags": [
-          "Fabrics"
-        ],
-        "summary": "Deploys a Process Server.",
-        "description": "The operation to deploy a scale out Process server in Azure.",
-        "operationId": "DeployProcessServerImage",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/parameters/ApiVersion"
-          },
-          {
-            "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceGroupName"
-          },
-          {
-            "$ref": "#/parameters/SubscriptionId"
-          },
-          {
-            "name": "fabricName",
-            "in": "path",
-            "description": "Fabric name.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "request",
-            "in": "body",
-            "description": "The input to deploy a Process Server from Azure Image.",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/DeployProcessServerRequest"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/System.Net.Http.HttpResponseMessage"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "Deploys a Process Server.": {
-            "$ref": "./examples/DeployProcessServerImage.json"
-          }
-        }
-      }
-    },
     "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/migratetoaad": {
       "post": {
         "tags": [
@@ -623,6 +559,9 @@
         "summary": "Migrates the site to AAD.",
         "description": "The operation to migrate an Azure Site Recovery fabric to AAD.",
         "operationId": "ReplicationFabrics_MigrateToAad",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "$ref": "#/parameters/ApiVersion"
@@ -731,51 +670,6 @@
         "summary": "Deletes the site.",
         "description": "The operation to delete or remove an Azure Site Recovery fabric.",
         "operationId": "ReplicationFabrics_Delete",
-        "parameters": [
-          {
-            "$ref": "#/parameters/ApiVersion"
-          },
-          {
-            "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceGroupName"
-          },
-          {
-            "$ref": "#/parameters/SubscriptionId"
-          },
-          {
-            "name": "fabricName",
-            "in": "path",
-            "description": "ASR fabric to delete.",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "202": {
-            "description": "Accepted"
-          },
-          "204": {
-            "description": "NoContent"
-          }
-        },
-        "x-ms-long-running-operation": true,
-        "x-ms-examples": {
-          "Deletes the site.\r\nTODO: put a code based DebugAssert to ensure all HttpPosts have Operation entry made.": {
-            "$ref": "./examples/ReplicationFabrics_Delete.json"
-          }
-        }
-      }
-    },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/renewcertificate": {
-      "post": {
-        "tags": [
-          "Fabrics"
-        ],
-        "summary": "Renews certificate for the fabric.",
-        "description": "The operation to renew the connection certificate for the ASR replication fabric.",
-        "operationId": "RenewCertificate",
         "produces": [
           "application/json"
         ],
@@ -795,22 +689,23 @@
           {
             "name": "fabricName",
             "in": "path",
-            "description": "ASR fabric name.",
+            "description": "ASR fabric to delete",
             "required": true,
             "type": "string"
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/System.Net.Http.HttpResponseMessage"
-            }
+          "202": {
+            "description": "Accepted"
+          },
+          "204": {
+            "description": "NoContent"
           }
         },
+        "x-ms-long-running-operation": true,
         "x-ms-examples": {
-          "Renews certificate for the fabric.": {
-            "$ref": "./examples/RenewCertificate.json"
+          "Deletes the site.": {
+            "$ref": "./examples/ReplicationFabrics_Delete.json"
           }
         }
       }
@@ -884,7 +779,7 @@
           "ReplicationLogicalNetworks"
         ],
         "summary": "Gets the list of logical networks under a fabric.",
-        "description": "Lists all the logical networks of the Azure Site Recovery fabric.",
+        "description": "Lists all the logical networks of the Azure Site Recovery fabric",
         "operationId": "ReplicationLogicalNetworks_ListByReplicationFabrics",
         "produces": [
           "application/json"
@@ -921,7 +816,6 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of logical networks under a fabric.": {
             "$ref": "./examples/ReplicationLogicalNetworks_ListByReplicationFabrics.json"
@@ -976,7 +870,6 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets a logical network with specified server id and logical network name.": {
             "$ref": "./examples/ReplicationLogicalNetworks_Get.json"
@@ -1011,7 +904,7 @@
           {
             "name": "fabricName",
             "in": "path",
-            "description": "Fabric name.",
+            "description": "Fabric name",
             "required": true,
             "type": "string"
           }
@@ -1027,7 +920,6 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of networks under a fabric.": {
             "$ref": "./examples/ReplicationNetworks_ListByReplicationFabrics.json"
@@ -1082,7 +974,6 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets a network with specified server id and network name.": {
             "$ref": "./examples/ReplicationNetworks_Get.json"
@@ -1140,7 +1031,6 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets all the network mappings under a network.": {
             "$ref": "./examples/ReplicationNetworkMappings_ListByReplicationNetworks.json"
@@ -1154,7 +1044,7 @@
           "ReplicationNetworkMappings"
         ],
         "summary": "Gets network mapping by name.",
-        "description": "Gets the details of an ASR network mapping.",
+        "description": "Gets the details of an ASR network mapping",
         "operationId": "ReplicationNetworkMappings_Get",
         "produces": [
           "application/json"
@@ -1202,7 +1092,6 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets network mapping by name.": {
             "$ref": "./examples/ReplicationNetworkMappings_Get.json"
@@ -1291,6 +1180,9 @@
         "summary": "Delete network mapping.",
         "description": "The operation to delete a network mapping.",
         "operationId": "ReplicationNetworkMappings_Delete",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "$ref": "#/parameters/ApiVersion"
@@ -1460,7 +1352,6 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of protection container for a fabric.": {
             "$ref": "./examples/ReplicationProtectionContainers_ListByReplicationFabrics.json"
@@ -1515,7 +1406,6 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the protection container details.": {
             "$ref": "./examples/ReplicationProtectionContainers_Get.json"
@@ -1597,7 +1487,7 @@
           "ReplicationProtectionContainers"
         ],
         "summary": "Adds a protectable item to the replication protection container.",
-        "description": "The operation to a add a protectable item to a protection container(Add physical server).",
+        "description": "The operation to a add a protectable item to a protection container(Add physical server.)",
         "operationId": "ReplicationProtectionContainers_DiscoverProtectableItem",
         "consumes": [
           "application/json"
@@ -1669,6 +1559,9 @@
         "summary": "Removes a protection container.",
         "description": "Operation to remove a protection container.",
         "operationId": "ReplicationProtectionContainers_Delete",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "$ref": "#/parameters/ApiVersion"
@@ -1763,7 +1656,6 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of migration items in the protection container.": {
             "$ref": "./examples/ReplicationMigrationItems_ListByReplicationProtectionContainers.json"
@@ -1824,7 +1716,6 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the details of a migration item.": {
             "$ref": "./examples/ReplicationMigrationItems_Get.json"
@@ -1913,6 +1804,9 @@
         "summary": "Delete the migration item.",
         "description": "The operation to delete an ASR migration item.",
         "operationId": "ReplicationMigrationItems_Delete",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "$ref": "#/parameters/ApiVersion"
@@ -1951,7 +1845,7 @@
             "name": "deleteOption",
             "in": "query",
             "description": "The delete option.",
-            "required": true,
+            "required": false,
             "type": "string"
           }
         ],
@@ -2179,7 +2073,6 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the recovery points for a migration item.": {
             "$ref": "./examples/MigrationRecoveryPoints_ListByReplicationMigrationItems.json"
@@ -2247,7 +2140,6 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets a recovery point for a migration item.": {
             "$ref": "./examples/MigrationRecoveryPoints_Get.json"
@@ -2528,21 +2420,7 @@
             "name": "$filter",
             "in": "query",
             "description": "OData filter options.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "$take",
-            "in": "query",
-            "description": "take OData query parameter.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "$skipToken",
-            "in": "query",
-            "description": "skipToken OData query parameter.",
-            "required": true,
+            "required": false,
             "type": "string"
           }
         ],
@@ -2558,7 +2436,6 @@
           "nextLinkName": "nextLink"
         },
         "x-ms-odata": "#/definitions/ProtectableItemQueryParameter",
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of protectable items.": {
             "$ref": "./examples/ReplicationProtectableItems_ListByReplicationProtectionContainers.json"
@@ -2620,7 +2497,6 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the details of a protectable item.": {
             "$ref": "./examples/ReplicationProtectableItems_Get.json"
@@ -2678,7 +2554,6 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of Replication protected items.": {
             "$ref": "./examples/ReplicationProtectedItems_ListByReplicationProtectionContainers.json"
@@ -2740,7 +2615,6 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the details of a Replication protected item.": {
             "$ref": "./examples/ReplicationProtectedItems_Get.json"
@@ -2829,6 +2703,9 @@
         "summary": "Purges protection.",
         "description": "The operation to delete or purge a replication protected item. This operation will force delete the replication protected item. Use the remove operation on replication protected item to perform a clean disable replication for the item.",
         "operationId": "ReplicationProtectedItems_Purge",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "$ref": "#/parameters/ApiVersion"
@@ -3037,7 +2914,7 @@
         "tags": [
           "ReplicationProtectedItems"
         ],
-        "summary": "Execute commit failover.",
+        "summary": "Execute commit failover",
         "description": "Operation to commit the failover of the replication protected item.",
         "operationId": "ReplicationProtectedItems_FailoverCommit",
         "produces": [
@@ -3091,7 +2968,7 @@
         },
         "x-ms-long-running-operation": true,
         "x-ms-examples": {
-          "Execute commit failover.": {
+          "Execute commit failover": {
             "$ref": "./examples/ReplicationProtectedItems_FailoverCommit.json"
           }
         }
@@ -3102,7 +2979,7 @@
         "tags": [
           "ReplicationProtectedItems"
         ],
-        "summary": "Execute planned failover.",
+        "summary": "Execute planned failover",
         "description": "Operation to initiate a planned failover of the replication protected item.",
         "operationId": "ReplicationProtectedItems_PlannedFailover",
         "consumes": [
@@ -3168,7 +3045,7 @@
         },
         "x-ms-long-running-operation": true,
         "x-ms-examples": {
-          "Execute planned failover.": {
+          "Execute planned failover": {
             "$ref": "./examples/ReplicationProtectedItems_PlannedFailover.json"
           }
         }
@@ -3231,7 +3108,6 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Get recovery points for a replication protected item.": {
             "$ref": "./examples/RecoveryPoints_ListByReplicationProtectedItems.json"
@@ -3300,7 +3176,6 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Get a recovery point.": {
             "$ref": "./examples/RecoveryPoints_Get.json"
@@ -3317,6 +3192,9 @@
         "description": "The operation to disable replication on a replication protected item. This will also remove the item.",
         "operationId": "ReplicationProtectedItems_Delete",
         "consumes": [
+          "application/json"
+        ],
+        "produces": [
           "application/json"
         ],
         "parameters": [
@@ -3449,7 +3327,7 @@
         "tags": [
           "ReplicationProtectedItems"
         ],
-        "summary": "Execute Reverse Replication\\Reprotect.",
+        "summary": "Execute Reverse Replication\\Reprotect",
         "description": "Operation to reprotect or reverse replicate a failed over replication protected item.",
         "operationId": "ReplicationProtectedItems_Reprotect",
         "consumes": [
@@ -3515,74 +3393,8 @@
         },
         "x-ms-long-running-operation": true,
         "x-ms-examples": {
-          "Execute Reverse Replication\\Reprotect.": {
+          "Execute Reverse Replication\\Reprotect": {
             "$ref": "./examples/ReplicationProtectedItems_Reprotect.json"
-          }
-        }
-      }
-    },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/submitFeedback": {
-      "post": {
-        "tags": [
-          "ReplicationProtectedItems"
-        ],
-        "summary": "Submit feedback for a replication protected item.",
-        "operationId": "SubmitFeedback",
-        "consumes": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/parameters/ApiVersion"
-          },
-          {
-            "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceGroupName"
-          },
-          {
-            "$ref": "#/parameters/SubscriptionId"
-          },
-          {
-            "name": "fabricName",
-            "in": "path",
-            "description": "Fabric name.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "protectionContainerName",
-            "in": "path",
-            "description": "Protection container name.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "replicatedProtectedItemName",
-            "in": "path",
-            "description": "Replication protected item name.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "submitFeedbackInput",
-            "in": "body",
-            "description": "Submit feedback input.",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/SubmitFeedbackInput"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        },
-        "x-ms-examples": {
-          "Submit feedback for a replication protected item.": {
-            "$ref": "./examples/SubmitFeedback.json"
           }
         }
       }
@@ -3644,7 +3456,6 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of target compute sizes for the replication protected item.": {
             "$ref": "./examples/TargetComputeSizes_ListByReplicationProtectedItems.json"
@@ -3657,9 +3468,9 @@
         "tags": [
           "ReplicationProtectedItems"
         ],
-        "summary": "Execute test failover.",
+        "summary": "Execute test failover",
         "description": "Operation to perform a test failover of the replication protected item.",
-        "operationId": "TestFailover",
+        "operationId": "ReplicationProtectedItems_TestFailover",
         "consumes": [
           "application/json"
         ],
@@ -3714,13 +3525,17 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/System.Net.Http.HttpResponseMessage"
+              "$ref": "#/definitions/ReplicationProtectedItem"
             }
+          },
+          "202": {
+            "description": "Accepted"
           }
         },
+        "x-ms-long-running-operation": true,
         "x-ms-examples": {
-          "Execute test failover.": {
-            "$ref": "./examples/TestFailover.json"
+          "Execute test failover": {
+            "$ref": "./examples/ReplicationProtectedItems_TestFailover.json"
           }
         }
       }
@@ -3807,7 +3622,7 @@
         "tags": [
           "ReplicationProtectedItems"
         ],
-        "summary": "Execute unplanned failover.",
+        "summary": "Execute unplanned failover",
         "description": "Operation to initiate a failover of the replication protected item.",
         "operationId": "ReplicationProtectedItems_UnplannedFailover",
         "consumes": [
@@ -3873,7 +3688,7 @@
         },
         "x-ms-long-running-operation": true,
         "x-ms-examples": {
-          "Execute unplanned failover.": {
+          "Execute unplanned failover": {
             "$ref": "./examples/ReplicationProtectedItems_UnplannedFailover.json"
           }
         }
@@ -4006,7 +3821,6 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of protection container mappings for a protection container.": {
             "$ref": "./examples/ReplicationProtectionContainerMappings_ListByReplicationProtectionContainers.json"
@@ -4019,7 +3833,7 @@
         "tags": [
           "ReplicationProtectionContainerMappings"
         ],
-        "summary": "Gets a protection container mapping.",
+        "summary": "Gets a protection container mapping/",
         "description": "Gets the details of a protection container mapping.",
         "operationId": "ReplicationProtectionContainerMappings_Get",
         "produces": [
@@ -4068,9 +3882,8 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
-          "Gets a protection container mapping.": {
+          "Gets a protection container mapping/": {
             "$ref": "./examples/ReplicationProtectionContainerMappings_Get.json"
           }
         }
@@ -4155,8 +3968,11 @@
           "ReplicationProtectionContainerMappings"
         ],
         "summary": "Purge protection container mapping.",
-        "description": "The operation to purge(force delete) a protection container mapping.",
+        "description": "The operation to purge(force delete) a protection container mapping",
         "operationId": "ReplicationProtectionContainerMappings_Purge",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "$ref": "#/parameters/ApiVersion"
@@ -4294,6 +4110,9 @@
         "consumes": [
           "application/json"
         ],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "$ref": "#/parameters/ApiVersion"
@@ -4418,7 +4237,7 @@
         },
         "x-ms-long-running-operation": true,
         "x-ms-examples": {
-          "Switches protection from one container to another or one replication provider to\r\nanother.": {
+          "Switches protection from one container to another or one replication provider to another.": {
             "$ref": "./examples/ReplicationProtectionContainers_SwitchProtection.json"
           }
         }
@@ -4451,7 +4270,7 @@
           {
             "name": "fabricName",
             "in": "path",
-            "description": "Fabric name.",
+            "description": "Fabric name",
             "required": true,
             "type": "string"
           }
@@ -4467,7 +4286,6 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of registered recovery services providers for the fabric.": {
             "$ref": "./examples/ReplicationRecoveryServicesProviders_ListByReplicationFabrics.json"
@@ -4509,7 +4327,7 @@
           {
             "name": "providerName",
             "in": "path",
-            "description": "Recovery services provider name.",
+            "description": "Recovery services provider name",
             "required": true,
             "type": "string"
           }
@@ -4522,7 +4340,6 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the details of a recovery services provider.": {
             "$ref": "./examples/ReplicationRecoveryServicesProviders_Get.json"
@@ -4544,15 +4361,15 @@
         ],
         "parameters": [
           {
-            "required": false,
             "$ref": "#/parameters/ApiVersion"
           },
           {
-            "required": false,
+            "$ref": "#/parameters/ResourceName"
+          },
+          {
             "$ref": "#/parameters/ResourceGroupName"
           },
           {
-            "required": false,
             "$ref": "#/parameters/SubscriptionId"
           },
           {
@@ -4573,7 +4390,7 @@
             "name": "addProviderInput",
             "in": "body",
             "description": "Add provider input.",
-            "required": false,
+            "required": true,
             "schema": {
               "$ref": "#/definitions/AddRecoveryServicesProviderInput"
             }
@@ -4581,24 +4398,32 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/RecoveryServicesProvider"
             }
           },
           "202": {
-            "description": "Success"
+            "description": "Accepted"
           }
         },
-        "x-ms-long-running-operation": true
+        "x-ms-long-running-operation": true,
+        "x-ms-examples": {
+          "Adds a recovery services provider.": {
+            "$ref": "./examples/ReplicationRecoveryServicesProviders_Create.json"
+          }
+        }
       },
       "delete": {
         "tags": [
           "ReplicationRecoveryServicesProviders"
         ],
-        "summary": "Purges recovery service provider from fabric.",
+        "summary": "Purges recovery service provider from fabric",
         "description": "The operation to purge(force delete) a recovery services provider from the vault.",
         "operationId": "ReplicationRecoveryServicesProviders_Purge",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "$ref": "#/parameters/ApiVersion"
@@ -4637,7 +4462,7 @@
         },
         "x-ms-long-running-operation": true,
         "x-ms-examples": {
-          "Purges recovery service provider from fabric.": {
+          "Purges recovery service provider from fabric": {
             "$ref": "./examples/ReplicationRecoveryServicesProviders_Purge.json"
           }
         }
@@ -4707,8 +4532,11 @@
           "ReplicationRecoveryServicesProviders"
         ],
         "summary": "Deletes provider from fabric. Note: Deleting provider for any fabric other than SingleHost is unsupported. To maintain backward compatibility for released clients the object \"deleteRspInput\" is used (if the object is empty we assume that it is old client and continue the old behavior).",
-        "description": "The operation to removes/delete(unregister) a recovery services provider from the vault.",
+        "description": "The operation to removes/delete(unregister) a recovery services provider from the vault",
         "operationId": "ReplicationRecoveryServicesProviders_Delete",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "$ref": "#/parameters/ApiVersion"
@@ -4747,7 +4575,7 @@
         },
         "x-ms-long-running-operation": true,
         "x-ms-examples": {
-          "Deletes provider from fabric.\r\nNote: Deleting provider for any fabric other than SingleHost is unsupported. To\r\nmaintain backward compatibility for released clients the object \"deleteRspInput\" is\r\nused (if the object is empty we assume that it is old client and continue the old\r\nbehavior).": {
+          "Deletes provider from fabric. Note: Deleting provider for any fabric other than SingleHost is unsupported. To maintain backward compatibility for released clients the object \"deleteRspInput\" is used (if the object is empty we assume that it is old client and continue the old behavior).": {
             "$ref": "./examples/ReplicationRecoveryServicesProviders_Delete.json"
           }
         }
@@ -4796,7 +4624,6 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of storage classification objects under a fabric.": {
             "$ref": "./examples/ReplicationStorageClassifications_ListByReplicationFabrics.json"
@@ -4851,7 +4678,6 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the details of a storage classification.": {
             "$ref": "./examples/ReplicationStorageClassifications_Get.json"
@@ -4909,7 +4735,6 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of storage classification mappings objects under a storage.": {
             "$ref": "./examples/ReplicationStorageClassificationMappings_ListByReplicationStorageClassifications.json"
@@ -4971,7 +4796,6 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the details of a storage classification mapping.": {
             "$ref": "./examples/ReplicationStorageClassificationMappings_Get.json"
@@ -5060,6 +4884,9 @@
         "summary": "Delete a storage classification mapping.",
         "description": "The operation to delete a storage classification mapping.",
         "operationId": "ReplicationStorageClassificationMappings_Delete",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "$ref": "#/parameters/ApiVersion"
@@ -5154,7 +4981,6 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of vCenter registered under a fabric.": {
             "$ref": "./examples/ReplicationvCenters_ListByReplicationFabrics.json"
@@ -5168,7 +4994,7 @@
           "ReplicationvCenters"
         ],
         "summary": "Gets the details of a vCenter.",
-        "description": "Gets the details of a registered vCenter server(Add vCenter server).",
+        "description": "Gets the details of a registered vCenter server(Add vCenter server.)",
         "operationId": "ReplicationvCenters_Get",
         "produces": [
           "application/json"
@@ -5209,7 +5035,6 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the details of a vCenter.": {
             "$ref": "./examples/ReplicationvCenters_Get.json"
@@ -5291,6 +5116,9 @@
         "summary": "Remove vCenter operation.",
         "description": "The operation to remove(unregister) a registered vCenter server from the vault.",
         "operationId": "ReplicationvCenters_Delete",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "$ref": "#/parameters/ApiVersion"
@@ -5370,7 +5198,7 @@
           {
             "name": "vCenterName",
             "in": "path",
-            "description": "vCeneter name.",
+            "description": "vCenter name",
             "required": true,
             "type": "string"
           },
@@ -5431,7 +5259,7 @@
             "name": "$filter",
             "in": "query",
             "description": "OData filter options.",
-            "required": true,
+            "required": false,
             "type": "string"
           }
         ],
@@ -5447,7 +5275,6 @@
           "nextLinkName": "nextLink"
         },
         "x-ms-odata": "#/definitions/JobQueryParameter",
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of jobs.": {
             "$ref": "./examples/ReplicationJobs_List.json"
@@ -5482,7 +5309,7 @@
           {
             "name": "jobName",
             "in": "path",
-            "description": "Job identifier.",
+            "description": "Job identifier",
             "required": true,
             "type": "string"
           }
@@ -5495,7 +5322,6 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the job details.": {
             "$ref": "./examples/ReplicationJobs_Get.json"
@@ -5611,7 +5437,7 @@
           "ReplicationJobs"
         ],
         "summary": "Resumes the specified job.",
-        "description": "The operation to resume an Azure Site Recovery job.",
+        "description": "The operation to resume an Azure Site Recovery job",
         "operationId": "ReplicationJobs_Resume",
         "consumes": [
           "application/json"
@@ -5718,7 +5544,7 @@
         },
         "x-ms-long-running-operation": true,
         "x-ms-examples": {
-          "Gets \"ExportJobs\" workflow details.\r\nOld method: Two APIs were exposed for performing export jobs, one api\r\n(subscriptions/workflow/computeWorkflowHistory) to trigger the export jobs workflow and\r\nanother api to get the blob information after the workflow has completed successfully\r\n(subscriptions/workflow/{workflowId}/blobUrlWithSASKey)\r\nNew Method: Only one API is exposed to trigger export jobs workflow, which will trigger\r\nthe export jobs workflow, however in order to store the blob information(blobUri and\r\nsas token) the CustomDetails field associated with the JobProperties (in Job Object)\r\nis being used. This will be set once the export jobs workflow completes successfully.\r\nWithin custom details, instanceType is set to \"ExportJobsDetails\" and fields\r\n\"blobUri\" and \"sasToken\" contains the required information that is necessary to access\r\nexported jobs data.\r\nNote:\r\n1. Current Implementation only supports one type of AffectedObjectType and one value\r\nfor WorkflowStatus for the filer. Hence the current implementation only uses the first\r\nvalue in the corresponding lists.\r\n2. A dummy Job Entity is created in the Jobs table (this is marked as internal job)\r\nThis job entity can be identified by the Scenario Name which is set to\r\n\"ScenarioName.ExportsJobs\".": {
+          "Exports the details of the Azure Site Recovery jobs of the vault.": {
             "$ref": "./examples/ReplicationJobs_Export.json"
           }
         }
@@ -5751,14 +5577,14 @@
             "name": "skipToken",
             "in": "query",
             "description": "The pagination token.",
-            "required": true,
+            "required": false,
             "type": "string"
           },
           {
             "name": "$filter",
             "in": "query",
             "description": "OData filter options.",
-            "required": true,
+            "required": false,
             "type": "string"
           }
         ],
@@ -5774,7 +5600,6 @@
           "nextLinkName": "nextLink"
         },
         "x-ms-odata": "#/definitions/MigrationItemsQueryParameter",
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of migration items in the vault.": {
             "$ref": "./examples/ReplicationMigrationItems_List.json"
@@ -5818,7 +5643,6 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets all the network mappings under a vault.": {
             "$ref": "./examples/ReplicationNetworkMappings_List.json"
@@ -5832,7 +5656,7 @@
           "ReplicationNetworks"
         ],
         "summary": "Gets the list of networks. View-only API.",
-        "description": "Lists the networks available in a vault.",
+        "description": "Lists the networks available in a vault",
         "operationId": "ReplicationNetworks_List",
         "produces": [
           "application/json"
@@ -5862,58 +5686,9 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of networks. View-only API.": {
             "$ref": "./examples/ReplicationNetworks_List.json"
-          }
-        }
-      }
-    },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationOperationStatus/{operationStatusId}": {
-      "get": {
-        "tags": [
-          "ReplicationOperationStatus"
-        ],
-        "summary": "Tracks the operation status response of any non-GET operation. This controller is not specific to ASR resource and directly will work on vault level call.",
-        "description": "Generic operation status response of any non-GET operation.",
-        "operationId": "ReplicationOperationStatus_Get",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/parameters/ApiVersion"
-          },
-          {
-            "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceGroupName"
-          },
-          {
-            "$ref": "#/parameters/SubscriptionId"
-          },
-          {
-            "name": "operationStatusId",
-            "in": "path",
-            "description": "Operation status Id, actually job name.",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/System.Net.Http.HttpResponseMessage"
-            }
-          }
-        },
-        "x-ms-long-running-operation": true,
-        "x-ms-examples": {
-          "Tracks the operation status response of any non-GET operation.\r\nThis controller is not specific to ASR resource and directly will work on vault\r\nlevel call.": {
-            "$ref": "./examples/ReplicationOperationStatus_Get.json"
           }
         }
       }
@@ -5923,7 +5698,7 @@
         "tags": [
           "ReplicationPolicies"
         ],
-        "summary": "Gets the list of replication policies.",
+        "summary": "Gets the list of replication policies",
         "description": "Lists the replication policies for a vault.",
         "operationId": "ReplicationPolicies_List",
         "produces": [
@@ -5954,9 +5729,8 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
-          "Gets the list of replication policies.": {
+          "Gets the list of replication policies": {
             "$ref": "./examples/ReplicationPolicies_List.json"
           }
         }
@@ -6002,7 +5776,6 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the requested policy.": {
             "$ref": "./examples/ReplicationPolicies_Get.json"
@@ -6014,7 +5787,7 @@
           "ReplicationPolicies"
         ],
         "summary": "Creates the policy.",
-        "description": "The operation to create a replication policy.",
+        "description": "The operation to create a replication policy",
         "operationId": "ReplicationPolicies_Create",
         "consumes": [
           "application/json"
@@ -6038,14 +5811,14 @@
           {
             "name": "policyName",
             "in": "path",
-            "description": "Replication policy name.",
+            "description": "Replication policy name",
             "required": true,
             "type": "string"
           },
           {
             "name": "input",
             "in": "body",
-            "description": "Create policy input.",
+            "description": "Create policy input",
             "required": true,
             "schema": {
               "$ref": "#/definitions/CreatePolicyInput"
@@ -6077,6 +5850,9 @@
         "summary": "Delete the policy.",
         "description": "The operation to delete a replication policy.",
         "operationId": "ReplicationPolicies_Delete",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "$ref": "#/parameters/ApiVersion"
@@ -6149,7 +5925,7 @@
           {
             "name": "input",
             "in": "body",
-            "description": "Update Policy Input.",
+            "description": "Update Policy Input",
             "required": true,
             "schema": {
               "$ref": "#/definitions/UpdatePolicyInput"
@@ -6202,15 +5978,15 @@
           {
             "name": "skipToken",
             "in": "query",
-            "description": "The pagination token. Possible values: \"FabricId\" or \"FabricId_CloudId\" or null.",
-            "required": true,
+            "description": "The pagination token. Possible values: \"FabricId\" or \"FabricId_CloudId\" or null",
+            "required": false,
             "type": "string"
           },
           {
             "name": "$filter",
             "in": "query",
             "description": "OData filter options.",
-            "required": true,
+            "required": false,
             "type": "string"
           }
         ],
@@ -6226,7 +6002,6 @@
           "nextLinkName": "nextLink"
         },
         "x-ms-odata": "#/definitions/ProtectedItemsQueryParameter",
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of replication protected items.": {
             "$ref": "./examples/ReplicationProtectedItems_List.json"
@@ -6270,7 +6045,6 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of all protection container mappings in a vault.": {
             "$ref": "./examples/ReplicationProtectionContainerMappings_List.json"
@@ -6314,7 +6088,6 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of all protection containers in a vault.": {
             "$ref": "./examples/ReplicationProtectionContainers_List.json"
@@ -6358,7 +6131,6 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of recovery plans.": {
             "$ref": "./examples/ReplicationRecoveryPlans_List.json"
@@ -6406,7 +6178,6 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the requested recovery plan.": {
             "$ref": "./examples/ReplicationRecoveryPlans_Get.json"
@@ -6481,6 +6252,9 @@
         "summary": "Deletes the specified recovery plan.",
         "description": "Delete a recovery plan.",
         "operationId": "ReplicationRecoveryPlans_Delete",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "$ref": "#/parameters/ApiVersion"
@@ -6553,7 +6327,7 @@
           {
             "name": "input",
             "in": "body",
-            "description": "Update recovery plan input.",
+            "description": "Update recovery plan input",
             "required": true,
             "schema": {
               "$ref": "#/definitions/UpdateRecoveryPlanInput"
@@ -6939,7 +6713,7 @@
           "ReplicationRecoveryServicesProviders"
         ],
         "summary": "Gets the list of registered recovery services providers in the vault. This is a view only api.",
-        "description": "Lists the registered recovery services providers in the vault.",
+        "description": "Lists the registered recovery services providers in the vault",
         "operationId": "ReplicationRecoveryServicesProviders_List",
         "produces": [
           "application/json"
@@ -6969,9 +6743,8 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
-          "Gets the list of registered recovery services providers in the vault.\r\nThis is a view only api.": {
+          "Gets the list of registered recovery services providers in the vault. This is a view only api.": {
             "$ref": "./examples/ReplicationRecoveryServicesProviders_List.json"
           }
         }
@@ -7013,7 +6786,6 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of storage classification mappings objects under a vault.": {
             "$ref": "./examples/ReplicationStorageClassificationMappings_List.json"
@@ -7057,90 +6829,9 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of storage classification objects under a vault.": {
             "$ref": "./examples/ReplicationStorageClassifications_List.json"
-          }
-        }
-      }
-    },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationSupportedOperatingSystems": {
-      "get": {
-        "tags": [
-          "SupportedOperatingSystems"
-        ],
-        "summary": "Gets the data of supported OSes by SRS.",
-        "operationId": "SupportedOperatingSystems_Get",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/parameters/ApiVersion"
-          },
-          {
-            "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceGroupName"
-          },
-          {
-            "$ref": "#/parameters/SubscriptionId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/SupportedOperatingSystems"
-            }
-          }
-        },
-        "x-ms-long-running-operation": true,
-        "x-ms-examples": {
-          "Gets the data of supported OSes by SRS.": {
-            "$ref": "./examples/SupportedOperatingSystems_Get.json"
-          }
-        }
-      }
-    },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationUsages": {
-      "get": {
-        "tags": [
-          "VaultUsage"
-        ],
-        "summary": "Gets the usage metrics for the vault.",
-        "description": "the operation to get the usage metrics for the vault.",
-        "operationId": "ReplicationUsages",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/parameters/ApiVersion"
-          },
-          {
-            "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceGroupName"
-          },
-          {
-            "$ref": "#/parameters/SubscriptionId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/VaultUsages"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "Gets the usage metrics for the vault.": {
-            "$ref": "./examples/ReplicationUsages.json"
           }
         }
       }
@@ -7178,7 +6869,6 @@
             }
           }
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the health summary for the vault.": {
             "$ref": "./examples/ReplicationVaultHealth_Get.json"
@@ -7265,50 +6955,9 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
-        "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "Gets the list of vCenter registered under the vault.": {
             "$ref": "./examples/ReplicationvCenters_List.json"
-          }
-        }
-      }
-    },
-    "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/usages": {
-      "get": {
-        "tags": [
-          "VaultUsage"
-        ],
-        "summary": "Gets the usage metrics for the vault.",
-        "description": "The operation to get the usage metrics for the vault.",
-        "operationId": "VaultUsages",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/parameters/ApiVersion"
-          },
-          {
-            "$ref": "#/parameters/ResourceName"
-          },
-          {
-            "$ref": "#/parameters/ResourceGroupName"
-          },
-          {
-            "$ref": "#/parameters/SubscriptionId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/UsagesResponse"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "Gets the usage metrics for the vault.": {
-            "$ref": "./examples/VaultUsages.json"
           }
         }
       }
@@ -7349,8 +6998,8 @@
         "agentAutoUpdateStatus": {
           "description": "A value indicating whether the auto update is enabled.",
           "enum": [
-            "disabled",
-            "enabled"
+            "Disabled",
+            "Enabled"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -7365,100 +7014,8 @@
       },
       "x-ms-discriminator-value": "A2A"
     },
-    "A2ACrossClusterMigrationApplyRecoveryPointInput": {
-      "description": "ApplyRecoveryPoint input specific to A2ACrossClusterMigration provider.",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ApplyRecoveryPointProviderSpecificInput"
-        }
-      ],
-      "properties": {},
-      "x-ms-discriminator-value": "A2ACrossClusterMigration"
-    },
-    "A2ACrossClusterMigrationContainerCreationInput": {
-      "description": "A2ACrossClusterMigration cloud creation input.",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ReplicationProviderSpecificContainerCreationInput"
-        }
-      ],
-      "properties": {},
-      "x-ms-discriminator-value": "A2ACrossClusterMigration"
-    },
-    "A2ACrossClusterMigrationEnableProtectionInput": {
-      "description": "A2A Cross-Cluster Migration enable protection input.",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/EnableProtectionProviderSpecificInput"
-        }
-      ],
-      "properties": {
-        "fabricObjectId": {
-          "description": "The fabric specific object Id of the virtual machine.",
-          "type": "string"
-        },
-        "recoveryContainerId": {
-          "description": "The recovery container Id.",
-          "type": "string"
-        }
-      },
-      "x-ms-discriminator-value": "A2ACrossClusterMigration"
-    },
-    "A2ACrossClusterMigrationPolicyCreationInput": {
-      "description": "A2A Cross-Cluster Migration Policy creation input.",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/PolicyProviderSpecificInput"
-        }
-      ],
-      "properties": {},
-      "x-ms-discriminator-value": "A2ACrossClusterMigration"
-    },
-    "A2ACrossClusterMigrationReplicationDetails": {
-      "description": "A2A provider specific settings.",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ReplicationProviderSpecificSettings"
-        }
-      ],
-      "properties": {
-        "fabricObjectId": {
-          "description": "The fabric specific object Id of the virtual machine.",
-          "type": "string"
-        },
-        "primaryFabricLocation": {
-          "description": "Primary fabric location.",
-          "type": "string"
-        },
-        "osType": {
-          "description": "The type of operating system.",
-          "type": "string"
-        },
-        "vmProtectionState": {
-          "description": "The protection state for the vm.",
-          "type": "string"
-        },
-        "vmProtectionStateDescription": {
-          "description": "The protection state description for the vm.",
-          "type": "string"
-        },
-        "lifecycleId": {
-          "description": "An id associated with the PE that survives actions like switch protection which change the backing PE/CPE objects internally.The lifecycle id gets carried forward to have a link/continuity in being able to have an Id that denotes the \"same\" protected item even though other internal Ids/ARM Id might be changing.",
-          "type": "string"
-        }
-      },
-      "x-ms-discriminator-value": "A2ACrossClusterMigration"
-    },
     "A2AEnableProtectionInput": {
       "description": "A2A enable protection input.",
-      "required": [
-        "fabricObjectId"
-      ],
       "type": "object",
       "allOf": [
         {
@@ -7504,10 +7061,6 @@
           "description": "The multi vm group name.",
           "type": "string"
         },
-        "multiVmGroupId": {
-          "description": "The multi vm group id.",
-          "type": "string"
-        },
         "recoveryBootDiagStorageAccountId": {
           "description": "The boot diagnostic storage account.",
           "type": "string"
@@ -7515,18 +7068,6 @@
         "diskEncryptionInfo": {
           "$ref": "#/definitions/DiskEncryptionInfo",
           "description": "The recovery disk encryption information."
-        },
-        "recoveryAvailabilityZone": {
-          "description": "The recovery availability zone.",
-          "type": "string"
-        },
-        "recoveryAzureNetworkId": {
-          "description": "The recovery Azure virtual network ARM id.",
-          "type": "string"
-        },
-        "recoverySubnetName": {
-          "description": "The recovery subnet name.",
-          "type": "string"
         }
       },
       "x-ms-discriminator-value": "A2A"
@@ -7617,8 +7158,8 @@
         "multiVmSyncStatus": {
           "description": "A value indicating whether multi-VM sync has to be enabled. Value should be 'Enabled' or 'Disabled'.",
           "enum": [
-            "enable",
-            "disable"
+            "Enable",
+            "Disable"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -7725,17 +7266,6 @@
           "description": "The data pending at source virtual machine in MB.",
           "type": "number"
         },
-        "diskState": {
-          "description": "The disk state.",
-          "type": "string"
-        },
-        "allowedDiskLevelOperation": {
-          "description": "The disk level operations list.",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "isDiskEncrypted": {
           "description": "A value indicating whether vm has encrypted os disk or not.",
           "type": "boolean"
@@ -7759,14 +7289,6 @@
         "kekKeyVaultArmId": {
           "description": "The KeyVault resource id for key (KEK).",
           "type": "string"
-        },
-        "failoverDiskName": {
-          "description": "The failover name for the managed disk.",
-          "type": "string"
-        },
-        "tfoDiskName": {
-          "description": "The test failover name for the managed disk.",
-          "type": "string"
         }
       }
     },
@@ -7788,10 +7310,6 @@
         },
         "recoveryReplicaDiskId": {
           "description": "Recovery replica disk Arm Id.",
-          "type": "string"
-        },
-        "recoveryOrignalTargetDiskId": {
-          "description": "Recovery orignal target disk Arm Id.",
           "type": "string"
         },
         "recoveryReplicaDiskAccountType": {
@@ -7842,17 +7360,6 @@
           "description": "The data pending at source virtual machine in MB.",
           "type": "number"
         },
-        "diskState": {
-          "description": "The disk state.",
-          "type": "string"
-        },
-        "allowedDiskLevelOperation": {
-          "description": "The disk level operations list.",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "isDiskEncrypted": {
           "description": "A value indicating whether vm has encrypted os disk or not.",
           "type": "boolean"
@@ -7876,14 +7383,6 @@
         "kekKeyVaultArmId": {
           "description": "The KeyVault resource id for key (KEK).",
           "type": "string"
-        },
-        "failoverDiskName": {
-          "description": "The failover name for the managed disk.",
-          "type": "string"
-        },
-        "tfoDiskName": {
-          "description": "The test failover name for the managed disk.",
-          "type": "string"
         }
       }
     },
@@ -7899,8 +7398,8 @@
         "agentAutoUpdateStatus": {
           "description": "A value indicating whether the auto update is enabled.",
           "enum": [
-            "disabled",
-            "enabled"
+            "Disabled",
+            "Enabled"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -7935,20 +7434,13 @@
         "recoveryPointSyncType": {
           "description": "A value indicating whether the recovery point is multi VM consistent.",
           "enum": [
-            "multiVmSyncRecoveryPoint",
-            "perVmRecoveryPoint"
+            "MultiVmSyncRecoveryPoint",
+            "PerVmRecoveryPoint"
           ],
           "type": "string",
           "x-ms-enum": {
             "name": "RecoveryPointSyncType",
             "modelAsString": true
-          }
-        },
-        "disks": {
-          "description": "List of disk ids representing a recovery point.",
-          "type": "array",
-          "items": {
-            "type": "string"
           }
         }
       },
@@ -7978,8 +7470,8 @@
         "multiVmGroupCreateOption": {
           "description": "Whether Multi VM group is auto created or specified by user.",
           "enum": [
-            "autoCreated",
-            "userSpecified"
+            "AutoCreated",
+            "UserSpecified"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -8074,11 +7566,6 @@
           "description": "The agent version.",
           "type": "string"
         },
-        "agentExpiryDate": {
-          "format": "date-time",
-          "description": "Agent expiry date.",
-          "type": "string"
-        },
         "isReplicationAgentUpdateRequired": {
           "description": "A value indicating whether replication agent update is required.",
           "type": "boolean"
@@ -8111,14 +7598,6 @@
         "lastRpoCalculatedTime": {
           "format": "date-time",
           "description": "The time (in UTC) when the last RPO value was calculated by Protection Service.",
-          "type": "string"
-        },
-        "recoveryAvailabilityZone": {
-          "description": "The recovery availability zone.",
-          "type": "string"
-        },
-        "vmEncryptionType": {
-          "description": "The encryption type of the VM.",
           "type": "string"
         }
       },
@@ -8210,10 +7689,6 @@
           "description": "The boot diagnostic storage account.",
           "type": "string"
         },
-        "recoveryAvailabilityZone": {
-          "description": "The recovery availability zone.",
-          "type": "string"
-        },
         "diskEncryptionInfo": {
           "$ref": "#/definitions/DiskEncryptionInfo",
           "description": "The recovery disk encryption information."
@@ -8233,8 +7708,8 @@
         "agentAutoUpdateStatus": {
           "description": "A value indicating whether the auto update is enabled.",
           "enum": [
-            "disabled",
-            "enabled"
+            "Disabled",
+            "Enabled"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -8286,11 +7761,6 @@
     },
     "A2AVmDiskInputDetails": {
       "description": "Azure VM disk input details.",
-      "required": [
-        "diskUri",
-        "recoveryAzureStorageAccountId",
-        "primaryStagingAzureStorageAccountId"
-      ],
       "type": "object",
       "properties": {
         "diskUri": {
@@ -8309,11 +7779,6 @@
     },
     "A2AVmManagedDiskInputDetails": {
       "description": "Azure VM managed disk input details.",
-      "required": [
-        "diskId",
-        "primaryStagingAzureStorageAccountId",
-        "recoveryResourceGroupId"
-      ],
       "type": "object",
       "properties": {
         "diskId": {
@@ -8431,19 +7896,12 @@
     "Alert": {
       "description": "Implements the Alert class.",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
       "properties": {
-        "name": {
-          "description": "Unique Id of the Alert.",
-          "type": "string"
-        },
-        "type": {
-          "description": "Object type.",
-          "type": "string"
-        },
-        "id": {
-          "description": "Unique ARM identifier for this object.",
-          "type": "string"
-        },
         "properties": {
           "$ref": "#/definitions/AlertProperties",
           "description": "Alert related data."
@@ -8534,6 +7992,68 @@
       "properties": {},
       "x-ms-discriminator-value": "AsrJobDetails"
     },
+    "ASRTask": {
+      "description": "Task of the Job.",
+      "type": "object",
+      "properties": {
+        "taskId": {
+          "description": "The Id.",
+          "type": "string"
+        },
+        "name": {
+          "description": "The unique Task name.",
+          "type": "string"
+        },
+        "startTime": {
+          "format": "date-time",
+          "description": "The start time.",
+          "type": "string"
+        },
+        "endTime": {
+          "format": "date-time",
+          "description": "The end time.",
+          "type": "string"
+        },
+        "allowedActions": {
+          "description": "The state/actions applicable on this task.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "friendlyName": {
+          "description": "The name.",
+          "type": "string"
+        },
+        "state": {
+          "description": "The State. It is one of these values - NotStarted, InProgress, Succeeded, Failed, Cancelled, Suspended or Other.",
+          "type": "string"
+        },
+        "stateDescription": {
+          "description": "The description of the task state. For example - For Succeeded state, description can be Completed, PartiallySucceeded, CompletedWithInformation or Skipped.",
+          "type": "string"
+        },
+        "taskType": {
+          "description": "The type of task. Details in CustomDetails property depend on this type.",
+          "type": "string"
+        },
+        "customDetails": {
+          "$ref": "#/definitions/TaskTypeDetails",
+          "description": "The custom task details based on the task type."
+        },
+        "groupTaskCustomDetails": {
+          "$ref": "#/definitions/GroupTaskDetails",
+          "description": "The custom task details based on the task type, if the task type is GroupTaskDetails or one of the types derived from it."
+        },
+        "errors": {
+          "description": "The task error details.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/JobErrorDetails"
+          }
+        }
+      }
+    },
     "AutomationRunbookTaskDetails": {
       "description": "This class represents the task details for an automation runbook.",
       "type": "object",
@@ -8622,7 +8142,7 @@
       "x-ms-discriminator-value": "Azure"
     },
     "AzureToAzureCreateNetworkMappingInput": {
-      "description": "Create network mappings input properties/behaviour specific to Azure to Azure Network mapping.",
+      "description": "Create network mappings input properties/behavior specific to Azure to Azure Network mapping.",
       "type": "object",
       "allOf": [
         {
@@ -8792,7 +8312,7 @@
       }
     },
     "ConsistencyCheckTaskDetails": {
-      "description": "This class contains monitoring details of all the inconsistent Protected Entites in Vmm.",
+      "description": "This class contains monitoring details of all the inconsistent Protected Entities in Vmm.",
       "type": "object",
       "allOf": [
         {
@@ -8942,9 +8462,9 @@
         "failoverDeploymentModel": {
           "description": "The failover deployment model.",
           "enum": [
-            "notApplicable",
-            "classic",
-            "resourceManager"
+            "NotApplicable",
+            "Classic",
+            "ResourceManager"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -8962,24 +8482,21 @@
       }
     },
     "CurrentJobDetails": {
-      "description": "Current job details of the migraton item.",
+      "description": "Current job details of the migration item.",
       "type": "object",
       "properties": {
         "jobName": {
           "description": "The job name.",
-          "type": "string",
-          "readOnly": true
+          "type": "string"
         },
         "jobId": {
           "description": "The ARM Id of the job being executed.",
-          "type": "string",
-          "readOnly": true
+          "type": "string"
         },
         "startTime": {
           "format": "date-time",
           "description": "The start time of the job.",
-          "type": "string",
-          "readOnly": true
+          "type": "string"
         }
       }
     },
@@ -9003,7 +8520,7 @@
       }
     },
     "DataStore": {
-      "description": "The datastore details of the MT.",
+      "description": "The data store details of the MT.",
       "type": "object",
       "properties": {
         "symbolicName": {
@@ -9028,54 +8545,6 @@
         }
       }
     },
-    "DeployProcessServerRequest": {
-      "description": "Request to create a Process Server.",
-      "type": "object",
-      "properties": {
-        "properties": {
-          "$ref": "#/definitions/DeployProcessServerRequestProperties",
-          "description": "The deploy process server request properties."
-        }
-      }
-    },
-    "DeployProcessServerRequestProperties": {
-      "description": "Deploy Process Server request properties.",
-      "type": "object",
-      "properties": {
-        "subscriptionId": {
-          "description": "The subscription Id.",
-          "type": "string"
-        },
-        "vaultLocation": {
-          "description": "The vault location.",
-          "type": "string"
-        },
-        "friendlyName": {
-          "description": "The process server name.",
-          "type": "string"
-        },
-        "userName": {
-          "description": "The user name.",
-          "type": "string"
-        },
-        "password": {
-          "description": "The password.",
-          "type": "string"
-        },
-        "ipAddress": {
-          "description": "The ip address.",
-          "type": "string"
-        },
-        "azureNetworkName": {
-          "description": "The azure network name.",
-          "type": "string"
-        },
-        "azureNetworkSubnet": {
-          "description": "The azure network subnet.",
-          "type": "string"
-        }
-      }
-    },
     "DisableProtectionInput": {
       "description": "Disable protection input.",
       "type": "object",
@@ -9093,8 +8562,8 @@
         "disableProtectionReason": {
           "description": "Disable protection reason. It can have values NotSpecified/MigrationComplete.",
           "enum": [
-            "notSpecified",
-            "migrationComplete"
+            "NotSpecified",
+            "MigrationComplete"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -9148,7 +8617,7 @@
       }
     },
     "DiskDetails": {
-      "description": "Onprem disk details data.",
+      "description": "On-prem disk details data.",
       "type": "object",
       "properties": {
         "maxSizeMB": {
@@ -9189,11 +8658,11 @@
       "type": "object",
       "properties": {
         "secretIdentifier": {
-          "description": "The secret url / identifier.",
+          "description": "The secret url / identifier.",
           "type": "string"
         },
         "keyVaultResourceArmId": {
-          "description": "The KeyVault resource ARM id for secret.",
+          "description": "The KeyVault resource ARM id for secret.",
           "type": "string"
         }
       }
@@ -9217,19 +8686,19 @@
       "type": "object",
       "properties": {
         "provider": {
-          "description": "The provider. The localized friendly form of the resource provider name – it is expected to also include the publisher/company responsible. It should use Title Casing and begin with \"Microsoft\" for 1st party services. e.g. \"Microsoft Monitoring Insights\" or \"Microsoft Compute.\".",
+          "description": "The provider. The localized friendly form of the resource provider name – it is expected to also include the publisher/company responsible. It should use Title Casing and begin with \"Microsoft\" for 1st party services. e.g. \"Microsoft Monitoring Insights\" or \"Microsoft Compute.\"",
           "type": "string"
         },
         "resource": {
-          "description": "The resource. The localized friendly form of the resource related to this action/operation – it should match the public documentation for the resource provider. It should use Title Casing. This value should be unique for a particular URL type (e.g. nested types should *not* reuse their parent’s display.resource field). e.g. \"Virtual Machines\" or \"Scheduler Job Collections\", or \"Virtual Machine VM Sizes\" or \"Scheduler Jobs\".",
+          "description": "The resource. The localized friendly form of the resource related to this action/operation – it should match the public documentation for the resource provider. It should use Title Casing. This value should be unique for a particular URL type (e.g. nested types should *not* reuse their parent’s display.resource field). e.g. \"Virtual Machines\" or \"Scheduler Job Collections\", or \"Virtual Machine VM Sizes\" or \"Scheduler Jobs\"",
           "type": "string"
         },
         "operation": {
-          "description": "The operation. The localized friendly name for the operation, as it should be shown to the user. It should be concise (to fit in drop downs) but clear (i.e. self-documenting). It should use Title Casing. Prescriptive guidance: Read Create or Update Delete 'ActionName'.",
+          "description": "The operation. The localized friendly name for the operation, as it should be shown to the user. It should be concise (to fit in drop downs) but clear (i.e. self-documenting). It should use Title Casing. Prescriptive guidance: Read Create or Update Delete 'ActionName'",
           "type": "string"
         },
         "description": {
-          "description": "The description. The localized friendly description for the operation, as it should be shown to the user. It should be thorough, yet concise – it will be used in tool tips and detailed views. Prescriptive guidance for namespaces: Read any 'display.provider' resource Create or Update any 'display.provider' resource Delete any 'display.provider' resource Perform any other action on any 'display.provider' resource Prescriptive guidance for namespaces: Read any 'display.resource' Create or Update any 'display.resource' Delete any 'display.resource' 'ActionName' any 'display.resources'.",
+          "description": "The description. The localized friendly description for the operation, as it should be shown to the user. It should be thorough, yet concise – it will be used in tool tips and detailed views. Prescriptive guidance for namespaces: Read any 'display.provider' resource Create or Update any 'display.provider' resource Delete any 'display.provider' resource Perform any other action on any 'display.provider' resource Prescriptive guidance for namespaces: Read any 'display.resource' Create or Update any 'display.resource' Delete any 'display.resource' 'ActionName' any 'display.resources'",
           "type": "string"
         }
       }
@@ -9340,19 +8809,12 @@
     "Event": {
       "description": "Implements the Event class.",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
       "properties": {
-        "name": {
-          "description": "Unique Id of the Event.",
-          "type": "string"
-        },
-        "type": {
-          "description": "Object type.",
-          "type": "string"
-        },
-        "id": {
-          "description": "Unique ARM identifier for this object.",
-          "type": "string"
-        },
         "properties": {
           "$ref": "#/definitions/EventProperties",
           "description": "Event related data."
@@ -9517,19 +8979,12 @@
     "Fabric": {
       "description": "Fabric definition.",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
       "properties": {
-        "name": {
-          "description": "Unique Id of the Fabric.",
-          "type": "string"
-        },
-        "type": {
-          "description": "Object type.",
-          "type": "string"
-        },
-        "id": {
-          "description": "Unique ARM identifier for this object.",
-          "type": "string"
-        },
         "properties": {
           "$ref": "#/definitions/FabricProperties",
           "description": "Fabric related data."
@@ -9554,7 +9009,7 @@
       }
     },
     "FabricCreationInput": {
-      "description": "Site details provided during the time of site creation.",
+      "description": "Site details provided during the time of site creation",
       "type": "object",
       "properties": {
         "properties": {
@@ -9564,7 +9019,7 @@
       }
     },
     "FabricCreationInputProperties": {
-      "description": "Properties of site details provided during the time of site creation.",
+      "description": "Properties of site details provided during the time of site creation",
       "type": "object",
       "properties": {
         "customDetails": {
@@ -9655,8 +9110,7 @@
       "properties": {
         "instanceType": {
           "description": "Gets the class type.",
-          "type": "string",
-          "readOnly": true
+          "type": "string"
         }
       },
       "discriminator": "instanceType"
@@ -9737,7 +9191,7 @@
           }
         },
         "updateType": {
-          "description": "A value for failover type. It can be systemlevel/serverlevel.",
+          "description": "A value for failover type. It can be systemlevel/serverlevel",
           "type": "string"
         }
       }
@@ -9797,14 +9251,14 @@
           "description": "The child tasks.",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Task"
+            "$ref": "#/definitions/ASRTask"
           }
         }
       },
       "discriminator": "instanceType"
     },
     "HealthError": {
-      "description": "Health Error.",
+      "description": "Health Error",
       "type": "object",
       "properties": {
         "innerHealthErrors": {
@@ -9852,7 +9306,7 @@
         },
         "creationTimeUtc": {
           "format": "date-time",
-          "description": "Error creation time (UTC).",
+          "description": "Error creation time (UTC)",
           "type": "string"
         },
         "recoveryProviderErrorMessage": {
@@ -9862,22 +9316,6 @@
         "entityId": {
           "description": "ID of the entity.",
           "type": "string"
-        },
-        "errorId": {
-          "description": "The health error unique id.",
-          "type": "string"
-        },
-        "customerResolvability": {
-          "description": "Value indicating whether the health error is customer resolvable.",
-          "enum": [
-            "allowed",
-            "notAllowed"
-          ],
-          "type": "string",
-          "x-ms-enum": {
-            "name": "HealthErrorCustomerResolvability",
-            "modelAsString": true
-          }
         }
       }
     },
@@ -9892,17 +9330,13 @@
         "category": {
           "description": "The category of the health error.",
           "enum": [
-            "none",
-            "replication",
-            "testFailover",
-            "configuration",
-            "fabricInfrastructure",
-            "versionExpiry",
-            "agentAutoUpdateInfra",
-            "agentAutoUpdateArtifactDeleted",
-            "agentAutoUpdateRunAsAccount",
-            "agentAutoUpdateRunAsAccountExpiry",
-            "agentAutoUpdateRunAsAccountExpired"
+            "None",
+            "Replication",
+            "TestFailover",
+            "Configuration",
+            "FabricInfrastructure",
+            "VersionExpiry",
+            "AgentAutoUpdate"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -9913,10 +9347,10 @@
         "severity": {
           "description": "Severity of error.",
           "enum": [
-            "nONE",
-            "warning",
-            "error",
-            "info"
+            "NONE",
+            "Warning",
+            "Error",
+            "Info"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -10063,7 +9497,7 @@
           "type": "string"
         },
         "enableRdpOnTargetOption": {
-          "description": "The selected option to enable RDP\\SSH on target vm after failover. String value of SrsDataContract.EnableRDPOnTargetOption enum.",
+          "description": "The selected option to enable RDP\\SSH on target vm after failover. String value of {SrsDataContract.EnableRDPOnTargetOption} enum.",
           "type": "string"
         },
         "targetAzureVmName": {
@@ -10091,7 +9525,7 @@
         },
         "useManagedDisks": {
           "description": "A value indicating whether managed disks should be used during failover.",
-          "type": "boolean"
+          "type": "string"
         }
       },
       "x-ms-discriminator-value": "HyperVReplicaAzure"
@@ -10138,7 +9572,7 @@
           "type": "string"
         },
         "providerIdForAlternateRecovery": {
-          "description": "Provider ID for alternate location.",
+          "description": "Provider ID for alternate location",
           "type": "string"
         }
       },
@@ -10346,7 +9780,7 @@
           "type": "integer"
         },
         "enableRdpOnTargetOption": {
-          "description": "The selected option to enable RDP\\SSH on target vm after failover. String value of SrsDataContract.EnableRDPOnTargetOption enum.",
+          "description": "The selected option to enable RDP\\SSH on target vm after failover. String value of {SrsDataContract.EnableRDPOnTargetOption} enum.",
           "type": "string"
         },
         "recoveryAzureResourceGroupId": {
@@ -10359,7 +9793,7 @@
         },
         "useManagedDisks": {
           "description": "A value indicating whether managed disks should be used during failover.",
-          "type": "boolean"
+          "type": "string"
         },
         "licenseType": {
           "description": "License Type of the VM to be used.",
@@ -10423,7 +9857,7 @@
         },
         "useManagedDisks": {
           "description": "A value indicating whether managed disks should be used during failover.",
-          "type": "boolean"
+          "type": "string"
         }
       },
       "x-ms-discriminator-value": "HyperVReplicaAzure"
@@ -10506,7 +9940,7 @@
           "type": "integer"
         },
         "replicaDeletionOption": {
-          "description": "A value indicating whether the VM has to be auto deleted. Supported Values: String.Empty, None, OnRecoveryCloud.",
+          "description": "A value indicating whether the VM has to be auto deleted. Supported Values: String.Empty, None, OnRecoveryCloud",
           "type": "string"
         }
       },
@@ -10614,7 +10048,7 @@
           "type": "integer"
         },
         "replicaDeletionOption": {
-          "description": "A value indicating whether the VM has to be auto deleted. Supported Values: String.Empty, None, OnRecoveryCloud.",
+          "description": "A value indicating whether the VM has to be auto deleted. Supported Values: String.Empty, None, OnRecoveryCloud",
           "type": "string"
         }
       },
@@ -10778,7 +10212,7 @@
           "type": "integer"
         },
         "replicaDeletionOption": {
-          "description": "A value indicating whether the VM has to be auto deleted. Supported Values: String.Empty, None, OnRecoveryCloud.",
+          "description": "A value indicating whether the VM has to be auto deleted. Supported Values: String.Empty, None, OnRecoveryCloud",
           "type": "string"
         }
       },
@@ -10927,11 +10361,11 @@
           }
         },
         "hasPhysicalDisk": {
-          "description": "A value indicating whether the VM has a physical disk attached. String value of SrsDataContract.PresenceStatus enum.",
+          "description": "A value indicating whether the VM has a physical disk attached. String value of {SrsDataContract.PresenceStatus} enum.",
           "enum": [
-            "unknown",
-            "present",
-            "notPresent"
+            "Unknown",
+            "Present",
+            "NotPresent"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -10940,11 +10374,11 @@
           }
         },
         "hasFibreChannelAdapter": {
-          "description": "A value indicating whether the VM has a fibre channel adapter attached. String value of SrsDataContract.PresenceStatus enum.",
+          "description": "A value indicating whether the VM has a fibre channel adapter attached. String value of {SrsDataContract.PresenceStatus} enum.",
           "enum": [
-            "unknown",
-            "present",
-            "notPresent"
+            "Unknown",
+            "Present",
+            "NotPresent"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -10953,11 +10387,11 @@
           }
         },
         "hasSharedVhd": {
-          "description": "A value indicating whether the VM has a shared VHD attached. String value of SrsDataContract.PresenceStatus enum.",
+          "description": "A value indicating whether the VM has a shared VHD attached. String value of {SrsDataContract.PresenceStatus} enum.",
           "enum": [
-            "unknown",
-            "present",
-            "notPresent"
+            "Unknown",
+            "Present",
+            "NotPresent"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -11131,11 +10565,11 @@
         "status": {
           "description": "A value indicating whether security update required.",
           "enum": [
-            "supported",
-            "notSupported",
-            "deprecated",
-            "updateRequired",
-            "securityUpdateRequired"
+            "Supported",
+            "NotSupported",
+            "Deprecated",
+            "UpdateRequired",
+            "SecurityUpdateRequired"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -11213,7 +10647,7 @@
           "type": "string"
         },
         "enableRdpOnTargetOption": {
-          "description": "The selected option to enable RDP\\SSH on target vm after failover. String value of SrsDataContract.EnableRDPOnTargetOption enum.",
+          "description": "The selected option to enable RDP\\SSH on target vm after failover. String value of {SrsDataContract.EnableRDPOnTargetOption} enum.",
           "type": "string"
         },
         "targetAzureVmName": {
@@ -11234,7 +10668,7 @@
         },
         "useManagedDisks": {
           "description": "A value indicating whether managed disks should be used during failover.",
-          "type": "boolean"
+          "type": "string"
         }
       },
       "x-ms-discriminator-value": "InMageAzureV2"
@@ -11249,7 +10683,7 @@
       ],
       "properties": {
         "eventType": {
-          "description": "InMage Event type. Takes one of the values of InMageDataContract.InMageMonitoringEventType.",
+          "description": "InMage Event type. Takes one of the values of {InMageDataContract.InMageMonitoringEventType}.",
           "type": "string"
         },
         "category": {
@@ -11370,8 +10804,8 @@
         "multiVmSyncStatus": {
           "description": "A value indicating whether multi-VM sync has to be enabled. Value should be 'Enabled' or 'Disabled'.",
           "enum": [
-            "enable",
-            "disable"
+            "Enable",
+            "Disable"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -11468,13 +10902,13 @@
       "properties": {
         "isMultiVmSyncPoint": {
           "description": "A value indicating whether the recovery point is multi VM consistent.",
-          "type": "boolean"
+          "type": "string"
         }
       },
       "x-ms-discriminator-value": "InMageAzureV2"
     },
     "InMageAzureV2ReplicationDetails": {
-      "description": "InMageAzureV2 provider specific settings.",
+      "description": "InMageAzureV2 provider specific settings",
       "type": "object",
       "allOf": [
         {
@@ -11648,11 +11082,11 @@
           "type": "string"
         },
         "enableRdpOnTargetOption": {
-          "description": "The selected option to enable RDP\\SSH on target vm after failover. String value of SrsDataContract.EnableRDPOnTargetOption enum.",
+          "description": "The selected option to enable RDP\\SSH on target vm after failover. String value of {SrsDataContract.EnableRDPOnTargetOption} enum.",
           "type": "string"
         },
         "datastores": {
-          "description": "The datastores of the on-premise machine. Value can be list of strings that contain datastore names.",
+          "description": "The data stores of the on-premise machine. Value can be list of strings that contain data store names.",
           "type": "array",
           "items": {
             "type": "string"
@@ -11672,7 +11106,7 @@
         },
         "useManagedDisks": {
           "description": "A value indicating whether managed disks should be used during failover.",
-          "type": "boolean"
+          "type": "string"
         },
         "licenseType": {
           "description": "License Type of the VM to be used.",
@@ -11768,7 +11202,7 @@
         },
         "useManagedDisks": {
           "description": "A value indicating whether managed disks should be used during failover.",
-          "type": "boolean"
+          "type": "string"
         }
       },
       "x-ms-discriminator-value": "InMageAzureV2"
@@ -11821,7 +11255,7 @@
       "x-ms-discriminator-value": "InMage"
     },
     "InMageDiskDetails": {
-      "description": "VMware/Physical specific Disk Details.",
+      "description": "VMware/Physical specific Disk Details",
       "type": "object",
       "properties": {
         "diskId": {
@@ -11928,7 +11362,7 @@
           "type": "string"
         },
         "datastoreName": {
-          "description": "The target datastore name.",
+          "description": "The target data store name.",
           "type": "string"
         },
         "diskExclusionInput": {
@@ -11957,9 +11391,9 @@
         "recoveryPointType": {
           "description": "The recovery point type. Values from LatestTime, LatestTag or Custom. In the case of custom, the recovery point provided by RecoveryPointId will be used. In the other two cases, recovery point id will be ignored.",
           "enum": [
-            "latestTime",
-            "latestTag",
-            "custom"
+            "LatestTime",
+            "LatestTag",
+            "Custom"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -11973,636 +11407,6 @@
         }
       },
       "x-ms-discriminator-value": "InMage"
-    },
-    "InMageMigrationContainerCreationInput": {
-      "description": "InMage migration container creation input.",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ReplicationProviderSpecificContainerCreationInput"
-        }
-      ],
-      "properties": {},
-      "x-ms-discriminator-value": "InMageMigration"
-    },
-    "InMageMigrationContainerMappingInput": {
-      "description": "InMage migration container mapping input.",
-      "required": [
-        "targetLocation"
-      ],
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ReplicationProviderSpecificContainerMappingInput"
-        }
-      ],
-      "properties": {
-        "targetLocation": {
-          "description": "The target location.",
-          "type": "string"
-        }
-      },
-      "x-ms-discriminator-value": "InMageMigration"
-    },
-    "InMageMigrationDiskInput": {
-      "description": "InMageMigration disk input.",
-      "required": [
-        "diskId",
-        "diskName",
-        "logStorageAccountId",
-        "diskType"
-      ],
-      "type": "object",
-      "properties": {
-        "diskId": {
-          "description": "The disk Id.",
-          "type": "string"
-        },
-        "diskName": {
-          "description": "The disk name.",
-          "type": "string"
-        },
-        "logStorageAccountId": {
-          "description": "The log storage account ARM Id.",
-          "type": "string"
-        },
-        "diskType": {
-          "description": "The disk type.",
-          "enum": [
-            "standard_LRS",
-            "premium_LRS",
-            "standardSSD_LRS"
-          ],
-          "type": "string",
-          "x-ms-enum": {
-            "name": "DiskAccountType",
-            "modelAsString": true
-          }
-        }
-      }
-    },
-    "InMageMigrationDisksDefaultInput": {
-      "description": "InMageMigration disk input.",
-      "required": [
-        "logStorageAccountId",
-        "diskType"
-      ],
-      "type": "object",
-      "properties": {
-        "logStorageAccountId": {
-          "description": "The log storage account ARM Id.",
-          "type": "string"
-        },
-        "diskType": {
-          "description": "The disk type.",
-          "enum": [
-            "standard_LRS",
-            "premium_LRS",
-            "standardSSD_LRS"
-          ],
-          "type": "string",
-          "x-ms-enum": {
-            "name": "DiskAccountType",
-            "modelAsString": true
-          }
-        }
-      }
-    },
-    "InMageMigrationEnableMigrationInput": {
-      "description": "InMageMigration specific enable migration input.",
-      "required": [
-        "fabricDiscoveryMachineId",
-        "targetResourceGroupId",
-        "targetNetworkId",
-        "instanceType"
-      ],
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/EnableMigrationProviderSpecificInput"
-        }
-      ],
-      "properties": {
-        "fabricDiscoveryMachineId": {
-          "description": "The ARM Id of the discovered machine.",
-          "type": "string"
-        },
-        "disksToInclude": {
-          "description": "The disks to include list.",
-          "minLength": 1,
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/InMageMigrationDiskInput"
-          }
-        },
-        "disksDefault": {
-          "$ref": "#/definitions/InMageMigrationDisksDefaultInput",
-          "description": "The default disk input."
-        },
-        "licenseType": {
-          "description": "The license type.",
-          "enum": [
-            "notSpecified",
-            "noLicenseType",
-            "windowsServer"
-          ],
-          "type": "string",
-          "x-ms-enum": {
-            "name": "LicenseType",
-            "modelAsString": true
-          }
-        },
-        "targetVmName": {
-          "description": "The target VM name.",
-          "type": "string"
-        },
-        "targetVmSize": {
-          "description": "The target VM size.",
-          "type": "string"
-        },
-        "targetResourceGroupId": {
-          "description": "The target resource group ARM Id.",
-          "type": "string"
-        },
-        "targetNetworkId": {
-          "description": "The target network ARM Id.",
-          "type": "string"
-        },
-        "targetSubnetName": {
-          "description": "The target subnet name.",
-          "type": "string"
-        },
-        "targetAvailabilitySetId": {
-          "description": "The target availability set ARM Id.",
-          "type": "string"
-        },
-        "targetBootDiagnosticsStorageAccountId": {
-          "description": "The target boot diagnostics storage account ARM Id.",
-          "type": "string"
-        },
-        "processServerId": {
-          "description": "The process server Id.",
-          "type": "string"
-        },
-        "runAsAccountId": {
-          "description": "The run-as account Id.",
-          "type": "string"
-        }
-      },
-      "x-ms-discriminator-value": "InMageMigration"
-    },
-    "InMageMigrationEventDetails": {
-      "description": "Event details for InMageMigration provider.",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/EventProviderSpecificDetails"
-        }
-      ],
-      "properties": {
-        "migrationItemName": {
-          "description": "The migration item name.",
-          "type": "string",
-          "readOnly": true
-        }
-      },
-      "x-ms-discriminator-value": "InMageMigration"
-    },
-    "InMageMigrationMigrateInput": {
-      "description": "InMageMigration specific migrate input.",
-      "required": [
-        "performShutdown",
-        "instanceType"
-      ],
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/MigrateProviderSpecificInput"
-        }
-      ],
-      "properties": {
-        "performShutdown": {
-          "description": "A value indicating whether VM is to be shutdown.",
-          "type": "boolean"
-        }
-      },
-      "x-ms-discriminator-value": "InMageMigration"
-    },
-    "InMageMigrationNicDetails": {
-      "description": "InMageMigration NIC details.",
-      "type": "object",
-      "properties": {
-        "nicId": {
-          "description": "The NIC Id.",
-          "type": "string",
-          "readOnly": true
-        },
-        "isPrimaryNic": {
-          "description": "A value indicating whether this is the primary NIC.",
-          "type": "boolean"
-        },
-        "sourceIPAddress": {
-          "description": "The source IP address.",
-          "type": "string",
-          "readOnly": true
-        },
-        "sourceIPAddressType": {
-          "description": "The source IP address type.",
-          "enum": [
-            "dynamic",
-            "static"
-          ],
-          "type": "string",
-          "readOnly": true,
-          "x-ms-enum": {
-            "name": "EthernetAddressType",
-            "modelAsString": true
-          }
-        },
-        "sourceNetworkId": {
-          "description": "Source network Id.",
-          "type": "string",
-          "readOnly": true
-        },
-        "sourceSubnetName": {
-          "description": "Source subnet name.",
-          "type": "string",
-          "readOnly": true
-        },
-        "targetIPAddress": {
-          "description": "The target IP address.",
-          "type": "string"
-        },
-        "targetIPAddressType": {
-          "description": "The target IP address type.",
-          "enum": [
-            "dynamic",
-            "static"
-          ],
-          "type": "string",
-          "x-ms-enum": {
-            "name": "EthernetAddressType",
-            "modelAsString": true
-          }
-        },
-        "targetSubnetName": {
-          "description": "Target subnet name.",
-          "type": "string"
-        },
-        "isSelectedForMigration": {
-          "description": "A value indicating whether this NIC is selected for migration.",
-          "type": "boolean"
-        }
-      }
-    },
-    "InMageMigrationNicInput": {
-      "description": "InMageMigration NIC input.",
-      "required": [
-        "nicId",
-        "isPrimaryNic"
-      ],
-      "type": "object",
-      "properties": {
-        "nicId": {
-          "description": "The NIC Id.",
-          "type": "string"
-        },
-        "isPrimaryNic": {
-          "description": "A value indicating whether this is the primary NIC.",
-          "type": "boolean"
-        },
-        "targetSubnetName": {
-          "description": "Target subnet name.",
-          "type": "string"
-        },
-        "targetStaticIPAddress": {
-          "description": "The static IP address.",
-          "type": "string"
-        },
-        "isSelectedForMigration": {
-          "description": "A value indicating whether this NIC is selected for migration.",
-          "type": "boolean"
-        }
-      }
-    },
-    "InMageMigrationPolicyCreationInput": {
-      "description": "InMage migration policy creation input.",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/PolicyProviderSpecificInput"
-        }
-      ],
-      "properties": {
-        "recoveryPointHistoryInMinutes": {
-          "format": "int32",
-          "description": "The duration in minutes until which the recovery points need to be stored.",
-          "type": "integer"
-        },
-        "crashConsistentFrequencyInMinutes": {
-          "format": "int32",
-          "description": "The crash consistent snapshot frequency (in minutes).",
-          "type": "integer"
-        },
-        "appConsistentFrequencyInMinutes": {
-          "format": "int32",
-          "description": "The app consistent snapshot frequency (in minutes).",
-          "type": "integer"
-        }
-      },
-      "x-ms-discriminator-value": "InMageMigration"
-    },
-    "InMageMigrationPolicyDetails": {
-      "description": "InMage migration specific policy details.",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/PolicyProviderSpecificDetails"
-        }
-      ],
-      "properties": {
-        "recoveryPointHistoryInMinutes": {
-          "format": "int32",
-          "description": "The duration in minutes until which the recovery points need to be stored.",
-          "type": "integer"
-        },
-        "appConsistentFrequencyInMinutes": {
-          "format": "int32",
-          "description": "The app consistent snapshot frequency in minutes.",
-          "type": "integer"
-        },
-        "crashConsistentFrequencyInMinutes": {
-          "format": "int32",
-          "description": "The crash consistent snapshot frequency in minutes.",
-          "type": "integer"
-        }
-      },
-      "x-ms-discriminator-value": "InMageMigration"
-    },
-    "InMageMigrationProtectedDiskDetails": {
-      "description": "InMageMigration protected disk details.",
-      "type": "object",
-      "properties": {
-        "diskId": {
-          "description": "The disk Id.",
-          "type": "string",
-          "readOnly": true
-        },
-        "diskName": {
-          "description": "The disk name.",
-          "type": "string",
-          "readOnly": true
-        },
-        "isOSDisk": {
-          "description": "A value indicating whether the disk is the OS disk.",
-          "type": "boolean",
-          "readOnly": true
-        },
-        "capacityInBytes": {
-          "format": "int64",
-          "description": "The disk capacity in bytes.",
-          "type": "integer",
-          "readOnly": true
-        },
-        "logStorageAccountId": {
-          "description": "The log storage account ARM Id.",
-          "type": "string",
-          "readOnly": true
-        },
-        "seedManagedDiskId": {
-          "description": "The ARM Id of the seed managed disk.",
-          "type": "string",
-          "readOnly": true
-        },
-        "targetManagedDiskId": {
-          "description": "The ARM Id of the target managed disk.",
-          "type": "string",
-          "readOnly": true
-        },
-        "diskType": {
-          "description": "The disk type.",
-          "enum": [
-            "standard_LRS",
-            "premium_LRS",
-            "standardSSD_LRS"
-          ],
-          "type": "string",
-          "x-ms-enum": {
-            "name": "DiskAccountType",
-            "modelAsString": true
-          }
-        }
-      }
-    },
-    "InMageMigrationProtectionContainerMappingDetails": {
-      "description": "InMage migration provider specific container mapping details.",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ProtectionContainerMappingProviderSpecificDetails"
-        }
-      ],
-      "properties": {
-        "targetLocation": {
-          "description": "The target location.",
-          "type": "string",
-          "readOnly": true
-        }
-      },
-      "x-ms-discriminator-value": "InMageMigration"
-    },
-    "InMageMigrationProviderSpecificDetails": {
-      "description": "InMageMigration provider specific details.",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/MigrationProviderSpecificSettings"
-        }
-      ],
-      "properties": {
-        "fabricDiscoveryMachineId": {
-          "description": "The ARM Id of the discovered VM.",
-          "type": "string",
-          "readOnly": true
-        },
-        "discoveryType": {
-          "description": "The type of the discovered VM.",
-          "type": "string",
-          "readOnly": true
-        },
-        "processServerId": {
-          "description": "The process server Id.",
-          "type": "string",
-          "readOnly": true
-        },
-        "runAsAccountId": {
-          "description": "The run-as account Id.",
-          "type": "string",
-          "readOnly": true
-        },
-        "osType": {
-          "description": "The type of the OS on the VM.",
-          "type": "string",
-          "readOnly": true
-        },
-        "licenseType": {
-          "description": "License Type of the VM to be used.",
-          "type": "string"
-        },
-        "targetVmName": {
-          "description": "Target VM name.",
-          "type": "string"
-        },
-        "targetVmSize": {
-          "description": "The target VM size.",
-          "type": "string"
-        },
-        "targetLocation": {
-          "description": "The target location.",
-          "type": "string",
-          "readOnly": true
-        },
-        "targetResourceGroupId": {
-          "description": "The target resource group Id.",
-          "type": "string"
-        },
-        "targetAvailabilitySetId": {
-          "description": "The target availability set Id.",
-          "type": "string"
-        },
-        "targetBootDiagnosticsStorageAccountId": {
-          "description": "The target boot diagnostics storage account ARM Id.",
-          "type": "string"
-        },
-        "targetNetworkId": {
-          "description": "The target network Id.",
-          "type": "string"
-        },
-        "logStorageAccountId": {
-          "description": "The log storage account ARM Id.",
-          "type": "string",
-          "readOnly": true
-        },
-        "lastRecoveryPointReceived": {
-          "format": "date-time",
-          "description": "The last recovery point received time.",
-          "type": "string",
-          "readOnly": true
-        },
-        "lastRecoveryPointId": {
-          "description": "The last recovery point Id.",
-          "type": "string",
-          "readOnly": true
-        },
-        "migrationRecoveryPointId": {
-          "description": "The recovery point Id to which the VM was migrated.",
-          "type": "string",
-          "readOnly": true
-        },
-        "initialSeedingProgressPercentage": {
-          "format": "int32",
-          "description": "The initial seeding progress percentage.",
-          "type": "integer",
-          "readOnly": true
-        },
-        "protectedDisks": {
-          "description": "The list of protected disks.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/InMageMigrationProtectedDiskDetails"
-          }
-        },
-        "vmNics": {
-          "description": "The network details.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/InMageMigrationNicDetails"
-          }
-        }
-      },
-      "x-ms-discriminator-value": "InMageMigration"
-    },
-    "InMageMigrationTestMigrateInput": {
-      "description": "InMageMigration specific test migrate input.",
-      "required": [
-        "recoveryPointId",
-        "networkId",
-        "instanceType"
-      ],
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/TestMigrateProviderSpecificInput"
-        }
-      ],
-      "properties": {
-        "recoveryPointId": {
-          "description": "The recovery point Id.",
-          "type": "string"
-        },
-        "networkId": {
-          "description": "The test network Id.",
-          "type": "string"
-        }
-      },
-      "x-ms-discriminator-value": "InMageMigration"
-    },
-    "InMageMigrationUpdateMigrationItemInput": {
-      "description": "InMageMigration specific update migration item input.",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/UpdateMigrationItemProviderSpecificInput"
-        }
-      ],
-      "properties": {
-        "targetVmName": {
-          "description": "The target VM name.",
-          "type": "string"
-        },
-        "targetVmSize": {
-          "description": "The target VM size.",
-          "type": "string"
-        },
-        "targetResourceGroupId": {
-          "description": "The target resource group ARM Id.",
-          "type": "string"
-        },
-        "targetAvailabilitySetId": {
-          "description": "The target availability set ARM Id.",
-          "type": "string"
-        },
-        "targetBootDiagnosticsStorageAccountId": {
-          "description": "The target boot diagnostics storage account ARM Id.",
-          "type": "string"
-        },
-        "targetNetworkId": {
-          "description": "The target network ARM Id.",
-          "type": "string"
-        },
-        "vmNics": {
-          "description": "The list of NIC details.",
-          "minLength": 1,
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/InMageMigrationNicInput"
-          }
-        },
-        "licenseType": {
-          "description": "The license type.",
-          "enum": [
-            "notSpecified",
-            "noLicenseType",
-            "windowsServer"
-          ],
-          "type": "string",
-          "x-ms-enum": {
-            "name": "LicenseType",
-            "modelAsString": true
-          }
-        }
-      },
-      "x-ms-discriminator-value": "InMageMigration"
     },
     "InMagePolicyDetails": {
       "description": "InMage specific protection profile details.",
@@ -12665,8 +11469,8 @@
         "multiVmSyncStatus": {
           "description": "A value indicating whether multi-VM sync has to be enabled. Value should be 'Enabled' or 'Disabled'.",
           "enum": [
-            "enable",
-            "disable"
+            "Enable",
+            "Disable"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -12753,7 +11557,7 @@
       }
     },
     "InMageReplicationDetails": {
-      "description": "InMage provider specific settings.",
+      "description": "InMage provider specific settings",
       "type": "object",
       "allOf": [
         {
@@ -12797,7 +11601,7 @@
         },
         "resyncDetails": {
           "$ref": "#/definitions/InitialReplicationDetails",
-          "description": "The resync details of the machine."
+          "description": "The resync details of the machine"
         },
         "retentionWindowStart": {
           "format": "date-time",
@@ -12904,14 +11708,14 @@
           "type": "string"
         },
         "datastores": {
-          "description": "The datastores of the on-premise machine Value can be list of strings that contain datastore names.",
+          "description": "The data stores of the on-premise machine Value can be list of strings that contain data store names",
           "type": "array",
           "items": {
             "type": "string"
           }
         },
         "validationErrors": {
-          "description": "The validation errors of the on-premise machine Value can be list of validation errors.",
+          "description": "The validation errors of the on-premise machine Value can be list of validation errors",
           "type": "array",
           "items": {
             "$ref": "#/definitions/HealthError"
@@ -12970,7 +11774,7 @@
           "type": "string"
         },
         "datastoreName": {
-          "description": "The target datastore name.",
+          "description": "The target data store name.",
           "type": "string"
         },
         "diskExclusionInput": {
@@ -13047,7 +11851,7 @@
         },
         "creationTimeUtc": {
           "format": "date-time",
-          "description": "Error creation time (UTC).",
+          "description": "Error creation time (UTC)",
           "type": "string"
         },
         "recoveryProviderErrorMessage": {
@@ -13057,22 +11861,6 @@
         "entityId": {
           "description": "ID of the entity.",
           "type": "string"
-        },
-        "errorId": {
-          "description": "The health error unique id.",
-          "type": "string"
-        },
-        "customerResolvability": {
-          "description": "Value indicating whether the health error is customer resolvable.",
-          "enum": [
-            "allowed",
-            "notAllowed"
-          ],
-          "type": "string",
-          "x-ms-enum": {
-            "name": "HealthErrorCustomerResolvability",
-            "modelAsString": true
-          }
         }
       }
     },
@@ -13103,19 +11891,12 @@
     "Job": {
       "description": "Job details.",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
       "properties": {
-        "id": {
-          "description": "The Id.",
-          "type": "string"
-        },
-        "name": {
-          "description": "The name.",
-          "type": "string"
-        },
-        "type": {
-          "description": "The resource type.",
-          "type": "string"
-        },
         "properties": {
           "$ref": "#/definitions/JobProperties",
           "description": "The custom data."
@@ -13243,7 +12024,7 @@
           "description": "The tasks.",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Task"
+            "$ref": "#/definitions/ASRTask"
           }
         },
         "errors": {
@@ -13279,7 +12060,7 @@
           "type": "string"
         },
         "targetInstanceType": {
-          "description": "The type of the affected object which is of AffectedObjectType class.",
+          "description": "The type of the affected object which is of {Microsoft.Azure.SiteRecovery.V2015_11_10.AffectedObjectType} class.",
           "type": "string"
         },
         "customDetails": {
@@ -13297,7 +12078,7 @@
           "type": "string"
         },
         "endTime": {
-          "description": "Date time to get jobs upto.",
+          "description": "Date time to get jobs up to.",
           "type": "string"
         },
         "fabricId": {
@@ -13311,49 +12092,6 @@
         "jobStatus": {
           "description": "The states of the job to be filtered can be in.",
           "type": "string"
-        },
-        "jobOutputType": {
-          "description": "The output type of the jobs.",
-          "enum": [
-            "json",
-            "xml",
-            "excel"
-          ],
-          "type": "string",
-          "x-ms-enum": {
-            "name": "ExportJobOutputSerializationType",
-            "modelAsString": true
-          }
-        },
-        "jobName": {
-          "description": "The job Name.",
-          "type": "string"
-        },
-        "timezoneOffset": {
-          "format": "double",
-          "description": "The timezone offset for the location of the request (in minutes).",
-          "type": "number"
-        }
-      }
-    },
-    "JobsSummary": {
-      "description": "Model to define the properties of Jobs Summary.",
-      "type": "object",
-      "properties": {
-        "failedJobs": {
-          "format": "int32",
-          "description": "The count of failed jobs.",
-          "type": "integer"
-        },
-        "suspendedJobs": {
-          "format": "int32",
-          "description": "The count of waiting for action jobs.",
-          "type": "integer"
-        },
-        "inProgressJobs": {
-          "format": "int32",
-          "description": "The in progress jobs count.",
-          "type": "integer"
         }
       }
     },
@@ -13406,11 +12144,11 @@
       "type": "object",
       "properties": {
         "keyIdentifier": {
-          "description": "The key url / identifier.",
+          "description": "The key url / identifier.",
           "type": "string"
         },
         "keyVaultResourceArmId": {
-          "description": "The KeyVault resource ARM id for key.",
+          "description": "The KeyVault resource ARM id for key.",
           "type": "string"
         }
       }
@@ -13418,19 +12156,12 @@
     "LogicalNetwork": {
       "description": "Logical network data model.",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
       "properties": {
-        "type": {
-          "description": "The Resource Type.",
-          "type": "string"
-        },
-        "id": {
-          "description": "The Logical Network ID (ARM ID).",
-          "type": "string"
-        },
-        "name": {
-          "description": "The Logical Network Name.",
-          "type": "string"
-        },
         "properties": {
           "$ref": "#/definitions/LogicalNetworkProperties",
           "description": "The Logical Network Properties."
@@ -13530,7 +12261,7 @@
           "type": "string"
         },
         "versionStatus": {
-          "description": "Version status.",
+          "description": "Version status",
           "type": "string"
         },
         "retentionVolumes": {
@@ -13637,19 +12368,12 @@
     "MigrationItem": {
       "description": "Migration item.",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
       "properties": {
-        "id": {
-          "description": "The Id.",
-          "type": "string"
-        },
-        "name": {
-          "description": "The name.",
-          "type": "string"
-        },
-        "type": {
-          "description": "The type of the object.",
-          "type": "string"
-        },
         "properties": {
           "$ref": "#/definitions/MigrationItemProperties",
           "description": "The migration item properties."
@@ -13695,17 +12419,17 @@
         "migrationState": {
           "description": "The migration status.",
           "enum": [
-            "none",
-            "enableMigrationInProgress",
-            "enableMigrationFailed",
-            "disableMigrationInProgress",
-            "disableMigrationFailed",
-            "initialSeedingInProgress",
-            "initialSeedingFailed",
-            "replicating",
-            "migrationInProgress",
-            "migrationSucceeded",
-            "migrationFailed"
+            "None",
+            "EnableMigrationInProgress",
+            "EnableMigrationFailed",
+            "DisableMigrationInProgress",
+            "DisableMigrationFailed",
+            "InitialSeedingInProgress",
+            "InitialSeedingFailed",
+            "Replicating",
+            "MigrationInProgress",
+            "MigrationSucceeded",
+            "MigrationFailed"
           ],
           "type": "string",
           "readOnly": true,
@@ -13733,11 +12457,11 @@
         "testMigrateState": {
           "description": "The test migrate state.",
           "enum": [
-            "none",
-            "testMigrationInProgress",
-            "testMigrationSucceeded",
-            "testMigrationFailed",
-            "testMigrationCleanupInProgress"
+            "None",
+            "TestMigrationInProgress",
+            "TestMigrationSucceeded",
+            "TestMigrationFailed",
+            "TestMigrationCleanupInProgress"
           ],
           "type": "string",
           "readOnly": true,
@@ -13754,10 +12478,10 @@
         "health": {
           "description": "The consolidated health.",
           "enum": [
-            "none",
-            "normal",
-            "warning",
-            "critical"
+            "None",
+            "Normal",
+            "Warning",
+            "Critical"
           ],
           "type": "string",
           "readOnly": true,
@@ -13775,15 +12499,15 @@
           "readOnly": true
         },
         "allowedOperations": {
-          "description": "The allowed operations on the migration item based on the current migration state of the item.",
+          "description": "The allowed operations on the migration item, based on the current migration state of the item.",
           "type": "array",
           "items": {
             "enum": [
-              "disableMigration",
-              "testMigrate",
-              "testMigrateCleanup",
-              "migrate",
-              "startResync"
+              "DisableMigration",
+              "TestMigrate",
+              "TestMigrateCleanup",
+              "Migrate",
+              "StartResync"
             ],
             "type": "string",
             "x-ms-enum": {
@@ -13837,19 +12561,12 @@
     "MigrationRecoveryPoint": {
       "description": "Recovery point for a migration item.",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
       "properties": {
-        "id": {
-          "description": "The unique ARM identifier for this object.",
-          "type": "string"
-        },
-        "name": {
-          "description": "The name of the recovery point.",
-          "type": "string"
-        },
-        "type": {
-          "description": "The resource type.",
-          "type": "string"
-        },
         "properties": {
           "$ref": "#/definitions/MigrationRecoveryPointProperties",
           "description": "Recovery point properties."
@@ -13886,9 +12603,9 @@
         "recoveryPointType": {
           "description": "The recovery point type.",
           "enum": [
-            "notSpecified",
-            "applicationConsistent",
-            "crashConsistent"
+            "NotSpecified",
+            "ApplicationConsistent",
+            "CrashConsistent"
           ],
           "type": "string",
           "readOnly": true,
@@ -13917,72 +12634,15 @@
         }
       }
     },
-    "MonitoringSummary": {
-      "description": "Model for the summary of events.",
-      "type": "object",
-      "properties": {
-        "unHealthyVmCount": {
-          "format": "int32",
-          "description": "The count of unhealthy VM.",
-          "type": "integer"
-        },
-        "unHealthyProviderCount": {
-          "format": "int32",
-          "description": "The count of unhealthy servers.",
-          "type": "integer"
-        },
-        "eventsCount": {
-          "format": "int32",
-          "description": "The count of Events other than VM and server.",
-          "type": "integer"
-        },
-        "deprecatedProviderCount": {
-          "format": "int32",
-          "description": "The count of deprecated recovery service providers.",
-          "type": "integer"
-        },
-        "supportedProviderCount": {
-          "format": "int32",
-          "description": "The count of supported recovery service providers.",
-          "type": "integer"
-        },
-        "unsupportedProviderCount": {
-          "format": "int32",
-          "description": "The count of unsupported recovery service providers.",
-          "type": "integer"
-        }
-      }
-    },
-    "Name": {
-      "description": "Class to define the Name.",
-      "type": "object",
-      "properties": {
-        "value": {
-          "description": "The value.",
-          "type": "string"
-        },
-        "localizedValue": {
-          "description": "The localized value.",
-          "type": "string"
-        }
-      }
-    },
     "Network": {
       "description": "Network model.",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
       "properties": {
-        "type": {
-          "description": "The Resource Type.",
-          "type": "string"
-        },
-        "id": {
-          "description": "The Network ID (ARM ID).",
-          "type": "string"
-        },
-        "name": {
-          "description": "The Network Name.",
-          "type": "string"
-        },
         "properties": {
           "$ref": "#/definitions/NetworkProperties",
           "description": "The Network Properties."
@@ -14009,19 +12669,12 @@
     "NetworkMapping": {
       "description": "Network Mapping model. Ideally it should have been possible to inherit this class from prev version in InheritedModels as long as there is no difference in structure or method signature. Since there were no base Models for certain fields and methods viz NetworkMappingProperties and Load with required return type, the class has been introduced in its entirety with references to base models to facilitate extensions in subsequent versions.",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
       "properties": {
-        "type": {
-          "description": "The Resource Type.",
-          "type": "string"
-        },
-        "id": {
-          "description": "The Network Mapping ID (ARM ID).",
-          "type": "string"
-        },
-        "name": {
-          "description": "The Network Mapping Name.",
-          "type": "string"
-        },
         "properties": {
           "$ref": "#/definitions/NetworkMappingProperties",
           "description": "The Network Mapping Properties."
@@ -14100,7 +12753,7 @@
       }
     },
     "NetworkProperties": {
-      "description": "Network Properties.",
+      "description": "Network Properties",
       "type": "object",
       "properties": {
         "fabricType": {
@@ -14124,20 +12777,25 @@
         }
       }
     },
+    "Object": {
+      "description": "Base of all objects.",
+      "type": "object",
+      "properties": {}
+    },
     "OperationsDiscovery": {
       "description": "Operations discovery class.",
       "type": "object",
       "properties": {
         "name": {
-          "description": "Name of the API. The name of the operation being performed on this particular object. It should match the action name that appears in RBAC / the event service. Examples of operations include: * Microsoft.Compute/virtualMachine/capture/action * Microsoft.Compute/virtualMachine/restart/action * Microsoft.Compute/virtualMachine/write * Microsoft.Compute/virtualMachine/read * Microsoft.Compute/virtualMachine/delete Each action should include, in order: (1) Resource Provider Namespace (2) Type hierarchy for which the action applies (e.g. server/databases for a SQL Azure database) (3) Read, Write, Action or Delete indicating which type applies. If it is a PUT/PATCH on a collection or named value, Write should be used. If it is a GET, Read should be used. If it is a DELETE, Delete should be used. If it is a POST, Action should be used. As a note: all resource providers would need to include the \"{Resource Provider Namespace}/register/action\" operation in their response. This API is used to register for their service, and should include details about the operation (e.g. a localized name for the resource provider + any special considerations like PII release).",
+          "description": "Name of the API. The name of the operation being performed on this particular object. It should match the action name that appears in RBAC / the event service. Examples of operations include: * Microsoft.Compute/virtualMachine/capture/action * Microsoft.Compute/virtualMachine/restart/action * Microsoft.Compute/virtualMachine/write * Microsoft.Compute/virtualMachine/read * Microsoft.Compute/virtualMachine/delete Each action should include, in order: (1) Resource Provider Namespace (2) Type hierarchy for which the action applies (e.g. server/databases for a SQL Azure database) (3) Read, Write, Action or Delete indicating which type applies. If it is a PUT/PATCH on a collection or named value, Write should be used. If it is a GET, Read should be used. If it is a DELETE, Delete should be used. If it is a POST, Action should be used. As a note: all resource providers would need to include the \"{Resource Provider Namespace}/register/action\" operation in their response. This API is used to register for their service, and should include details about the operation (e.g. a localized name for the resource provider + any special considerations like PII release)",
           "type": "string"
         },
         "display": {
           "$ref": "#/definitions/Display",
-          "description": "Object type."
+          "description": "Object type"
         },
         "origin": {
-          "description": "Origin. The intended executor of the operation; governs the display of the operation in the RBAC UX and the audit logs UX. Default value is \"user,system\".",
+          "description": "Origin. The intended executor of the operation; governs the display of the operation in the RBAC UX and the audit logs UX. Default value is \"user,system\"",
           "type": "string"
         },
         "properties": {
@@ -14216,27 +12874,13 @@
         }
       }
     },
-    "OSVersionWrapper": {
-      "description": "Wrapper model for OSVersion to include version and service pack info.",
-      "type": "object",
-      "properties": {
-        "version": {
-          "description": "The version.",
-          "type": "string"
-        },
-        "servicePack": {
-          "description": "Service pack.",
-          "type": "string"
-        }
-      }
-    },
     "PlannedFailoverInput": {
       "description": "Input definition for planned failover.",
       "type": "object",
       "properties": {
         "properties": {
           "$ref": "#/definitions/PlannedFailoverInputProperties",
-          "description": "Planned failover input properties."
+          "description": "Planned failover input properties"
         }
       }
     },
@@ -14250,26 +12894,19 @@
         },
         "providerSpecificDetails": {
           "$ref": "#/definitions/ProviderSpecificFailoverInput",
-          "description": "Provider specific settings."
+          "description": "Provider specific settings"
         }
       }
     },
     "Policy": {
       "description": "Protection profile details.",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
       "properties": {
-        "id": {
-          "description": "The Id.",
-          "type": "string"
-        },
-        "name": {
-          "description": "The name.",
-          "type": "string"
-        },
-        "type": {
-          "description": "The type.",
-          "type": "string"
-        },
         "properties": {
           "$ref": "#/definitions/PolicyProperties",
           "description": "The custom data."
@@ -14320,7 +12957,7 @@
       "discriminator": "instanceType"
     },
     "PolicyProviderSpecificInput": {
-      "description": "Base class for provider specific input.",
+      "description": "Base class for provider specific input",
       "type": "object",
       "properties": {
         "instanceType": {
@@ -14360,7 +12997,7 @@
           "type": "string"
         },
         "versionStatus": {
-          "description": "Version status.",
+          "description": "Version status",
           "type": "string"
         },
         "mobilityServiceUpdates": {
@@ -14459,63 +13096,18 @@
         "agentVersionDetails": {
           "$ref": "#/definitions/VersionDetails",
           "description": "The agent version details."
-        },
-        "health": {
-          "description": "The health of Process Server.",
-          "enum": [
-            "none",
-            "normal",
-            "warning",
-            "critical"
-          ],
-          "type": "string",
-          "x-ms-enum": {
-            "name": "ProtectionHealth",
-            "modelAsString": true
-          }
-        },
-        "psStatsRefreshTime": {
-          "format": "date-time",
-          "description": "The process server stats refresh time.",
-          "type": "string"
-        },
-        "throughputUploadPendingDataInBytes": {
-          "format": "int64",
-          "description": "The uploading pending data in bytes.",
-          "type": "integer"
-        },
-        "throughputInMBps": {
-          "format": "int64",
-          "description": "The throughput in MBps.",
-          "type": "integer"
-        },
-        "throughputInBytes": {
-          "format": "int64",
-          "description": "The throughput in bytes.",
-          "type": "integer"
-        },
-        "throughputStatus": {
-          "description": "The throughput status.",
-          "type": "string"
         }
       }
     },
     "ProtectableItem": {
-      "description": "Replication protected item.",
+      "description": "Replication protected item",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
       "properties": {
-        "id": {
-          "description": "The Id.",
-          "type": "string"
-        },
-        "name": {
-          "description": "The name.",
-          "type": "string"
-        },
-        "type": {
-          "description": "The Type of the object.",
-          "type": "string"
-        },
         "properties": {
           "$ref": "#/definitions/ProtectableItemProperties",
           "description": "The custom data."
@@ -14612,8 +13204,8 @@
         "multiVmGroupCreateOption": {
           "description": "Whether Multi VM group is auto created or specified by user.",
           "enum": [
-            "autoCreated",
-            "userSpecified"
+            "AutoCreated",
+            "UserSpecified"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -14623,98 +13215,15 @@
         }
       }
     },
-    "ProtectedItemsSummary": {
-      "description": "Model to define the protected items distribution for *2A scenarios.",
-      "type": "object",
-      "properties": {
-        "irInProgressProtectedItemsCount": {
-          "format": "int32",
-          "description": "The count of IR in progress protected items.",
-          "type": "integer"
-        },
-        "testFailoverInProgressProtectedItemsCount": {
-          "format": "int32",
-          "description": "The count of TFO in progress protected items.",
-          "type": "integer"
-        },
-        "testFailoverWaitingProtectedItemsCount": {
-          "format": "int32",
-          "description": "The count of TFO waiting protected items.",
-          "type": "integer"
-        },
-        "failoverInProgressProtectedItemsCount": {
-          "format": "int32",
-          "description": "The count of FO in progress protected items.",
-          "type": "integer"
-        },
-        "failedOverProtectedItemsCount": {
-          "format": "int32",
-          "description": "The count of failed over protected items.",
-          "type": "integer"
-        },
-        "changePitInProgressProtectedItemsCount": {
-          "format": "int32",
-          "description": "The count of change PIT in progress protected items.",
-          "type": "integer"
-        },
-        "failoverCommitInProgressProtectedItemsCount": {
-          "format": "int32",
-          "description": "The count of FO commit in progress protected items.",
-          "type": "integer"
-        },
-        "failoverCommittedProtectedItemsCount": {
-          "format": "int32",
-          "description": "The count of FO commit succeeded protected items.",
-          "type": "integer"
-        },
-        "testFailoverApplicableProtectedItemsCount": {
-          "format": "int32",
-          "description": "The count of test failover applicable protected items.",
-          "type": "integer"
-        },
-        "replicatingProtectedItemsCount": {
-          "format": "int32",
-          "description": "The count of protected items currently replicating. This would exclude failedover protected item count.",
-          "type": "integer"
-        },
-        "hyperVToAzureProtectedItemsCount": {
-          "format": "int32",
-          "description": "The count of protected items protected from HyperV to Azure.",
-          "type": "integer"
-        },
-        "vmmToAzureProtectedItemsCount": {
-          "format": "int32",
-          "description": "The count of protected items protected from VMM to Azure.",
-          "type": "integer"
-        },
-        "vmwareToAzureProtectedItemsCount": {
-          "format": "int32",
-          "description": "The count of protected items protected from vmware to Azure.",
-          "type": "integer"
-        },
-        "azureToAzureProtectedItemsCount": {
-          "format": "int32",
-          "description": "The count of protected items protected from Azure to Azure.",
-          "type": "integer"
-        }
-      }
-    },
     "ProtectionContainer": {
       "description": "Protection container details.",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
       "properties": {
-        "id": {
-          "description": "The Id.",
-          "type": "string"
-        },
-        "name": {
-          "description": "The name.",
-          "type": "string"
-        },
-        "type": {
-          "description": "The type.",
-          "type": "string"
-        },
         "properties": {
           "$ref": "#/definitions/ProtectionContainerProperties",
           "description": "The custom data."
@@ -14752,19 +13261,12 @@
     "ProtectionContainerMapping": {
       "description": "Protection container mapping object.",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
       "properties": {
-        "id": {
-          "description": "The Id.",
-          "type": "string"
-        },
-        "name": {
-          "description": "The name.",
-          "type": "string"
-        },
-        "type": {
-          "description": "The Resource Type.",
-          "type": "string"
-        },
         "properties": {
           "$ref": "#/definitions/ProtectionContainerMappingProperties",
           "description": "The custom data."
@@ -14820,7 +13322,7 @@
           "type": "string"
         },
         "state": {
-          "description": "Association Status.",
+          "description": "Association Status",
           "type": "string"
         },
         "sourceProtectionContainerFriendlyName": {
@@ -14871,7 +13373,7 @@
         },
         "protectedItemCount": {
           "format": "int32",
-          "description": "Number of protected PEs.",
+          "description": "Number of protected PEs",
           "type": "integer"
         },
         "pairingStatus": {
@@ -14938,38 +13440,59 @@
       },
       "discriminator": "instanceType"
     },
-    "RcmProcessServerInfo": {
-      "description": "RCM process server info.",
+    "RcmAzureMigrationPolicyDetails": {
+      "description": "RCM based Azure migration specific policy details.",
       "type": "object",
-      "properties": {
-        "id": {
-          "description": "The process server Id.",
-          "type": "string",
-          "readOnly": true
-        },
-        "name": {
-          "description": "The list of process servers.",
-          "type": "string",
-          "readOnly": true
+      "allOf": [
+        {
+          "$ref": "#/definitions/PolicyProviderSpecificDetails"
         }
-      }
+      ],
+      "properties": {
+        "recoveryPointThresholdInMinutes": {
+          "format": "int32",
+          "description": "The recovery point threshold in minutes.",
+          "type": "integer"
+        },
+        "recoveryPointHistory": {
+          "format": "int32",
+          "description": "The duration in minutes until which the recovery points need to be stored.",
+          "type": "integer"
+        },
+        "appConsistentFrequencyInMinutes": {
+          "format": "int32",
+          "description": "The app consistent snapshot frequency in minutes.",
+          "type": "integer"
+        },
+        "multiVmSyncStatus": {
+          "description": "A value indicating whether multi-VM sync has to be enabled.",
+          "enum": [
+            "Enabled",
+            "Disabled"
+          ],
+          "type": "string",
+          "x-ms-enum": {
+            "name": "MultiVmSyncStatus",
+            "modelAsString": true
+          }
+        },
+        "crashConsistentFrequencyInMinutes": {
+          "format": "int32",
+          "description": "The crash consistent snapshot frequency in minutes.",
+          "type": "integer"
+        }
+      },
+      "x-ms-discriminator-value": "RcmAzureMigration"
     },
     "RecoveryPlan": {
       "description": "Recovery plan details.",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
       "properties": {
-        "id": {
-          "description": "The Id.",
-          "type": "string"
-        },
-        "name": {
-          "description": "The name.",
-          "type": "string"
-        },
-        "type": {
-          "description": "The type.",
-          "type": "string"
-        },
         "properties": {
           "$ref": "#/definitions/RecoveryPlanProperties",
           "description": "The custom details."
@@ -14998,7 +13521,7 @@
           ],
           "type": "string",
           "x-ms-enum": {
-            "name": "RpRecoveryPointType",
+            "name": "A2ARpRecoveryPointType",
             "modelAsString": true
           }
         },
@@ -15009,8 +13532,8 @@
         "multiVmSyncPointOption": {
           "description": "A value indicating whether multi VM sync enabled VMs should use multi VM sync points for failover.",
           "enum": [
-            "useMultiVmSyncRecoveryPoint",
-            "usePerVmRecoveryPoint"
+            "UseMultiVmSyncRecoveryPoint",
+            "UsePerVmRecoveryPoint"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -15040,19 +13563,19 @@
           "type": "array",
           "items": {
             "enum": [
-              "reverseReplicate",
-              "commit",
-              "plannedFailover",
-              "unplannedFailover",
-              "disableProtection",
-              "testFailover",
-              "testFailoverCleanup",
-              "failback",
-              "finalizeFailback",
-              "changePit",
-              "repairReplication",
-              "switchProtection",
-              "completeMigration"
+              "ReverseReplicate",
+              "Commit",
+              "PlannedFailover",
+              "UnplannedFailover",
+              "DisableProtection",
+              "TestFailover",
+              "TestFailoverCleanup",
+              "Failback",
+              "FinalizeFailback",
+              "ChangePit",
+              "RepairReplication",
+              "SwitchProtection",
+              "CompleteMigration"
             ],
             "type": "string",
             "x-ms-enum": {
@@ -15066,8 +13589,8 @@
           "type": "array",
           "items": {
             "enum": [
-              "primaryToRecovery",
-              "recoveryToPrimary"
+              "PrimaryToRecovery",
+              "RecoveryToPrimary"
             ],
             "type": "string",
             "x-ms-enum": {
@@ -15117,8 +13640,8 @@
         "fabricLocation": {
           "description": "The fabric location.",
           "enum": [
-            "primary",
-            "recovery"
+            "Primary",
+            "Recovery"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -15156,9 +13679,9 @@
         "groupType": {
           "description": "The group type.",
           "enum": [
-            "shutdown",
-            "boot",
-            "failover"
+            "Shutdown",
+            "Boot",
+            "Failover"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -15229,8 +13752,8 @@
         "dataSyncOption": {
           "description": "The data sync option.",
           "enum": [
-            "forDownTime",
-            "forSynchronization"
+            "ForDownTime",
+            "ForSynchronization"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -15241,8 +13764,8 @@
         "recoveryVmCreationOption": {
           "description": "The ALR option.",
           "enum": [
-            "createVmIfNotFound",
-            "noAction"
+            "CreateVmIfNotFound",
+            "NoAction"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -15286,7 +13809,7 @@
           ],
           "type": "string",
           "x-ms-enum": {
-            "name": "RpRecoveryPointType",
+            "name": "HyperVReplicaAzureRpRecoveryPointType",
             "modelAsString": true
           }
         }
@@ -15320,7 +13843,7 @@
           ],
           "type": "string",
           "x-ms-enum": {
-            "name": "RpRecoveryPointType",
+            "name": "InMageV2RpRecoveryPointType",
             "modelAsString": true
           }
         },
@@ -15346,9 +13869,9 @@
         "recoveryPointType": {
           "description": "The recovery point type.",
           "enum": [
-            "latestTime",
-            "latestTag",
-            "custom"
+            "LatestTime",
+            "LatestTag",
+            "Custom"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -15398,8 +13921,8 @@
         "failoverDirection": {
           "description": "The failover direction.",
           "enum": [
-            "primaryToRecovery",
-            "recoveryToPrimary"
+            "PrimaryToRecovery",
+            "RecoveryToPrimary"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -15417,7 +13940,7 @@
       }
     },
     "RecoveryPlanProperties": {
-      "description": "Recovery plan properties.",
+      "description": "Recovery plan custom details.",
       "type": "object",
       "properties": {
         "friendlyName": {
@@ -15543,8 +14066,8 @@
         "fabricLocation": {
           "description": "The fabric location.",
           "enum": [
-            "primary",
-            "recovery"
+            "Primary",
+            "Recovery"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -15626,8 +14149,8 @@
         "failoverDirection": {
           "description": "The failover direction.",
           "enum": [
-            "primaryToRecovery",
-            "recoveryToPrimary"
+            "PrimaryToRecovery",
+            "RecoveryToPrimary"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -15680,8 +14203,8 @@
         "failoverDirection": {
           "description": "The failover direction.",
           "enum": [
-            "primaryToRecovery",
-            "recoveryToPrimary"
+            "PrimaryToRecovery",
+            "RecoveryToPrimary"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -15692,8 +14215,8 @@
         "sourceSiteOperations": {
           "description": "A value indicating whether source site operations are required.",
           "enum": [
-            "required",
-            "notRequired"
+            "Required",
+            "NotRequired"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -15713,19 +14236,12 @@
     "RecoveryPoint": {
       "description": "Base class representing a recovery point.",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
       "properties": {
-        "name": {
-          "description": "The name of the recovery point.",
-          "type": "string"
-        },
-        "type": {
-          "description": "The resource type.",
-          "type": "string"
-        },
-        "id": {
-          "description": "The unique ARM identifier for this object.",
-          "type": "string"
-        },
         "properties": {
           "$ref": "#/definitions/RecoveryPointProperties",
           "description": "Recovery point related data."
@@ -15771,19 +14287,12 @@
     "RecoveryServicesProvider": {
       "description": "Provider details.",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
       "properties": {
-        "id": {
-          "description": "Unqiue ARM Id URL to access this object.",
-          "type": "string"
-        },
-        "type": {
-          "description": "Class type of the object.",
-          "type": "string"
-        },
-        "name": {
-          "description": "Id of the DRA.",
-          "type": "string"
-        },
         "properties": {
           "$ref": "#/definitions/RecoveryServicesProviderProperties",
           "description": "Provider properties."
@@ -15927,7 +14436,7 @@
       }
     },
     "ReplicationGroupDetails": {
-      "description": "Replication group details. This will be used in case of San.",
+      "description": "Replication group details. This will be used in case of San and Wvr.",
       "type": "object",
       "allOf": [
         {
@@ -15940,19 +14449,12 @@
     "ReplicationProtectedItem": {
       "description": "Replication protected item.",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
       "properties": {
-        "id": {
-          "description": "The Id.",
-          "type": "string"
-        },
-        "name": {
-          "description": "The name.",
-          "type": "string"
-        },
-        "type": {
-          "description": "The Type of the object.",
-          "type": "string"
-        },
         "properties": {
           "$ref": "#/definitions/ReplicationProtectedItemProperties",
           "description": "The custom data."
@@ -16095,10 +14597,6 @@
         "recoveryContainerId": {
           "description": "The recovery container Id.",
           "type": "string"
-        },
-        "eventCorrelationId": {
-          "description": "The correlation Id for events associated with this protected item.",
-          "type": "string"
         }
       }
     },
@@ -16156,6 +14654,31 @@
         }
       },
       "discriminator": "instanceType"
+    },
+    "Resource": {
+      "description": "Azure resource.",
+      "properties": {
+        "id": {
+          "description": "Resource Id",
+          "type": "string",
+          "readOnly": true
+        },
+        "name": {
+          "description": "Resource Name",
+          "type": "string",
+          "readOnly": true
+        },
+        "type": {
+          "description": "Resource Type",
+          "type": "string",
+          "readOnly": true
+        },
+        "location": {
+          "description": "Resource Location",
+          "type": "string"
+        }
+      },
+      "x-ms-azure-resource": true
     },
     "ResourceHealthSummary": {
       "description": "Base class to define the health summary of the resources contained under an Arm resource.",
@@ -16274,7 +14797,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/ReverseReplicationInputProperties",
-          "description": "Reverse replication properties."
+          "description": "Reverse replication properties"
         }
       }
     },
@@ -16383,7 +14906,7 @@
       "x-ms-discriminator-value": "ScriptActionTaskDetails"
     },
     "ServiceError": {
-      "description": "ASR error model.",
+      "description": "ASR error model",
       "type": "object",
       "properties": {
         "code": {
@@ -16408,315 +14931,15 @@
         }
       }
     },
-    "SrsDataContract.AzureDeploymentDetails": {
-      "type": "object",
-      "properties": {
-        "version": {
-          "$ref": "#/definitions/System.Version"
-        },
-        "roleName": {
-          "type": "string"
-        },
-        "deploymentName": {
-          "type": "string"
-        },
-        "hostedServiceName": {
-          "type": "string"
-        },
-        "virtualNetworkName": {
-          "type": "string"
-        },
-        "subscriptionId": {
-          "type": "string"
-        },
-        "vaultLocation": {
-          "type": "string"
-        },
-        "storageAccountName": {
-          "type": "string"
-        },
-        "vhdIdTargetBlobMap": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        },
-        "seedDiskIdTargetBlobUriMap": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        },
-        "propertyBag": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "object"
-          }
-        },
-        "enableRDPOnTargetOption": {
-          "type": "string"
-        },
-        "targetLogStorageAccountArmId": {
-          "type": "string"
-        },
-        "azureVmNics": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "vhdIdSourceBlobMap": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        },
-        "targetResourceGroupId": {
-          "type": "string"
-        },
-        "isResourceGroupUserCreated": {
-          "type": "boolean"
-        },
-        "resourceGroupId": {
-          "type": "string"
-        },
-        "targetAvailabilitySetId": {
-          "type": "string"
-        },
-        "nicIdToAzureNicIdMap": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        },
-        "useManagedDisks": {
-          "type": "boolean"
-        },
-        "vhdIdToManagedDiskIdMap": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        },
-        "userGivenName": {
-          "type": "string"
-        },
-        "vhdIdToSourceManagedDiskIdMap": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        },
-        "targetLocation": {
-          "type": "string"
-        },
-        "targetStorageType": {
-          "type": "string"
-        },
-        "replicaStorageType": {
-          "type": "string"
-        },
-        "recoveryAzureNicConfigurations": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/SrsDataContract.RecoveryAzureNicSettings"
-          }
-        },
-        "testFailoverVmName": {
-          "type": "string"
-        },
-        "recoveryAzureMangedDiskConfigurations": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/SrsDataContract.AzureManagedDiskRecoverySettings"
-          }
-        }
-      }
-    },
-    "SrsDataContract.AzureManagedDiskRecoverySettings": {
-      "type": "object",
-      "properties": {
-        "diskName": {
-          "type": "string"
-        },
-        "managedDiskFailoverGivenName": {
-          "type": "string"
-        },
-        "managedDiskTestFailoverGivenName": {
-          "type": "string"
-        },
-        "targetManagedDiskId": {
-          "type": "string"
-        }
-      }
-    },
-    "SrsDataContract.RecoveryAzureNicSettings": {
-      "type": "object",
-      "properties": {
-        "nicId": {
-          "type": "string"
-        },
-        "nicFabricObjectId": {
-          "type": "string"
-        },
-        "isPrimary": {
-          "type": "boolean"
-        },
-        "recoveryVMNetworkId": {
-          "type": "string"
-        },
-        "previousRecoveryVMNetworkId": {
-          "type": "string"
-        },
-        "recoveryVmSubnetId": {
-          "type": "string"
-        },
-        "previousRecoveryVmSubnetId": {
-          "type": "string"
-        },
-        "recoveryVmSubnetName": {
-          "type": "string"
-        },
-        "previousRecoveryVmSubnetName": {
-          "type": "string"
-        },
-        "recoveryNetworkSecurityGroupId": {
-          "type": "string"
-        },
-        "previousRecoveryNetworkSecurityGroupId": {
-          "type": "string"
-        },
-        "isAcceleratedNetworkingEnabledOnRecovery": {
-          "type": "boolean"
-        },
-        "isAcceleratedNetworkingEnabledOnPreviousRecovery": {
-          "type": "boolean"
-        },
-        "recoveryIPConfigs": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/SrsDataContract.RecoveryIPConfig"
-          }
-        },
-        "previousRecoveryIPConfigs": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/SrsDataContract.RecoveryIPConfig"
-          }
-        },
-        "selectionTypeForFailover": {
-          "type": "string"
-        },
-        "testFailoverSettings": {
-          "$ref": "#/definitions/SrsDataContract.TestFailoverSettings"
-        },
-        "previousTestFailoverSettings": {
-          "$ref": "#/definitions/SrsDataContract.TestFailoverSettings"
-        }
-      }
-    },
-    "SrsDataContract.RecoveryIPConfig": {
-      "type": "object",
-      "properties": {
-        "replicaNicStaticIPAddress": {
-          "type": "string"
-        },
-        "recoveryPublicIpAddressId": {
-          "type": "string"
-        },
-        "recoveryLBBackendAddressPoolIds": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "SrsDataContract.TestFailoverSettings": {
-      "type": "object",
-      "properties": {
-        "vmNetworkId": {
-          "type": "string"
-        },
-        "vmSubnetName": {
-          "type": "string"
-        },
-        "networkSecurityGroupId": {
-          "type": "string"
-        },
-        "isAcceleratedNetworkingEnabled": {
-          "type": "boolean"
-        },
-        "ipConfigs": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/SrsDataContract.RecoveryIPConfig"
-          }
-        }
-      }
-    },
-    "StorageAccountsCountSummary": {
-      "description": "Model to define the storage account usage for *2A scenarios.",
-      "type": "object",
-      "properties": {
-        "hyperVToAzureTotalStorageAccountsCount": {
-          "format": "int32",
-          "description": "The total count of storage account being used for HyperV to Azure replicating VMs. This would include both log and recovery.",
-          "type": "integer"
-        },
-        "hyperVToAzureLogStorageAccountsCount": {
-          "format": "int32",
-          "description": "The count of storage account being used for log purpose for HyperV to Azure replicating VMs.",
-          "type": "integer"
-        },
-        "hyperVToAzureRecoveryStorageAccountsCount": {
-          "format": "int32",
-          "description": "The count of storage account being used for recovery purpose for HyperV to Azure replicating VMs.",
-          "type": "integer"
-        },
-        "vmwareToAzureStorageAccountsCount": {
-          "format": "int32",
-          "description": "The count of total storage account being used for vmware to Azure replicating Vms. This would include both log and recovery.",
-          "type": "integer"
-        },
-        "vmwareToAzureLogStorageAccountsCount": {
-          "format": "int32",
-          "description": "The count of total storage account being used for recovery purpose for vmware to Azure replicating Vms.",
-          "type": "integer"
-        },
-        "vmwareToAzureRecoveryStorageAccountsCount": {
-          "format": "int32",
-          "description": "The count of total storage account being used for recovery purpose for vmware to Azure replicating Vms.",
-          "type": "integer"
-        },
-        "azureToAzureRecoveryStorageAccountsCount": {
-          "format": "int32",
-          "description": "The count of storage account being used for recovery purpose for Azure to Azure replicating VMs.",
-          "type": "integer"
-        },
-        "azureToAzureStagingStorageAccountsCount": {
-          "format": "int32",
-          "description": "The count of storage account being used for staging purpose for Azure to Azure replicating VMs.",
-          "type": "integer"
-        }
-      }
-    },
     "StorageClassification": {
       "description": "Storage object definition.",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
       "properties": {
-        "id": {
-          "description": "Unqiue ARM Id URL to access this object.",
-          "type": "string"
-        },
-        "type": {
-          "description": "Class type of the object.",
-          "type": "string"
-        },
-        "name": {
-          "description": "Id of the Storage.",
-          "type": "string"
-        },
         "properties": {
           "$ref": "#/definitions/StorageClassificationProperties",
           "description": "Properties of the storage object."
@@ -16743,19 +14966,12 @@
     "StorageClassificationMapping": {
       "description": "Storage mapping object.",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
       "properties": {
-        "id": {
-          "description": "Unqiue ARM Id URL to access this object.",
-          "type": "string"
-        },
-        "type": {
-          "description": "Class type of the object.",
-          "type": "string"
-        },
-        "name": {
-          "description": "Id of the Storage mapping.",
-          "type": "string"
-        },
         "properties": {
           "$ref": "#/definitions/StorageClassificationMappingProperties",
           "description": "Properties of the storage mapping object."
@@ -16819,26 +15035,6 @@
         }
       }
     },
-    "SubmitFeedbackInput": {
-      "description": "Submit feedback input.",
-      "type": "object",
-      "properties": {
-        "properties": {
-          "$ref": "#/definitions/SubmitFeedbackInputProperties",
-          "description": "The submit feedback input properties."
-        }
-      }
-    },
-    "SubmitFeedbackInputProperties": {
-      "description": "Submit feedback input properties.",
-      "type": "object",
-      "properties": {
-        "feedback": {
-          "description": "The feedback.",
-          "type": "string"
-        }
-      }
-    },
     "Subnet": {
       "description": "Subnets of the network.",
       "type": "object",
@@ -16860,87 +15056,13 @@
         }
       }
     },
-    "SupportedOperatingSystems": {
-      "description": "Response object for supported operating systems API.",
-      "type": "object",
-      "properties": {
-        "id": {
-          "description": "The ID (ARM ID).",
-          "type": "string"
-        },
-        "name": {
-          "description": "The name.",
-          "type": "string"
-        },
-        "type": {
-          "description": "Type.",
-          "type": "string"
-        },
-        "properties": {
-          "$ref": "#/definitions/SupportedOSProperties",
-          "description": "Properties model for supported OS API."
-        }
-      }
-    },
-    "SupportedOSDetails": {
-      "description": "Supported Operating system details.",
-      "type": "object",
-      "properties": {
-        "osName": {
-          "description": "The name.",
-          "type": "string"
-        },
-        "osType": {
-          "description": "The type.",
-          "type": "string"
-        },
-        "osVersions": {
-          "description": "List of version for OS.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/OSVersionWrapper"
-          }
-        }
-      }
-    },
-    "SupportedOSProperties": {
-      "description": "Properties model for supported OS API.",
-      "type": "object",
-      "properties": {
-        "supportedOsList": {
-          "description": "The supported OS List.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/SupportedOSProperty"
-          }
-        }
-      }
-    },
-    "SupportedOSProperty": {
-      "description": "Property object for supported OS api.",
-      "type": "object",
-      "properties": {
-        "instanceType": {
-          "description": "Gets the replication provider type.",
-          "type": "string",
-          "readOnly": true
-        },
-        "supportedOs": {
-          "description": "List of supported OS.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/SupportedOSDetails"
-          }
-        }
-      }
-    },
     "SwitchProtectionInput": {
       "description": "Switch protection input.",
       "type": "object",
       "properties": {
         "properties": {
           "$ref": "#/definitions/SwitchProtectionInputProperties",
-          "description": "Switch protection properties."
+          "description": "Switch protection properties"
         }
       }
     },
@@ -16980,210 +15102,10 @@
       "properties": {
         "instanceType": {
           "description": "Gets the Instance type.",
-          "type": "string",
-          "readOnly": true
+          "type": "string"
         }
       },
       "discriminator": "instanceType"
-    },
-    "System.Collections.Generic.KeyValuePair`2": {
-      "type": "object",
-      "properties": {
-        "key": {
-          "type": "string",
-          "readOnly": true
-        }
-      }
-    },
-    "System.Net.Http.HttpContent": {
-      "type": "object",
-      "properties": {
-        "headers": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/System.Collections.Generic.KeyValuePair`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Collections.Generic.IEnumerable`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
-          },
-          "readOnly": true
-        }
-      }
-    },
-    "System.Net.Http.HttpMethod": {
-      "type": "object",
-      "properties": {
-        "method": {
-          "type": "string",
-          "readOnly": true
-        }
-      }
-    },
-    "System.Net.Http.HttpRequestMessage": {
-      "type": "object",
-      "properties": {
-        "version": {
-          "$ref": "#/definitions/System.Version"
-        },
-        "content": {
-          "$ref": "#/definitions/System.Net.Http.HttpContent"
-        },
-        "method": {
-          "$ref": "#/definitions/System.Net.Http.HttpMethod"
-        },
-        "requestUri": {
-          "type": "string"
-        },
-        "headers": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/System.Collections.Generic.KeyValuePair`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Collections.Generic.IEnumerable`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
-          },
-          "readOnly": true
-        },
-        "properties": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "object"
-          },
-          "readOnly": true
-        }
-      }
-    },
-    "System.Net.Http.HttpResponseMessage": {
-      "type": "object",
-      "properties": {
-        "version": {
-          "$ref": "#/definitions/System.Version"
-        },
-        "content": {
-          "$ref": "#/definitions/System.Net.Http.HttpContent"
-        },
-        "statusCode": {
-          "enum": [
-            "continue",
-            "switchingProtocols",
-            "oK",
-            "created",
-            "accepted",
-            "nonAuthoritativeInformation",
-            "noContent",
-            "resetContent",
-            "partialContent",
-            "multipleChoices",
-            "ambiguous",
-            "movedPermanently",
-            "moved",
-            "found",
-            "redirect",
-            "seeOther",
-            "redirectMethod",
-            "notModified",
-            "useProxy",
-            "unused",
-            "temporaryRedirect",
-            "redirectKeepVerb",
-            "badRequest",
-            "unauthorized",
-            "paymentRequired",
-            "forbidden",
-            "notFound",
-            "methodNotAllowed",
-            "notAcceptable",
-            "proxyAuthenticationRequired",
-            "requestTimeout",
-            "conflict",
-            "gone",
-            "lengthRequired",
-            "preconditionFailed",
-            "requestEntityTooLarge",
-            "requestUriTooLong",
-            "unsupportedMediaType",
-            "requestedRangeNotSatisfiable",
-            "expectationFailed",
-            "upgradeRequired",
-            "internalServerError",
-            "notImplemented",
-            "badGateway",
-            "serviceUnavailable",
-            "gatewayTimeout",
-            "httpVersionNotSupported"
-          ],
-          "type": "string",
-          "x-ms-enum": {
-            "name": "HttpStatusCode",
-            "modelAsString": true
-          }
-        },
-        "reasonPhrase": {
-          "type": "string"
-        },
-        "headers": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/System.Collections.Generic.KeyValuePair`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Collections.Generic.IEnumerable`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
-          },
-          "readOnly": true
-        },
-        "requestMessage": {
-          "$ref": "#/definitions/System.Net.Http.HttpRequestMessage"
-        },
-        "isSuccessStatusCode": {
-          "type": "boolean",
-          "readOnly": true
-        }
-      }
-    },
-    "System.StringSystem.Collections.Generic.KeyValuePair`2": {
-      "description": "List of System.String resources",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/System.Collections.Generic.KeyValuePair`2"
-        }
-      ],
-      "properties": {
-        "value": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/System.String",
-            "type": "string"
-          },
-          "readOnly": true
-        }
-      }
-    },
-    "System.Version": {
-      "type": "object",
-      "properties": {
-        "major": {
-          "format": "int32",
-          "type": "integer",
-          "readOnly": true
-        },
-        "minor": {
-          "format": "int32",
-          "type": "integer",
-          "readOnly": true
-        },
-        "build": {
-          "format": "int32",
-          "type": "integer",
-          "readOnly": true
-        },
-        "revision": {
-          "format": "int32",
-          "type": "integer",
-          "readOnly": true
-        },
-        "majorRevision": {
-          "format": "int32",
-          "type": "integer",
-          "readOnly": true
-        },
-        "minorRevision": {
-          "format": "int32",
-          "type": "integer",
-          "readOnly": true
-        }
-      }
     },
     "TargetComputeSize": {
       "description": "Represents applicable recovery vm sizes.",
@@ -17241,11 +15163,6 @@
           "description": "The maximum cpu cores count supported by target compute size.",
           "type": "integer"
         },
-        "vCPUsAvailable": {
-          "format": "int32",
-          "description": "The Available vCPUs supported by target compute size.",
-          "type": "integer"
-        },
         "memoryInGB": {
           "format": "double",
           "description": "The maximum memory in GB supported by target compute size.",
@@ -17271,75 +15188,6 @@
         "highIopsSupported": {
           "description": "The value indicating whether the target compute size supports high Iops.",
           "type": "string"
-        },
-        "hyperVGenerations": {
-          "description": "The supported HyperV Generations.",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "Task": {
-      "description": "Task of the Job.",
-      "type": "object",
-      "properties": {
-        "taskId": {
-          "description": "The Id.",
-          "type": "string"
-        },
-        "name": {
-          "description": "The unique Task name.",
-          "type": "string"
-        },
-        "startTime": {
-          "format": "date-time",
-          "description": "The start time.",
-          "type": "string"
-        },
-        "endTime": {
-          "format": "date-time",
-          "description": "The end time.",
-          "type": "string"
-        },
-        "allowedActions": {
-          "description": "The state/actions applicable on this task.",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "friendlyName": {
-          "description": "The name.",
-          "type": "string"
-        },
-        "state": {
-          "description": "The State. It is one of these values - NotStarted, InProgress, Succeeded, Failed, Cancelled, Suspended or Other.",
-          "type": "string"
-        },
-        "stateDescription": {
-          "description": "The description of the task state. For example - For Succeeded state, description can be Completed, PartiallySucceeded, CompletedWithInformation or Skipped.",
-          "type": "string"
-        },
-        "taskType": {
-          "description": "The type of task. Details in CustomDetails property depend on this type.",
-          "type": "string"
-        },
-        "customDetails": {
-          "$ref": "#/definitions/TaskTypeDetails",
-          "description": "The custom task details based on the task type."
-        },
-        "groupTaskCustomDetails": {
-          "$ref": "#/definitions/GroupTaskDetails",
-          "description": "The custom task details based on the task type, if the task type is GroupTaskDetails or one of the types derived from it."
-        },
-        "errors": {
-          "description": "The task error details.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/JobErrorDetails"
-          }
         }
       }
     },
@@ -17383,7 +15231,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/TestFailoverInputProperties",
-          "description": "Planned failover input properties."
+          "description": "Planned failover input properties"
         }
       }
     },
@@ -17400,7 +15248,7 @@
           "type": "string"
         },
         "networkId": {
-          "description": "The id of the network to be used for test failover.",
+          "description": "The id of the network to be used for test failover",
           "type": "string"
         },
         "skipTestFailoverCleanup": {
@@ -17409,7 +15257,7 @@
         },
         "providerSpecificDetails": {
           "$ref": "#/definitions/ProviderSpecificFailoverInput",
-          "description": "Provider specific settings."
+          "description": "Provider specific settings"
         }
       }
     },
@@ -17522,7 +15370,7 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/UnplannedFailoverInputProperties",
-          "description": "Planned failover input properties."
+          "description": "Planned failover input properties"
         }
       }
     },
@@ -17535,12 +15383,12 @@
           "type": "string"
         },
         "sourceSiteOperations": {
-          "description": "Source site operations status.",
+          "description": "Source site operations status",
           "type": "string"
         },
         "providerSpecificDetails": {
           "$ref": "#/definitions/ProviderSpecificFailoverInput",
-          "description": "Provider specific settings."
+          "description": "Provider specific settings"
         }
       }
     },
@@ -17677,7 +15525,7 @@
       }
     },
     "UpdateRecoveryPlanInputProperties": {
-      "description": "Recovery plan updation properties.",
+      "description": "Recovery plan update properties.",
       "type": "object",
       "properties": {
         "groups": {
@@ -17720,7 +15568,7 @@
           "type": "string"
         },
         "enableRdpOnTargetOption": {
-          "description": "The selected option to enable RDP\\SSH on target vm after failover. String value of SrsDataContract.EnableRDPOnTargetOption enum.",
+          "description": "The selected option to enable RDP\\SSH on target vm after failover. String value of {SrsDataContract.EnableRDPOnTargetOption} enum.",
           "type": "string"
         },
         "vmNics": {
@@ -17733,9 +15581,9 @@
         "licenseType": {
           "description": "License type.",
           "enum": [
-            "notSpecified",
-            "noLicenseType",
-            "windowsServer"
+            "NotSpecified",
+            "NoLicenseType",
+            "WindowsServer"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -17800,60 +15648,15 @@
         }
       }
     },
-    "Usage": {
-      "description": "Class to define Usage metrics.",
-      "type": "object",
-      "properties": {
-        "name": {
-          "$ref": "#/definitions/Name",
-          "description": "The Name of the usage."
-        },
-        "unit": {
-          "description": "The unit.",
-          "type": "string"
-        },
-        "currentValue": {
-          "format": "int64",
-          "description": "The current value.",
-          "type": "integer"
-        },
-        "limit": {
-          "format": "int64",
-          "description": "Gets the limit.",
-          "type": "integer",
-          "readOnly": true
-        }
-      }
-    },
-    "UsagesResponse": {
-      "description": "Base class to define the Vault Usage Response.",
-      "type": "object",
-      "properties": {
-        "value": {
-          "description": "The array of Usage.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Usage"
-          }
-        }
-      }
-    },
     "VaultHealthDetails": {
       "description": "Vault health details definition.",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
       "properties": {
-        "name": {
-          "description": "Unique Id of the vault health detail.",
-          "type": "string"
-        },
-        "type": {
-          "description": "Resource type.",
-          "type": "string"
-        },
-        "id": {
-          "description": "Unique ARM identifier for this object.",
-          "type": "string"
-        },
         "properties": {
           "$ref": "#/definitions/VaultHealthProperties",
           "description": "The vault health related data."
@@ -17885,59 +15688,15 @@
         }
       }
     },
-    "VaultUsages": {
-      "description": "Base class to define the properties for Vault Usages.",
-      "type": "object",
-      "properties": {
-        "monitoringSummary": {
-          "$ref": "#/definitions/MonitoringSummary",
-          "description": "The value for the event summary."
-        },
-        "jobsSummary": {
-          "$ref": "#/definitions/JobsSummary",
-          "description": "The value for the jobs summary."
-        },
-        "protectedItemsSummary": {
-          "$ref": "#/definitions/ProtectedItemsSummary",
-          "description": "The value for the protected items summary."
-        },
-        "storageAccountsCountSummary": {
-          "$ref": "#/definitions/StorageAccountsCountSummary",
-          "description": "The value for the storage account usage summary."
-        },
-        "protectedItemCount": {
-          "format": "int32",
-          "description": "The protected item count.",
-          "type": "integer"
-        },
-        "registeredServersCount": {
-          "format": "int32",
-          "description": "The registered servers count.",
-          "type": "integer"
-        },
-        "recoveryPlanCount": {
-          "format": "int32",
-          "description": "The recovery plan count.",
-          "type": "integer"
-        }
-      }
-    },
     "VCenter": {
       "description": "vCenter definition.",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
       "properties": {
-        "name": {
-          "description": "Unique Id of the vCenter.",
-          "type": "string"
-        },
-        "type": {
-          "description": "Object type.",
-          "type": "string"
-        },
-        "id": {
-          "description": "Unique ARM identifier for this object.",
-          "type": "string"
-        },
         "properties": {
           "$ref": "#/definitions/VCenterProperties",
           "description": "VCenter related data."
@@ -18031,11 +15790,11 @@
         "status": {
           "description": "A value indicating whether security update required.",
           "enum": [
-            "supported",
-            "notSupported",
-            "deprecated",
-            "updateRequired",
-            "securityUpdateRequired"
+            "Supported",
+            "NotSupported",
+            "Deprecated",
+            "UpdateRequired",
+            "SecurityUpdateRequired"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -18081,7 +15840,7 @@
       "x-ms-discriminator-value": "VMM"
     },
     "VmmToAzureCreateNetworkMappingInput": {
-      "description": "Create network mappings input properties/behaviour specific to Vmm to Azure Network mapping.",
+      "description": "Create network mappings input properties/behavior specific to Vmm to Azure Network mapping.",
       "type": "object",
       "allOf": [
         {
@@ -18103,7 +15862,7 @@
       "x-ms-discriminator-value": "VmmToAzure"
     },
     "VmmToAzureUpdateNetworkMappingInput": {
-      "description": "Update network mappings input properties/behaviour specific to vmm to azure.",
+      "description": "Update network mappings input properties/behavior specific to vmm to azure.",
       "type": "object",
       "allOf": [
         {
@@ -18114,7 +15873,7 @@
       "x-ms-discriminator-value": "VmmToAzure"
     },
     "VmmToVmmCreateNetworkMappingInput": {
-      "description": "Create network mappings input properties/behaviour specific to vmm to vmm Network mapping.",
+      "description": "Create network mappings input properties/behavior specific to vmm to vmm Network mapping.",
       "type": "object",
       "allOf": [
         {
@@ -18136,7 +15895,7 @@
       "x-ms-discriminator-value": "VmmToVmm"
     },
     "VmmToVmmUpdateNetworkMappingInput": {
-      "description": "Update network mappings input properties/behaviour specific to vmm to vmm.",
+      "description": "Update network mappings input properties/behavior specific to vmm to vmm.",
       "type": "object",
       "allOf": [
         {
@@ -18175,11 +15934,11 @@
           }
         },
         "hasPhysicalDisk": {
-          "description": "A value indicating whether the VM has a physical disk attached. String value of SrsDataContract.PresenceStatus enum.",
+          "description": "A value indicating whether the VM has a physical disk attached. String value of {SrsDataContract.PresenceStatus} enum.",
           "enum": [
-            "unknown",
-            "present",
-            "notPresent"
+            "Unknown",
+            "Present",
+            "NotPresent"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -18188,11 +15947,11 @@
           }
         },
         "hasFibreChannelAdapter": {
-          "description": "A value indicating whether the VM has a fibre channel adapter attached. String value of SrsDataContract.PresenceStatus enum.",
+          "description": "A value indicating whether the VM has a fibre channel adapter attached. String value of {SrsDataContract.PresenceStatus} enum.",
           "enum": [
-            "unknown",
-            "present",
-            "notPresent"
+            "Unknown",
+            "Present",
+            "NotPresent"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -18201,11 +15960,11 @@
           }
         },
         "hasSharedVhd": {
-          "description": "A value indicating whether the VM has a shared VHD attached. String value of SrsDataContract.PresenceStatus enum.",
+          "description": "A value indicating whether the VM has a shared VHD attached. String value of {SrsDataContract.PresenceStatus} enum.",
           "enum": [
-            "unknown",
-            "present",
-            "notPresent"
+            "Unknown",
+            "Present",
+            "NotPresent"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -18269,7 +16028,7 @@
           "type": "string"
         },
         "enableAcceleratedNetworkingOnRecovery": {
-          "description": "A value indicating whether the NIC has accerated networking enabled.",
+          "description": "A value indicating whether the NIC has accelerated networking enabled.",
           "type": "boolean"
         }
       }
@@ -18295,7 +16054,7 @@
           "type": "string"
         },
         "enableAcceleratedNetworkingOnRecovery": {
-          "description": "Whether the NIC has accerated networking enabled.",
+          "description": "Whether the NIC has accelerated networking enabled.",
           "type": "boolean"
         }
       }
@@ -18408,9 +16167,9 @@
         "diskType": {
           "description": "The disk type.",
           "enum": [
-            "standard_LRS",
-            "premium_LRS",
-            "standardSSD_LRS"
+            "Standard_LRS",
+            "Premium_LRS",
+            "StandardSSD_LRS"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -18453,9 +16212,9 @@
         "licenseType": {
           "description": "License type.",
           "enum": [
-            "notSpecified",
-            "noLicenseType",
-            "windowsServer"
+            "NotSpecified",
+            "NoLicenseType",
+            "WindowsServer"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -18464,11 +16223,11 @@
           }
         },
         "dataMoverRunAsAccountId": {
-          "description": "The data mover runas account Id.",
+          "description": "The data mover RunAs account Id.",
           "type": "string"
         },
         "snapshotRunAsAccountId": {
-          "description": "The snapshot runas account Id.",
+          "description": "The snapshot RunAs account Id.",
           "type": "string"
         },
         "targetVmName": {
@@ -18567,12 +16326,12 @@
           "type": "string"
         },
         "dataMoverRunAsAccountId": {
-          "description": "The data mover runas account Id.",
+          "description": "The data mover RunAs account Id.",
           "type": "string",
           "readOnly": true
         },
         "snapshotRunAsAccountId": {
-          "description": "The snapshot runas account Id.",
+          "description": "The snapshot RunAs account Id.",
           "type": "string",
           "readOnly": true
         },
@@ -18656,9 +16415,9 @@
         "resyncState": {
           "description": "The resync state.",
           "enum": [
-            "none",
-            "preparedForResynchronization",
-            "startedResynchronization"
+            "None",
+            "PreparedForResynchronization",
+            "StartedResynchronization"
           ],
           "type": "string",
           "readOnly": true,
@@ -18695,8 +16454,8 @@
         "sourceIPAddressType": {
           "description": "The source IP address type.",
           "enum": [
-            "dynamic",
-            "static"
+            "Dynamic",
+            "Static"
           ],
           "type": "string",
           "readOnly": true,
@@ -18717,8 +16476,8 @@
         "targetIPAddressType": {
           "description": "The target IP address type.",
           "enum": [
-            "dynamic",
-            "static"
+            "Dynamic",
+            "Static"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -18873,9 +16632,9 @@
         "diskType": {
           "description": "The disk type.",
           "enum": [
-            "standard_LRS",
-            "premium_LRS",
-            "standardSSD_LRS"
+            "Standard_LRS",
+            "Premium_LRS",
+            "StandardSSD_LRS"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -19016,9 +16775,9 @@
         "licenseType": {
           "description": "The license type.",
           "enum": [
-            "notSpecified",
-            "noLicenseType",
-            "windowsServer"
+            "NotSpecified",
+            "NoLicenseType",
+            "WindowsServer"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -19161,7 +16920,7 @@
           "type": "string"
         },
         "versionStatus": {
-          "description": "Version status.",
+          "description": "Version status",
           "type": "string"
         },
         "sslCertExpiryDate": {
@@ -19250,20 +17009,12 @@
           "description": "The service resource Id.",
           "type": "string",
           "readOnly": true
-        },
-        "processServers": {
-          "description": "The list of process servers.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/RcmProcessServerInfo"
-          },
-          "readOnly": true
         }
       },
       "x-ms-discriminator-value": "VMwareV2"
     },
     "VMwareVirtualMachineDetails": {
-      "description": "VMware provider specific settings.",
+      "description": "VMware provider specific settings",
       "type": "object",
       "allOf": [
         {
@@ -19334,16 +17085,16 @@
       "in": "path",
       "description": "The name of the resource group where the recovery services vault is present.",
       "required": true,
-      "type": "string",
-      "x-ms-parameter-location": "method"
+      "x-ms-parameter-location": "client",
+      "type": "string"
     },
-    "VaultName": {
-      "name": "vaultName",
+    "ResourceName": {
+      "name": "resourceName",
       "in": "path",
       "description": "The name of the recovery services vault.",
       "required": true,
-      "type": "string",
-      "x-ms-parameter-location": "method"
+      "x-ms-parameter-location": "client",
+      "type": "string"
     },
     "ApiVersion": {
       "name": "api-version",
@@ -19355,13 +17106,13 @@
   },
   "securityDefinitions": {
     "azure_auth": {
+      "type": "oauth2",
+      "description": "Azure Active Directory OAuth2 Flow",
       "flow": "implicit",
       "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
       "scopes": {
         "user_impersonation": "impersonate your user account."
-      },
-      "type": "oauth2",
-      "description": "Azure Active Directory OAuth2 Flow"
+      }
     }
   },
   "security": [
@@ -19370,6 +17121,5 @@
         "user_impersonation"
       ]
     }
-  ],
-  "tags": []
+  ]
 }
