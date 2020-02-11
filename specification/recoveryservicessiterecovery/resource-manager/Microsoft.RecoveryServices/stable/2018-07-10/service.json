@@ -12190,6 +12190,62 @@
         }
       }
     },
+    "InMageRcmFabricCreationInput": {
+      "description": "InMageRcm fabric provider specific settings.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/FabricSpecificCreationInput"
+        }
+      ],
+      "properties": {},
+      "x-ms-discriminator-value": "InMageRcm"
+    },
+    "InMageRcmFabricSpecificDetails": {
+      "description": "InMageRcm fabric specific details.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/FabricSpecificDetails"
+        }
+      ],
+      "properties": {
+        "serviceEndpoint": {
+          "description": "The service endpoint.",
+          "type": "string",
+          "readOnly": true
+        },
+        "serviceResourceId": {
+          "description": "The service resource Id.",
+          "type": "string",
+          "readOnly": true
+        },
+        "serviceContainerId": {
+          "description": "The service container Id.",
+          "type": "string",
+          "readOnly": true
+        },
+        "dataPlaneUri": {
+          "description": "The data plane Uri.",
+          "type": "string",
+          "readOnly": true
+        },
+        "controlPlaneUri": {
+          "description": "The control plane Uri.",
+          "type": "string",
+          "readOnly": true
+        },
+        "processServers": {
+          "description": "The list of process servers.",          
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProcessServerDetails"
+          },
+          "readOnly": true
+        }
+      },
+      "x-ms-discriminator-value": "InMageRcm"
+    },
     "InnerHealthError": {
       "description": "Implements InnerHealthError class. HealthError object has a list of InnerHealthErrors as child errors. InnerHealthError is used because this will prevent an infinite loop of structures when Hydra tries to auto-generate the contract. We are exposing the related health errors as inner health errors and all API consumers can utilize this in the same fashion as Exception -&gt; InnerException.",
       "type": "object",
@@ -13471,6 +13527,32 @@
         "agentVersionDetails": {
           "$ref": "#/definitions/VersionDetails",
           "description": "The agent version details."
+        }
+      }
+    },
+	"ProcessServerDetails": {
+      "description": "Process server details.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "The process server Id.",
+          "type": "string",
+          "readOnly": true
+        },
+        "name": {
+          "description": "The process server name.",
+          "type": "string",
+          "readOnly": true
+        },
+        "machineId": {
+          "description": "The Id of the machine hosting the process server.",
+          "type": "string",
+          "readOnly": true
+        },
+        "machineName": {
+          "description": "The name of the machine hosting the process server.",
+          "type": "string",
+          "readOnly": true
         }
       }
     },
@@ -14756,6 +14838,14 @@
           "description": "The DRA Id.",
           "type": "string"
         },
+	"machineId": {
+          "description": "The machine Id.",
+          "type": "string"
+        },
+        "machineName": {
+          "description": "The machine name.",
+          "type": "string"
+        },
         "authenticationIdentityDetails": {
           "$ref": "#/definitions/IdentityProviderDetails",
           "description": "The authentication identity details."
@@ -14763,6 +14853,10 @@
         "resourceAccessIdentityDetails": {
           "$ref": "#/definitions/IdentityProviderDetails",
           "description": "The resource access identity details."
+        },
+	"dataPlaneAuthenticationIdentityDetails": {
+          "$ref": "#/definitions/IdentityProviderDetails",
+          "description": "The data plane authentication identity details."
         },
         "providerVersionDetails": {
           "$ref": "#/definitions/VersionDetails",
@@ -17357,6 +17451,11 @@
           "type": "string",
           "readOnly": true
         },
+        "physicalSiteId": {
+          "description": "The ARM Id of the physical site.",
+          "type": "string",
+          "readOnly": true
+        },
         "migrationSolutionId": {
           "description": "The Migration solution ARM Id.",
           "type": "string",
@@ -17370,6 +17469,19 @@
         "serviceResourceId": {
           "description": "The service resource Id.",
           "type": "string",
+          "readOnly": true
+        },
+        "serviceContainerId": {
+          "description": "The service container Id.",
+          "type": "string",
+          "readOnly": true
+        },
+        "processServers": {
+          "description": "The list of process servers.",          
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProcessServerDetails"
+          },
           "readOnly": true
         }
       },
