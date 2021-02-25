@@ -1518,6 +1518,7 @@ rstrnt
 RTMP
 RTSP
 Ruleproperties
+runas
 runbook
 Runbooks
 runcounts
@@ -1774,6 +1775,7 @@ tablevaluedfunctions
 tagname
 tagsandregions
 tagvalue
+targetv
 TARGETDURATION
 taskcompletion
 taskcounts
