@@ -19435,7 +19435,7 @@
           "readOnly": true
         },
         "version": {
-          "description": "The reprotect agent FQDN version.",
+          "description": "The reprotect agent version.",
           "type": "string",
           "readOnly": true
         },
