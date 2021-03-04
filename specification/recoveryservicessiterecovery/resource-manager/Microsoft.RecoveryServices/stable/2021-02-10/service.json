@@ -580,7 +580,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2015_11_10.Fabric"
+              "$ref": "#/definitions/Fabric"
             }
           },
           "202": {
@@ -682,7 +682,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2015_11_10.Fabric"
+              "$ref": "#/definitions/Fabric"
             }
           },
           "202": {
@@ -798,7 +798,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2015_11_10.Fabric"
+              "$ref": "#/definitions/Fabric"
             }
           },
           "202": {
@@ -914,7 +914,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2015_11_10.Fabric"
+              "$ref": "#/definitions/Fabric"
             }
           },
           "202": {
@@ -1606,7 +1606,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2015_11_10.ProtectionContainer"
+              "$ref": "#/definitions/ProtectionContainer"
             }
           }
         },
@@ -1675,7 +1675,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2015_11_10.ProtectionContainer"
+              "$ref": "#/definitions/ProtectionContainer"
             }
           },
           "202": {
@@ -1749,7 +1749,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2015_11_10.ProtectionContainer"
+              "$ref": "#/definitions/ProtectionContainer"
             }
           },
           "202": {
@@ -2261,7 +2261,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2018_01_10.MigrationItem"
+              "$ref": "#/definitions/MigrationItem"
             }
           },
           "202": {
@@ -2482,7 +2482,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2018_01_10.MigrationItem"
+              "$ref": "#/definitions/MigrationItem"
             }
           },
           "202": {
@@ -2563,7 +2563,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2018_01_10.MigrationItem"
+              "$ref": "#/definitions/MigrationItem"
             }
           },
           "202": {
@@ -2644,7 +2644,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2018_01_10.MigrationItem"
+              "$ref": "#/definitions/MigrationItem"
             }
           },
           "202": {
@@ -3222,7 +3222,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2018_07_10.ReplicationProtectedItem"
+              "$ref": "#/definitions/ReplicationProtectedItem"
             }
           },
           "202": {
@@ -3303,7 +3303,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2018_07_10.ReplicationProtectedItem"
+              "$ref": "#/definitions/ReplicationProtectedItem"
             }
           },
           "202": {
@@ -3372,7 +3372,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2018_07_10.ReplicationProtectedItem"
+              "$ref": "#/definitions/ReplicationProtectedItem"
             }
           },
           "202": {
@@ -3441,7 +3441,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2018_07_10.ReplicationProtectedItem"
+              "$ref": "#/definitions/ReplicationProtectedItem"
             }
           },
           "202": {
@@ -3522,7 +3522,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2018_07_10.ReplicationProtectedItem"
+              "$ref": "#/definitions/ReplicationProtectedItem"
             }
           },
           "202": {
@@ -3820,7 +3820,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2018_07_10.ReplicationProtectedItem"
+              "$ref": "#/definitions/ReplicationProtectedItem"
             }
           },
           "202": {
@@ -3889,7 +3889,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2018_07_10.ReplicationProtectedItem"
+              "$ref": "#/definitions/ReplicationProtectedItem"
             }
           },
           "202": {
@@ -3970,7 +3970,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2018_07_10.ReplicationProtectedItem"
+              "$ref": "#/definitions/ReplicationProtectedItem"
             }
           },
           "202": {
@@ -4051,7 +4051,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2018_07_10.ReplicationProtectedItem"
+              "$ref": "#/definitions/ReplicationProtectedItem"
             }
           },
           "202": {
@@ -4201,7 +4201,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2018_07_10.ReplicationProtectedItem"
+              "$ref": "#/definitions/ReplicationProtectedItem"
             }
           },
           "202": {
@@ -4282,7 +4282,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2018_07_10.ReplicationProtectedItem"
+              "$ref": "#/definitions/ReplicationProtectedItem"
             }
           },
           "202": {
@@ -4363,7 +4363,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2018_07_10.ReplicationProtectedItem"
+              "$ref": "#/definitions/ReplicationProtectedItem"
             }
           },
           "202": {
@@ -4444,7 +4444,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2018_07_10.ReplicationProtectedItem"
+              "$ref": "#/definitions/ReplicationProtectedItem"
             }
           },
           "202": {
@@ -6657,7 +6657,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2015_11_10.Policy"
+              "$ref": "#/definitions/Policy"
             }
           }
         },
@@ -7675,7 +7675,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Microsoft.Azure.SiteRecovery.V2015_11_10.RecoveryPlan"
+              "$ref": "#/definitions/RecoveryPlan"
             }
           },
           "202": {
