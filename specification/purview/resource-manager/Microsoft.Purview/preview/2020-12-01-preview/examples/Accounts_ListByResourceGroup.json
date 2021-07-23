@@ -35,8 +35,14 @@
                 "scan": "https://account1.scan.purview.azure-test.com",
                 "guardian": "https://account1.guardian.purview.azure-test.com"
               },
-              "networkAcls": {
-                "defaultAction": "Allow"
+              "publicNetworkAccess": "Enabled",
+              "systemData": {
+                "createdBy": "client-name",
+                "createdByType": "User",
+                "createdAt": "2019-11-22T18:39:58.6929344Z",
+                "lastModifiedBy": "client-name",
+                "lastModifiedByType": "User",
+                "lastModifiedAt": "2021-03-16T23:24:34.3430059Z"
               }
             }
           },
@@ -60,8 +66,14 @@
                 "scan": "https://account2.scan.purview.azure-test.com",
                 "guardian": "https://account1.guardian.purview.azure-test.com"
               },
-              "networkAcls": {
-                "defaultAction": "Allow"
+              "publicNetworkAccess": "Enabled",
+              "systemData": {
+                "createdBy": "client-name",
+                "createdByType": "User",
+                "createdAt": "2019-11-22T18:39:58.6929344Z",
+                "lastModifiedBy": "client-name",
+                "lastModifiedByType": "User",
+                "lastModifiedAt": "2021-03-16T23:24:34.3430059Z"
               }
             }
           }

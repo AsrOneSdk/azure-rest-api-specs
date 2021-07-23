@@ -69,6 +69,10 @@
           "description": "Managed integration runtime properties.",
           "x-ms-client-flatten": true,
           "$ref": "#/definitions/ManagedIntegrationRuntimeTypeProperties"
+        },
+        "managedVirtualNetwork": {
+          "description": "Managed Virtual Network reference.",
+          "$ref": "../datafactory.json#/definitions/ManagedVirtualNetworkReference"
         }
       },
       "required": [
@@ -233,6 +237,10 @@
           "items": {
             "$ref": "#/definitions/PackageStore"
           }
+        },
+        "credential": {
+          "$ref": "../datafactory.json#/definitions/CredentialReference",
+          "description": "The credential reference containing authentication information."
         }
       },
       "additionalProperties": {
@@ -270,6 +278,10 @@
             "name": "IntegrationRuntimeSsisCatalogPricingTier",
             "modelAsString": true
           }
+        },
+        "dualStandbyPairName": {
+          "description": "The dual standby pair name of Azure-SSIS Integration Runtimes to support SSISDB failover.",
+          "type": "string"
         }
       },
       "additionalProperties": {
