@@ -560,7 +560,7 @@
         },
         "filter": {
           "type": "object",
-          "description": "Has filter expression to use in the query.",
+          "description": "The filter expression to use in the query. Please reference our Query API REST documentation for how to properly format the filter.",
           "$ref": "#/definitions/QueryFilter"
         }
       }
@@ -588,6 +588,9 @@
           "description": "The name of the aggregation function to use.",
           "type": "string",
           "enum": [
+            "Avg",
+            "Max",
+            "Min",
             "Sum"
           ],
           "x-ms-enum": {
@@ -637,15 +640,11 @@
           },
           "minItems": 2
         },
-        "not": {
-          "description": "The logical \"NOT\" expression.",
-          "$ref": "#/definitions/QueryFilter"
-        },
-        "dimension": {
+        "dimensions": {
           "description": "Has comparison expression for a dimension",
           "$ref": "#/definitions/QueryComparisonExpression"
         },
-        "tag": {
+        "tags": {
           "description": "Has comparison expression for a tag",
           "$ref": "#/definitions/QueryComparisonExpression"
         }
