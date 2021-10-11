@@ -1050,6 +1050,20 @@
         }
       }
     },
+    "GitHubClientSecret": {
+      "description": "Client secret information for factory's bring your own app repository configuration",
+      "type": "object",
+      "properties": {
+        "byoaSecretAkvUrl": {
+          "description": "Bring your own app client secret AKV URL",
+          "type": "string"
+        },
+        "byoaSecretName": {
+          "description": "Bring your own app client secret name in AKV",
+          "type": "string"
+        }
+      }
+    },
     "WorkspaceRepositoryConfiguration": {
       "description": "Git integration settings",
       "type": "object",
@@ -1081,6 +1095,23 @@
         "rootFolder": {
           "description": "Root folder to use in the repository",
           "type": "string"
+        },
+        "lastCommitId": {
+          "description": "The last commit ID",
+          "type": "string"
+        },
+        "tenantId": {
+          "description": "The VSTS tenant ID",
+          "type": "string",
+          "format": "uuid"
+        },
+        "clientId": {
+          "description": "GitHub bring your own app client id",
+          "type": "string"
+        },
+        "clientSecret": {
+          "$ref": "#/definitions/GitHubClientSecret",
+          "description": "GitHub bring your own app client secret information."
         }
       }
     },
@@ -1207,6 +1238,11 @@
         "purviewConfiguration": {
           "description": "Purview Configuration",
           "$ref": "#/definitions/PurviewConfiguration"
+        },
+        "adlaResourceId": {
+          "description": "The ADLA resource ID.",
+          "type": "string",
+          "readOnly": true
         }
       }
     },

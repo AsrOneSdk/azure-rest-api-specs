@@ -1501,6 +1501,14 @@
         "displayName": {
           "description": "Localized friendly display name of the dimension",
           "type": "string"
+        },
+        "internalName": {
+          "description": "Name of the dimension as it appears in MDM",
+          "type": "string"
+        },
+        "toBeExportedForShoebox": {
+          "description": "A boolean flag indicating whether this dimension should be included for the shoebox export scenario",
+          "type": "boolean"
         }
       }
     },
@@ -1777,7 +1785,11 @@
         },
         "networkBlock": {
           "description": "The block of addresses should be unique across VNet in your subscription as well as on-premise. Make sure the CIDR format is conformed to (A.B.C.D/X) where A,B,C,D are between 0 and 255, and X is between 0 and 22",
-          "type": "string"
+          "type": "string",
+          "x-ms-mutability": [
+            "create",
+            "read"
+          ]
         },
         "managementNetwork": {
           "description": "Network used to access vCenter Server and NSX-T Manager",

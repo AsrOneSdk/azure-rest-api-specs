@@ -1897,6 +1897,7 @@
           }
         },
         "description": "Creates or updates a Sql Script.",
+        "x-ms-long-running-operation": true,
         "parameters": [
           {
             "$ref": "#/parameters/sqlScriptName"
@@ -1927,6 +1928,9 @@
             "schema": {
               "$ref": "#/definitions/SqlScriptResource"
             }
+          },
+          "202": {
+            "description": "Accepted."
           },
           "default": {
             "description": "An error response received from the Azure Synapse service.",
@@ -1991,6 +1995,7 @@
           }
         },
         "description": "Deletes a Sql Script.",
+        "x-ms-long-running-operation": true,
         "parameters": [
           {
             "$ref": "#/parameters/sqlScriptName"
@@ -2002,6 +2007,9 @@
         "responses": {
           "200": {
             "description": "OK."
+          },
+          "202": {
+            "description": "Accepted."
           },
           "204": {
             "description": "No Content."
@@ -2112,6 +2120,7 @@
           }
         },
         "description": "Creates or updates a Spark Job Definition.",
+        "x-ms-long-running-operation": true,
         "parameters": [
           {
             "$ref": "#/parameters/sparkJobDefinitionName"
@@ -2142,6 +2151,9 @@
             "schema": {
               "$ref": "#/definitions/SparkJobDefinitionResource"
             }
+          },
+          "202": {
+            "description": "Accepted."
           },
           "default": {
             "description": "An error response received from the Azure Synapse service.",
@@ -2206,6 +2218,7 @@
           }
         },
         "description": "Deletes a Spark Job Definition.",
+        "x-ms-long-running-operation": true,
         "parameters": [
           {
             "$ref": "#/parameters/sparkJobDefinitionName"
@@ -2217,6 +2230,9 @@
         "responses": {
           "200": {
             "description": "OK."
+          },
+          "202": {
+            "description": "Accepted."
           },
           "204": {
             "description": "No Content."
@@ -2645,6 +2661,7 @@
     },
     "SubResourceDebugResource": {
       "description": "Azure Synapse nested debug resource.",
+      "type": "object",
       "properties": {
         "name": {
           "type": "string",
@@ -2740,6 +2757,7 @@
     },
     "IntegrationRuntimeReference": {
       "description": "Integration runtime reference type.",
+      "type": "object",
       "properties": {
         "type": {
           "type": "string",
@@ -2870,31 +2888,40 @@
       "description": "Request body structure for creating data flow debug session.",
       "type": "object",
       "properties": {
-        "dataFlowName": {
-          "description": "The name of the data flow.",
+        "computeType": {
+          "description": "Compute type of the cluster. The value will be overwritten by the same setting in integration runtime if provided.",
           "type": "string"
         },
-        "existingClusterId": {
-          "description": "The ID of existing Databricks cluster.",
-          "type": "string"
-        },
-        "clusterTimeout": {
-          "description": "Timeout setting for Databricks cluster.",
+        "coreCount": {
+          "description": "Core count of the cluster. The value will be overwritten by the same setting in integration runtime if provided.",
           "type": "integer"
         },
-        "newClusterName": {
-          "description": "The name of new Databricks cluster.",
-          "type": "string"
+        "timeToLive": {
+          "description": "Time to live setting of the cluster in minutes.",
+          "type": "integer"
         },
-        "newClusterNodeType": {
-          "description": "The type of new Databricks cluster.",
-          "type": "string"
-        },
-        "dataBricksLinkedService": {
-          "description": "Data bricks linked service.",
-          "$ref": "#/definitions/LinkedServiceResource"
+        "integrationRuntime": {
+          "description": "Set to use integration runtime setting for data flow debug session.",
+          "$ref": "#/definitions/IntegrationRuntimeDebugResource"
         }
       }
+    },
+    "IntegrationRuntimeDebugResource": {
+      "description": "Integration runtime debug resource.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SubResourceDebugResource"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "$ref": "../../../../resource-manager/Microsoft.Synapse/preview/2019-06-01-preview/integrationRuntime.json#/definitions/IntegrationRuntime",
+          "description": "Integration runtime properties."
+        }
+      },
+      "required": [
+        "properties"
+      ]
     },
     "CreateDataFlowDebugSessionResponse": {
       "description": "Response body structure for creating data flow debug session.",
@@ -2962,10 +2989,6 @@
       "properties": {
         "sessionId": {
           "description": "The ID of data flow debug session.",
-          "type": "string"
-        },
-        "dataFlowName": {
-          "description": "The data flow which contains the debug session.",
           "type": "string"
         }
       }
@@ -3044,29 +3067,58 @@
       }
     },
     "DataFlowDebugCommandRequest": {
-      "description": "Request body structure for data flow expression preview.",
+      "description": "Request body structure for data flow debug command.",
       "type": "object",
       "properties": {
         "sessionId": {
           "description": "The ID of data flow debug session.",
           "type": "string"
         },
-        "dataFlowName": {
-          "description": "The data flow which contains the debug session.",
-          "type": "string"
-        },
-        "commandName": {
-          "description": "The command name.",
-          "type": "string"
+        "command": {
+          "description": "The command type.",
+          "type": "string",
+          "enum": [
+            "executePreviewQuery",
+            "executeStatisticsQuery",
+            "executeExpressionQuery"
+          ],
+          "x-ms-enum": {
+            "name": "DataFlowDebugCommandType",
+            "modelAsString": true
+          }
         },
         "commandPayload": {
           "description": "The command payload object.",
-          "type": "object"
+          "$ref": "#/definitions/DataFlowDebugCommandPayload"
+        }
+      }
+    },
+    "DataFlowDebugCommandPayload": {
+      "description": "Structure of command payload.",
+      "type": "object",
+      "properties": {
+        "streamName": {
+          "description": "The stream name which is used for preview.",
+          "type": "string"
+        },
+        "rowLimits": {
+          "description": "Row limits for preview response.",
+          "type": "integer"
+        },
+        "columns": {
+          "description": "Array of column names.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "expression": {
+          "description": "The expression which is used for preview.",
+          "type": "string"
         }
       },
       "required": [
-        "sessionId",
-        "commandPayload"
+        "streamName"
       ]
     },
     "DataFlowDebugQueryResponse": {
@@ -3333,6 +3385,7 @@
     },
     "PipelineReference": {
       "description": "Pipeline reference type.",
+      "type": "object",
       "properties": {
         "type": {
           "type": "string",
@@ -3361,6 +3414,7 @@
     },
     "TriggerPipelineReference": {
       "description": "Pipeline that needs to be triggered with the given parameters.",
+      "type": "object",
       "properties": {
         "pipelineReference": {
           "description": "Pipeline reference.",
@@ -3374,6 +3428,7 @@
     },
     "TriggerResource": {
       "description": "Trigger resource type.",
+      "type": "object",
       "allOf": [
         {
           "$ref": "#/definitions/SubResource"
@@ -3418,6 +3473,7 @@
     },
     "WorkspaceUpdateParameters": {
       "description": "Parameters for updating a workspace resource.",
+      "type": "object",
       "properties": {
         "tags": {
           "type": "object",
@@ -3434,6 +3490,7 @@
     },
     "WorkspaceIdentity": {
       "description": "Identity properties of the workspace resource.",
+      "type": "object",
       "properties": {
         "type": {
           "type": "string",
@@ -3463,6 +3520,7 @@
     },
     "DatasetReference": {
       "description": "Dataset reference type.",
+      "type": "object",
       "properties": {
         "type": {
           "type": "string",
@@ -3491,6 +3549,7 @@
     },
     "DatasetResource": {
       "description": "Dataset resource type.",
+      "type": "object",
       "allOf": [
         {
           "$ref": "#/definitions/SubResource"
@@ -3508,6 +3567,7 @@
     },
     "DatasetDebugResource": {
       "description": "Dataset debug resource.",
+      "type": "object",
       "allOf": [
         {
           "$ref": "#/definitions/SubResourceDebugResource"
@@ -3525,6 +3585,7 @@
     },
     "LinkedServiceReference": {
       "description": "Linked service reference type.",
+      "type": "object",
       "properties": {
         "type": {
           "type": "string",
@@ -3553,6 +3614,7 @@
     },
     "LinkedServiceResource": {
       "description": "Linked service resource type.",
+      "type": "object",
       "allOf": [
         {
           "$ref": "#/definitions/SubResource"
@@ -3570,6 +3632,7 @@
     },
     "LinkedServiceDebugResource": {
       "description": "Linked service debug resource.",
+      "type": "object",
       "allOf": [
         {
           "$ref": "#/definitions/SubResourceDebugResource"
@@ -3607,6 +3670,7 @@
     },
     "SqlScriptResource": {
       "description": "Sql Script resource type.",
+      "type": "object",
       "properties": {
         "id": {
           "readOnly": true,
@@ -3659,6 +3723,7 @@
     },
     "SparkJobDefinitionResource": {
       "description": "Spark job definition resource type.",
+      "type": "object",
       "allOf": [
         {
           "$ref": "#/definitions/SubResource"
@@ -3696,6 +3761,7 @@
     },
     "NotebookResource": {
       "description": "Notebook resource type.",
+      "type": "object",
       "properties": {
         "id": {
           "readOnly": true,
@@ -3728,6 +3794,7 @@
     },
     "DataFlowResource": {
       "description": "Data flow resource type.",
+      "type": "object",
       "allOf": [
         {
           "$ref": "#/definitions/SubResource"
@@ -3745,6 +3812,7 @@
     },
     "DataFlowReference": {
       "description": "Data flow reference type.",
+      "type": "object",
       "properties": {
         "type": {
           "type": "string",
@@ -3776,6 +3844,7 @@
     },
     "DataFlowStagingInfo": {
       "description": "Staging info for execute data flow activity.",
+      "type": "object",
       "properties": {
         "linkedService": {
           "description": "Staging linked service reference.",
@@ -3862,6 +3931,7 @@
     },
     "DataFlowDebugResource": {
       "description": "Data flow debug resource.",
+      "type": "object",
       "allOf": [
         {
           "$ref": "#/definitions/SubResourceDebugResource"
@@ -4107,7 +4177,8 @@
           "description": "The end time of a pipeline run in ISO8601 format.",
           "type": "string",
           "format": "date-time",
-          "readOnly": true
+          "readOnly": true,
+          "x-nullable": true
         },
         "durationInMs": {
           "description": "The duration of a pipeline run.",
@@ -4381,6 +4452,7 @@
     },
     "RerunTriggerResource": {
       "description": "RerunTrigger resource type.",
+      "type": "object",
       "allOf": [
         {
           "$ref": "#/definitions/SubResource"
@@ -4460,6 +4532,7 @@
     },
     "SynapseNotebookReference": {
       "description": "Synapse notebook reference type.",
+      "type": "object",
       "properties": {
         "type": {
           "type": "string",
@@ -4484,6 +4557,7 @@
     },
     "SynapseSparkJobReference": {
       "description": "Synapse spark job reference type.",
+      "type": "object",
       "properties": {
         "type": {
           "type": "string",
@@ -4508,6 +4582,7 @@
     },
     "SqlPoolReference": {
       "description": "SQL pool reference type.",
+      "type": "object",
       "properties": {
         "type": {
           "type": "string",
